@@ -28,14 +28,16 @@ Load: first contentful paint about 90 ms locally; the whole app is about 160 KB 
 
 | Check | Result |
 |---|---|
-| Text contrast | 902 text elements measured across 7 sections × 2 languages × 2 themes: 0 failures |
+| Text contrast | 974 text elements measured across 7 sections and the welcome screen × 2 languages × 2 themes: 0 failures |
 | Tap targets (SC 2.5.8) | 0 below 24 px after fixes (was 2: the "not an official warning" link at 20 px tall and the 22 px checkbox) |
 | Accessible names | 0 unnamed controls; every form field has a label |
 | Keyboard focus (SC 2.4.7) | Visible 3 px outline on 13 of 13 controls tabbed through |
 | Choice load (Hick) | 13–14 interactive items on first screen (index 3.7–3.9), inside the typical 8–15 range |
 | Kiswahili/English parity | Same headings, same number of controls and same structure in both languages on every section |
 
-Fixed during testing: the two small tap targets; too much bold text (81% → 45% on the report
+Apple-style redesign (system font, blue palette, weather icons): retested in full; fixed white-on-white text on the TMA button, low-contrast tab labels and button text found by the audit.
+
+Fixed during earlier testing: the two small tap targets; too much bold text (81% → 45% on the report
 form); missing pressed and disabled states on buttons; the form now asks required questions first;
 a desktop layout bug where the details panel sat under the map; crowded phone header; the map
 opening zoomed out when the app started on another tab; a selected ward hiding behind the panel.

@@ -1,5 +1,5 @@
 // Salama Dar service worker: the app shell, map and advice work offline.
-const CACHE = "salama-dar-v4";
+const CACHE = "salama-dar-v5";
 const SHELL = ["./", "./index.html", "./config.js", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./icon-512.png"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
