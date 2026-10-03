@@ -14,7 +14,7 @@ the app's TMA desk sends people straight to TMA's official website and channels.
 | `index.html` | The app (map, report form, prepare, health, emergency, about) |
 | `moderate.html` | Volunteer page to approve or reject community reports |
 | `config.js` | Where you paste your database keys. `null` = prototype mode |
-| `supabase/schema.sql` | The database: tables, security rules, reviewer list |
+| `schema.sql` | The database: tables, security rules, reviewer list |
 | `sw.js`, `manifest.webmanifest`, `icon*` | Offline support and "Add to Home screen" |
 | `vercel.json` | Hosting settings for Vercel |
 | `TESTING.md` | What was tested, results, and a script for testing with residents |
@@ -36,9 +36,13 @@ vercel          # first time: log in, accept the defaults
 vercel --prod   # publishes to https://<your-project>.vercel.app
 ```
 
-Option B, no command line: create a GitHub repository, upload the contents of this folder,
-then on vercel.com choose **Add New > Project**, import the repository and click **Deploy**.
-There is no build step; Vercel serves the files as they are.
+Option B, no command line: create a GitHub repository and upload every file from this zip
+(index.html must end up at the top level of the repository, not inside a folder). Then on
+vercel.com choose **Add New > Project**, import the repository, set Framework Preset to
+**Other**, leave the build settings empty and click **Deploy**.
+
+If the deployed site shows "404: NOT_FOUND", index.html is inside a folder: set Vercel's
+**Root Directory** to that folder's name, or move the files to the top level.
 
 At this point the app works fully except that community reports stay on each phone
 (prototype mode).
@@ -46,7 +50,7 @@ At this point the app works fully except that community reports stay on each pho
 ## 2. Turn on the shared database (Supabase, free tier)
 
 1. Create a project at supabase.com. Pick the region closest to Tanzania that is offered.
-2. Open **SQL Editor > New query**, paste all of `supabase/schema.sql`, click **Run**.
+2. Open **SQL Editor > New query**, paste all of `schema.sql`, click **Run**.
 3. Open **Project Settings > API** and copy the **Project URL** and the **anon / publishable** key.
    Never use the `service_role` key in this app.
 4. In `config.js`, replace `window.SALAMA_CONFIG = null;` with:

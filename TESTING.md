@@ -3,7 +3,7 @@
 Tested 3 October 2026 on a local server, Chromium, at 390×844 (phone, touch) and 1366×800
 (desktop), in light and dark mode, in Kiswahili and English.
 
-## Automated user-flow tests: 38 of 38 passed, 0 JavaScript errors
+## Automated user-flow tests: 43 of 43 passed, 0 JavaScript errors
 
 | # | Flow | Result |
 |---|---|---|
@@ -19,6 +19,7 @@ Tested 3 October 2026 on a local server, Chromium, at 390×844 (phone, touch) an
 | 24–26 | Service worker installs; app loads with no connection; offline banner appears | Pass |
 | 27–28 | Report reviewed on `moderate.html` appears on the map | Pass |
 | 29 | Desktop: side panel instead of bottom sheet, top navigation instead of tab bar | Pass |
+| 36–40 | Preparation checklist ticks, progress and reload; health topics expand; emergency tiles dial the right numbers | Pass |
 | 30–35 | TMA desk: opens with the official TMA link, 4-point check before sharing, 6th tab, daily calendar reminder downloads, map legend links to it | Pass |
 
 Load: first contentful paint about 90 ms locally; the whole app is about 160 KB before compression.
@@ -27,7 +28,7 @@ Load: first contentful paint about 90 ms locally; the whole app is about 160 KB 
 
 | Check | Result |
 |---|---|
-| Text contrast | 770 text elements measured across 6 sections × 2 languages × 2 themes: 0 failures |
+| Text contrast | 902 text elements measured across 7 sections × 2 languages × 2 themes: 0 failures |
 | Tap targets (SC 2.5.8) | 0 below 24 px after fixes (was 2: the "not an official warning" link at 20 px tall and the 22 px checkbox) |
 | Accessible names | 0 unnamed controls; every form field has a label |
 | Keyboard focus (SC 2.4.7) | Visible 3 px outline on 13 of 13 controls tabbed through |
