@@ -1,0 +1,16 @@
+{
+  "name": "Salama Dar: ramani ya uelewa wa mafuriko",
+  "short_name": "Salama Dar",
+  "description": "Flood awareness for Dar es Salaam: ward flood history, how to prepare, health advice and emergency numbers.",
+  "lang": "sw",
+  "start_url": "./#ramani",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F3F6F4",
+  "theme_color": "#16324F",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="sw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salama Dar: ramani ya uelewa wa mafuriko</title>
+<meta name="description" content="Ramani ya uelewa wa mafuriko Dar es Salaam: kata zenye historia ya mafuriko, jinsi ya kujiandaa, afya, na namba za dharura.">
+<meta name="theme-color" content="#16324F">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Sofia+Sans+Extra+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F6F4; --paper-2:#E6ECE8; --raised:#FFFFFF; --ink:#16324F; --ink-2:#4B6274; --rule:#C6D1CC;
+  --land:#DCE3DB; --land-other:#EBEEE7; --sea:#C4DAE3; --ward-line:#F8FAF8; --district-line:#7D909B;
+  --flood:#A8561A; --plan:#E3AF6D; --sel:#16324F; --em:#B3261E; --ok:#1E6B47;
+  --frame:#16324F; --frame-dot:#E3AF6D; --frame-text:#F3F6F4;
+  --shadow:0 6px 24px rgba(16,40,60,.16),0 1px 3px rgba(16,40,60,.12);
+  --display:"Sofia Sans Extra Condensed","Arial Narrow","Roboto Condensed",sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F171D; --paper-2:#16212A; --raised:#1A2630; --ink:#E4ECF0; --ink-2:#A2B4BF; --rule:#2C3B45;
+    --land:#22303A; --land-other:#1B2327; --sea:#0A2B40; --ward-line:#34444F; --district-line:#71889A;
+    --flood:#E4893D; --plan:#8E5F2D; --sel:#F4F7F8; --em:#FF8A80; --ok:#6FCF97;
+    --frame:#1D3A59; --frame-dot:#D99A52; --frame-text:#F3F6F4; --shadow:0 6px 24px rgba(0,0,0,.5);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F171D; --paper-2:#16212A; --raised:#1A2630; --ink:#E4ECF0; --ink-2:#A2B4BF; --rule:#2C3B45;
+  --land:#22303A; --land-other:#1B2327; --sea:#0A2B40; --ward-line:#34444F; --district-line:#71889A;
+  --flood:#E4893D; --plan:#8E5F2D; --sel:#F4F7F8; --em:#FF8A80; --ok:#6FCF97;
+  --frame:#1D3A59; --frame-dot:#D99A52; --frame-text:#F3F6F4; --shadow:0 6px 24px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.55;overflow:hidden}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--flood);outline-offset:2px}
+p{margin:0 0 .8em}
+h1,h2,h3{line-height:1.2;margin:0 0 .4em}
+h2{font-size:1.55rem} h3{font-size:1.08rem}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;flex:0 0 auto}
+.sw.rep{background:var(--flood)} .sw.plan{background:var(--plan)} .sw.none{background:var(--land);outline:1px solid var(--rule)}
+.sw.rpt{background:var(--ink);border-radius:50%}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* App shell */
+.app{height:100%;display:flex;flex-direction:column}
+.bar{display:flex;align-items:center;gap:12px;padding:8px 14px;min-height:58px;background:var(--paper);position:relative;z-index:30}
+.brand{display:flex;align-items:baseline;gap:9px;text-decoration:none;min-width:0}
+@media (max-width:480px){.brand{flex-direction:column;align-items:flex-start;gap:2px}.wordmark{font-size:1.6rem}.proto{font-size:.68rem;padding:0 7px}}
+.wordmark{font-family:var(--display);font-weight:800;font-size:1.85rem;line-height:1;letter-spacing:.01em;white-space:nowrap}
+.proto{font-size:.72rem;border:1px solid var(--ink-2);color:var(--ink-2);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.topnav{display:none;gap:4px;margin-left:18px}
+.topnav a{text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:400;color:var(--ink-2)}
+.topnav a[aria-current="page"]{color:var(--ink);background:var(--paper-2);font-weight:700}
+.bar-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.iconbtn{width:44px;height:44px;display:grid;place-items:center;border:1.5px solid var(--rule);background:transparent;border-radius:10px;cursor:pointer;padding:0}
+.lang{display:inline-flex;flex:0 0 auto;border:1.5px solid var(--ink);border-radius:10px;overflow:hidden}
+.lang button{background:transparent;border:0;padding:8px 12px;min-height:44px;min-width:48px;cursor:pointer;font-weight:400;font-size:.92rem}
+.lang button[aria-pressed="true"]{font-weight:700}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.strip{height:8px;flex:0 0 auto;background:radial-gradient(circle,var(--frame-dot) 1.6px,transparent 2.1px) 0 0/8px 8px,var(--frame)}
+.offline{background:var(--ink);color:var(--paper);font-size:.88rem;padding:6px 14px;text-align:center}
+main{flex:1;min-height:0;position:relative;overflow:hidden}
+.view{position:absolute;inset:0;overflow:auto;-webkit-overflow-scrolling:touch}
+.view[hidden]{display:none}
+.page{max-width:820px;margin:0 auto;padding:22px 18px 40px}
+.page>h1{font-size:clamp(1.6rem,5vw,2.2rem)}
+.lead{color:var(--ink-2);max-width:62ch}
+.tabbar{display:grid;grid-template-columns:repeat(6,1fr);background:var(--raised);border-top:1px solid var(--rule);flex:0 0 auto;z-index:30}
+.tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:60px;text-decoration:none;font-size:.76rem;font-weight:400;color:var(--ink-2);position:relative}
+.tabbar a svg{width:24px;height:24px}
+.tabbar a[aria-current="page"]{color:var(--ink);font-weight:700}
+.tabbar a[aria-current="page"]::before{content:"";position:absolute;top:0;left:22%;right:22%;height:3px;border-radius:0 0 3px 3px;background:var(--flood)}
+.tabbar a.alert{color:var(--em)}
+@media (min-width:900px){
+  .topnav{display:flex} .tabbar{display:none}
+  .bar{padding:10px 24px}
+}
+
+/* Map view */
+.v-map{display:grid;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.v-map{grid-template-columns:minmax(0,1fr) 410px}}
+.mapwrap{position:relative;min-height:0;height:100%;overflow:hidden;background:var(--sea)}
+.mapbox{position:absolute;inset:0;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.mapbox.dragging{cursor:grabbing}
+#map{display:block;width:100%;height:100%}
+#map .sea{fill:var(--sea)} #map .other{fill:var(--land-other)}
+#map .w{fill:var(--land);stroke:var(--ward-line);stroke-width:.8px;vector-effect:non-scaling-stroke;cursor:pointer}
+#map .w.plan{fill:var(--plan)} #map .w.rep{fill:var(--flood)}
+@media (hover:hover){#map .w:hover{filter:brightness(.93)}}
+#map .dist{fill:none;stroke:var(--district-line);stroke-width:1.3px;vector-effect:non-scaling-stroke;pointer-events:none}
+#map .selp{fill:none;stroke:var(--sel);stroke-width:3px;vector-effect:non-scaling-stroke;pointer-events:none;stroke-linejoin:round}
+#map text{pointer-events:none;paint-order:stroke;stroke:var(--paper);stroke-linejoin:round;fill:var(--ink);font-family:var(--body);font-weight:700}
+#map text.dl{font-weight:400;fill:var(--ink-2)}
+#map text.sl{font-style:italic;font-weight:400;fill:var(--ink-2);stroke:var(--sea)}
+#map .bub circle{fill:var(--ink);stroke:var(--paper);vector-effect:non-scaling-stroke;stroke-width:2px}
+#map .bub text{fill:var(--paper);stroke:none;font-weight:700}
+.mtop{position:absolute;left:12px;right:12px;top:12px;z-index:8;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.mtop>*{pointer-events:auto}
+@media (min-width:900px){.mtop{right:auto;width:min(440px,calc(100% - 90px))}.legend{flex-wrap:wrap}}
+.combo{position:relative}
+.combo input{width:100%;font-size:1rem;padding:12px 14px 12px 44px;border:1.5px solid var(--ink);border-radius:12px;background:var(--raised);color:var(--ink);min-height:50px;box-shadow:var(--shadow)}
+.combo input::placeholder{color:var(--ink-2)}
+.combo .mag{position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none}
+.combo ul{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 6px);margin:0;padding:6px 0;list-style:none;background:var(--raised);border:1.5px solid var(--ink);border-radius:12px;max-height:min(320px,50vh);overflow:auto;box-shadow:var(--shadow)}
+.combo li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 14px;cursor:pointer;min-height:44px}
+.combo li[aria-selected="true"],.combo li:hover{background:var(--paper-2)}
+.combo li small{color:var(--ink-2)}
+.combo .empty{color:var(--ink-2);cursor:default}
+.legend{display:flex;gap:6px;margin:0;padding:0;list-style:none;overflow-x:auto;scrollbar-width:none}
+.legend::-webkit-scrollbar{display:none}
+.legend li{display:flex;align-items:center;gap:6px;white-space:nowrap;background:var(--raised);border:1px solid var(--rule);border-radius:999px;padding:6px 11px;font-size:.8rem;min-height:32px}
+.legend li.lnk{padding:0}
+.legend a{display:flex;align-items:center;min-height:32px;padding:6px 12px;font-weight:700}
+.ctrls{position:absolute;right:12px;top:132px;display:flex;flex-direction:column;gap:6px;z-index:7}
+@media (min-width:900px){.ctrls{top:12px}}
+.ctrls button{width:44px;height:44px;display:grid;place-items:center;background:var(--raised);border:1.5px solid var(--ink);border-radius:10px;cursor:pointer;padding:0;box-shadow:var(--shadow)}
+
+/* Panel: bottom sheet on mobile, side column on desktop */
+.panel{background:var(--raised);display:flex;flex-direction:column;min-height:0}
+.sheet-head{display:flex;align-items:center;gap:10px;padding:6px 14px 8px;cursor:pointer;touch-action:none;border:0;background:transparent;width:100%;text-align:left}
+.grab{display:block;width:44px;height:5px;border-radius:3px;background:var(--rule);margin:2px auto 6px}
+.sheet-head .peek-title{font-weight:700;font-size:1.02rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sheet-head .peek-sub{color:var(--ink-2);font-size:.86rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.panel-body{overflow:auto;padding:4px 18px 22px;flex:1;min-height:0}
+@media (max-width:899px){
+  .panel{position:absolute;left:0;right:0;bottom:0;z-index:12;border-radius:18px 18px 0 0;box-shadow:0 -6px 24px rgba(16,40,60,.18);height:var(--sh,96px);transition:height .28s cubic-bezier(.2,.8,.2,1)}
+  .panel[data-mode="peek"]{--sh:96px}
+  .panel[data-mode="half"]{--sh:56%}
+  .panel[data-mode="full"]{--sh:calc(100% - 10px)}
+  .panel[data-mode="peek"] .panel-body{visibility:hidden}
+}
+@media (min-width:900px){
+  .panel{border-left:1px solid var(--rule);height:100%}
+  .sheet-head{display:none}
+  .panel-body{padding:22px 24px 30px}
+}
+@media (prefers-reduced-motion:reduce){.panel{transition:none}}
+.kicker{color:var(--ink-2);font-size:.92rem;margin:0 0 2px}
+.panel h2{font-size:1.9rem;margin-bottom:.15em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;padding:0;list-style:none}
+.tags li{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--rule);border-radius:6px;padding:4px 10px;font-size:.88rem}
+.ask{border-left:3px solid var(--plan);padding:2px 0 2px 12px;margin:14px 0}
+.ask h3{font-size:.98rem;margin:0 0 2px} .ask p{margin:0}
+.src{font-size:.88rem;color:var(--ink-2);margin-top:16px}
+.src h3{font-size:.95rem;color:var(--ink);margin-bottom:4px}
+.src ol{margin:0;padding-left:20px} .src li{margin-bottom:4px}
+.count{font-family:var(--display);font-weight:800;font-size:4rem;line-height:.9;display:block}
+.fine{font-size:.85rem;color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips button{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--rule);background:var(--paper);border-radius:999px;padding:7px 13px;min-height:44px;cursor:pointer;font-size:.94rem}
+.chips button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 18px;border-radius:12px;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-weight:700;text-decoration:none}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:active,.chips button:active,.ctrls button:active,.iconbtn:active,.numbers a:active,.tabbar a:active,.depths label:active{transform:scale(.97)}
+.btn:disabled{opacity:.6;cursor:progress}
+.btn,.chips button,.ctrls button,.numbers a,.depths label{transition:transform .08s ease}
+@media (prefers-reduced-motion:reduce){.btn,.chips button,.ctrls button,.numbers a,.depths label{transition:none}}
+.btn.block{width:100%}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.rlist{list-style:none;margin:6px 0 0;padding:0}
+.rlist li{padding:10px 0;border-bottom:1px solid var(--rule)}
+.rlist .meta{font-size:.84rem;color:var(--ink-2)}
+.depth-badge{display:inline-flex;align-items:center;gap:6px;font-weight:700}
+.community{margin-top:18px;padding-top:12px;border-top:1px solid var(--rule)}
+
+/* Report form */
+.callout{display:flex;flex-wrap:wrap;align-items:center;gap:10px;border:2px solid var(--em);border-radius:12px;padding:10px 14px;margin:14px 0 18px}
+.callout strong{color:var(--em);margin-right:auto}
+.callout a{display:inline-flex;align-items:center;min-height:44px;padding:4px 14px;border-radius:10px;background:var(--em);color:#fff;text-decoration:none;font-weight:700}
+:root[data-theme="dark"] .callout a{color:#1a0b0a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .callout a{color:#1a0b0a}}
+.demo{background:var(--paper-2);border-left:4px solid var(--plan);padding:10px 12px;border-radius:0 8px 8px 0;font-size:.9rem;margin-bottom:16px}
+.field{margin:0 0 18px;border:0;padding:0;min-width:0}
+.field>label,.field>legend{display:block;font-weight:700;margin-bottom:6px;padding:0}
+.hint{font-size:.86rem;color:var(--ink-2);margin:-2px 0 6px}
+.field select,.field input[type=text],.field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--ink-2);border-radius:10px;background:var(--raised);min-height:48px}
+.field textarea{min-height:90px;resize:vertical}
+.field [aria-invalid="true"]{border-color:var(--em)}
+.err{color:var(--em);font-size:.9rem;font-weight:700;margin-top:6px}
+.err:empty{display:none}
+.depths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:600px){.depths{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.depths label{display:flex;flex-direction:column;align-items:center;gap:6px;border:1.5px solid var(--rule);border-radius:12px;padding:12px 8px;cursor:pointer;text-align:center;font-weight:400;font-size:.92rem;background:var(--raised);min-height:96px;justify-content:center}
+.depths input:checked+label span{font-weight:700}
+.depths input{position:absolute;opacity:0;pointer-events:none}
+.depths input:checked+label{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.depths input:focus-visible+label{outline:3px solid var(--flood);outline-offset:2px}
+.check{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--rule);border-radius:12px;padding:12px 14px;cursor:pointer;background:var(--raised)}
+.check input{width:24px;height:24px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--ink)}
+.success{border:2px solid var(--ok);border-radius:14px;padding:18px;margin-top:6px}
+.success h2{color:var(--ok)}
+.st{display:inline-block;font-size:.8rem;font-weight:700;border-radius:999px;padding:2px 10px;border:1px solid var(--rule)}
+.st.ok{border-color:var(--ok);color:var(--ok)}
+
+/* TMA desk */
+.tma-hero{display:flex;flex-direction:column;gap:10px;background:var(--raised);border:1.5px solid var(--ink);border-radius:14px;padding:18px;margin:6px 0 22px}
+.tma-hero p{margin:0;color:var(--ink-2)}
+.tma-hero .btn{align-self:flex-start}
+.chan{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0 0;padding:0;list-style:none}
+.chan a{display:flex;align-items:center;gap:10px;min-height:52px;padding:10px 14px;border:1.5px solid var(--rule);border-radius:12px;text-decoration:none;font-weight:700;background:var(--raised)}
+.verify{margin:0;padding:0;list-style:none;counter-reset:v}
+.verify li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--rule)}
+.verify li::before{counter-increment:v;content:counter(v);flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--paper-2);font-weight:700;font-size:.9rem}
+.sec{margin-top:30px}
+.sec>h2{font-size:1.25rem}
+.sharebox{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.copied{font-size:.9rem;color:var(--ok);font-weight:700}
+
+/* Prepare / health / numbers */
+.hero{margin:6px 0 24px;padding:9px;border-radius:8px;background:radial-gradient(circle,var(--frame-dot) 1.9px,transparent 2.4px) 0 0/9px 9px,var(--frame)}
+.hero div{background:var(--frame);color:var(--frame-text);text-align:center;padding:22px 14px 16px;border-radius:3px}
+.hero b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,9vw,3.6rem);line-height:1;letter-spacing:.012em}
+.hero span{display:block;margin-top:8px;opacity:.88;font-size:.95rem}
+.hero span:empty{display:none}
+.phases{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.phase{border-top:3px solid var(--flood);padding-top:10px}
+.phase:nth-child(1){border-top-color:var(--plan)} .phase:nth-child(3){border-top-color:var(--ink-2)}
+.phase ul{margin:0;padding:0;list-style:none}
+.phase li{padding:9px 0;border-bottom:1px solid var(--rule)} .phase li:last-child{border-bottom:0}
+.health>div{padding:13px 0;border-bottom:1px solid var(--rule)}
+.health p{margin:0}
+.danger{margin-top:22px;border:2px solid var(--em);border-radius:12px;padding:14px 18px}
+.danger h2{color:var(--em);font-size:1.1rem}
+.danger ul{margin:0;padding-left:20px}
+.numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
+@media (min-width:640px){.numbers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.numbers a{display:flex;flex-direction:column;gap:2px;text-decoration:none;border:1.5px solid var(--ink);border-radius:12px;padding:12px 14px;min-height:92px;background:var(--raised)}
+.numbers b{font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1;color:var(--em)}
+.numbers span{font-size:.9rem}
+.official{margin:0;padding:0;list-style:none}
+.official li{padding:12px 0;border-bottom:1px solid var(--rule)}
+.official p{margin:0}
+.srcs{font-size:.9rem;padding-left:20px} .srcs li{margin-bottom:6px}
+
+/* First-run dialog */
+dialog{border:0;border-radius:18px;padding:0;max-width:min(460px,calc(100% - 28px));width:100%;background:var(--raised);color:var(--ink);box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(10,22,34,.55)}
+.dlg{padding:22px 22px 20px}
+.dlg-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.dlg h2{font-family:var(--display);font-weight:800;font-size:2.1rem;margin:0}
+.dlg ul{list-style:none;margin:6px 0 14px;padding:0}
+.dlg li{display:flex;gap:12px;align-items:flex-start;padding:8px 0}
+.dlg li svg{flex:0 0 auto;margin-top:2px}
+.dlg .note{font-size:.9rem;background:var(--paper-2);border-left:4px solid var(--flood);padding:10px 12px;border-radius:0 8px 8px 0}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="brand" href="#ramani"><span class="wordmark">Salama Dar</span><span class="proto" data-t="proto"></span></a>
+    <nav class="topnav" id="topnav" data-ta="navLabel"></nav>
+    <div class="bar-actions">
+      <button type="button" class="iconbtn" id="aboutBtn" data-ta="about"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.6 8.4a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .8-1 1.5v.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="15.6" r="1.1" fill="currentColor"/></svg></button>
+      <div class="lang" role="group" aria-label="Lugha / Language">
+        <button type="button" data-lang="sw" aria-pressed="true" aria-label="Kiswahili">SW</button>
+        <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+    </div>
+  </header>
+  <div class="strip" aria-hidden="true"></div>
+  <div class="offline" id="offline" hidden data-t="offline"></div>
+
+  <main id="main">
+    <!-- MAP -->
+    <section class="view v-map" id="v-ramani" aria-labelledby="h-ramani">
+      <h1 class="visually-hidden" id="h-ramani" tabindex="-1" data-t="tabMap"></h1>
+      <div class="mapwrap">
+        <div class="mapbox" id="mapbox">
+          <svg id="map" role="group" aria-labelledby="maplabel">
+            <title id="maplabel"></title>
+            <path class="sea" id="sea"/><path class="other" id="other"/>
+            <g id="wards"></g><g id="dists"></g><path class="selp" id="selp"/>
+            <g id="labels"></g><g id="bubbles"></g>
+          </svg>
+        </div>
+        <div class="mtop">
+          <div class="combo" role="search">
+            <svg class="mag" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <label for="q" class="visually-hidden" data-t="searchTitle"></label>
+            <input id="q" type="search" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="qlist">
+            <ul id="qlist" role="listbox" hidden></ul>
+          </div>
+          <ul class="legend" id="legend"></ul>
+        </div>
+        <div class="ctrls">
+          <button type="button" id="zin" data-ta="zoomIn"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+          <button type="button" id="zout" data-ta="zoomOut"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+          <button type="button" id="zall" data-ta="showAll"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7V3h4M13 3h4v4M17 13v4h-4M7 17H3v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="panel" id="panel" data-mode="peek" aria-live="polite">
+        <button type="button" class="sheet-head" id="sheetHead" aria-controls="panelBody" aria-expanded="false">
+          <span style="flex:1;min-width:0"><span class="grab" aria-hidden="true"></span>
+            <span style="display:flex;flex-direction:column;gap:1px"><span class="peek-title" id="peekTitle"></span><span class="peek-sub" id="peekSub"></span></span></span>
+        </button>
+        <div class="panel-body" id="panelBody"></div>
+      </div>
+    </section>
+
+    <!-- REPORT -->
+    <section class="view" id="v-ripoti" hidden aria-labelledby="h-ripoti">
+      <div class="page">
+        <h1 id="h-ripoti" tabindex="-1" data-t="rTitle"></h1>
+        <p class="lead" data-t="rLead"></p>
+        <div class="callout"><strong data-t="rDanger"></strong><a href="tel:112">112</a><a href="tel:190">190</a></div>
+        <p class="demo" id="demoNote" hidden data-t="demo"></p>
+        <form id="rform" novalidate>
+          <div class="field">
+            <label for="fWard" data-t="fWard"></label>
+            <select id="fWard" aria-describedby="eWard"></select>
+            <p class="err" id="eWard" role="alert"></p>
+          </div>
+          <fieldset class="field" aria-describedby="eDepth">
+            <legend data-t="fDepth"></legend>
+            <div class="depths" id="depths"></div>
+            <p class="err" id="eDepth" role="alert"></p>
+          </fieldset>
+          <div class="field">
+            <label for="fPlace" data-t="fPlace"></label>
+            <p class="hint" id="hPlace" data-t="fPlaceHint"></p>
+            <input type="text" id="fPlace" maxlength="140" aria-describedby="hPlace">
+          </div>
+          <div class="field">
+            <label for="fNote" data-t="fNote"></label>
+            <p class="hint" id="hNote" data-t="fPrivacy"></p>
+            <textarea id="fNote" maxlength="280" aria-describedby="hNote"></textarea>
+          </div>
+          <div class="field" style="margin-top:26px">
+            <label class="check"><input type="checkbox" id="fConfirm" aria-describedby="eConfirm"><span data-t="fConfirm"></span></label>
+            <p class="err" id="eConfirm" role="alert"></p>
+          </div>
+          <p class="err" id="eSend" role="alert"></p>
+          <button type="submit" class="btn primary block" id="fSubmit" data-t="fSubmit"></button>
+        </form>
+        <div id="rdone" hidden></div>
+        <div id="mine"></div>
+      </div>
+    </section>
+
+    <!-- TMA DESK -->
+    <section class="view" id="v-tma" hidden aria-labelledby="h-tma">
+      <div class="page">
+        <h1 id="h-tma" tabindex="-1" data-t="tmaTitle"></h1>
+        <p class="lead" data-t="tmaLead"></p>
+        <div class="tma-hero">
+          <h2 style="font-size:1.2rem;margin:0" data-t="tmaSiteTitle"></h2>
+          <p data-t="tmaSiteBody"></p>
+          <a class="btn primary" id="tmaOpen" href="https://www.meteo.go.tz" target="_blank" rel="noopener"></a>
+        </div>
+        <div class="sec">
+          <h2 data-t="tmaChanTitle"></h2>
+          <p data-t="tmaChanBody"></p>
+          <ul class="chan" id="tmaChan"></ul>
+          <div id="tmaRemind" hidden><p class="fine" style="margin-top:14px" data-t="tmaRemindBody"></p><button type="button" class="btn" id="tmaIcs" data-t="tmaRemindBtn"></button></div>
+        </div>
+        <div class="sec">
+          <h2 data-t="tmaVerifyTitle"></h2>
+          <p data-t="tmaVerifyLead"></p>
+          <ol class="verify" id="tmaVerify"></ol>
+          <p style="margin-top:12px"><strong data-t="tmaVerifyEnd"></strong></p>
+          <div class="sharebox"><button type="button" class="btn" id="tmaShare" data-t="tmaShareBtn"></button><span class="copied" id="tmaShared" role="status"></span></div>
+        </div>
+        <div class="sec">
+          <h2 data-t="tmaWhyTitle"></h2>
+          <p data-t="tmaWhyBody"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREPARE -->
+    <section class="view" id="v-jiandae" hidden aria-labelledby="h-jiandae">
+      <div class="page">
+        <div class="hero" lang="sw"><div><b>Tahadhari kabla ya hatari</b><span id="heroEn" lang="en"></span></div></div>
+        <h1 id="h-jiandae" tabindex="-1" data-t="prepTitle"></h1>
+        <p class="lead" data-t="prepLead"></p>
+        <div class="phases" id="phases"></div>
+      </div>
+    </section>
+
+    <!-- HEALTH -->
+    <section class="view" id="v-afya" hidden aria-labelledby="h-afya">
+      <div class="page">
+        <h1 id="h-afya" tabindex="-1" data-t="healthTitle"></h1>
+        <p class="lead" data-t="healthLead"></p>
+        <div class="danger"><h2 data-t="dangerTitle"></h2><ul id="dangerList"></ul></div>
+        <div class="health" id="healthItems" style="margin-top:12px"></div>
+      </div>
+    </section>
+
+    <!-- EMERGENCY -->
+    <section class="view" id="v-dharura" hidden aria-labelledby="h-dharura">
+      <div class="page">
+        <h1 id="h-dharura" tabindex="-1" data-t="emTitle"></h1>
+        <p class="lead" data-t="emLead"></p>
+        <ul class="numbers" id="numList"></ul>
+        <h2 style="margin-top:30px" data-t="offTitle"></h2>
+        <ul class="official" id="offList"></ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="view" id="v-kuhusu" hidden aria-labelledby="h-kuhusu">
+      <div class="page">
+        <h1 id="h-kuhusu" tabindex="-1" data-t="aboutTitle"></h1>
+        <p data-t="about1"></p><p data-t="about2"></p><p data-t="about3"></p><p data-t="about5"></p>
+        <h2 style="margin-top:20px" data-t="sourcesTitle"></h2>
+        <ol class="srcs" id="srcList"></ol>
+        <p style="margin-top:16px"><strong data-t="disclaimer"></strong></p>
+        <p id="modLink" hidden><a href="moderate.html" data-t="modLink"></a></p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabbar" id="tabbar" data-ta="navLabel"></nav>
+</div>
+
+<dialog id="intro" aria-labelledby="introTitle">
+  <div class="dlg">
+    <div class="dlg-top"><h2 id="introTitle" data-t="introTitle"></h2>
+      <div class="lang" role="group" aria-label="Lugha / Language">
+        <button type="button" data-lang="sw" aria-pressed="true" aria-label="Kiswahili">SW</button>
+        <button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div></div>
+    <ul id="introList"></ul>
+    <p class="note" data-t="introNote"></p>
+    <button type="button" class="btn primary block" id="introStart" data-t="introStart"></button>
+  </div>
+</dialog>
+
+<script src="config.js"></script>
+<script>
+const IS_SITE = true;
+const GEO = {"W":7869,"H":8680,"wards":[{"n":"Kigogo","d":"Kinondoni","p":"M3650 3647l28 1l14 2l11 6l36 7l6 0l-6 8l-10 7l-18 8l-16 3l-17 -2l-9 5l-14 8l-12 10l-5 10l-10 9l-28 0l-38 -5l-14 3l-6 6l-9 17l-5 3l-22 3l-17 -11l-11 -3l-8 5l-5 -2l-4 -10l1 -8l-7 -7l-11 -3l-9 8l-17 -8l-7 3l-8 -5l-25 2l-14 5l-15 -15l10 -11l15 -2l8 2l18 -13l12 2l11 9l7 -4l9 4l24 -1l13 -8l6 3l9 -4l12 -8l9 1l22 -5l11 0l1 -5l11 -4l43 -28l12 7l5 -2l13 7z","c":[3523,3695],"b":[3349,3635,3745,3756]},{"n":"Mzimuni","d":"Kinondoni","p":"M3774 3600l-12 27l-1 13l-3 9l-13 14l-6 0l-36 -7l-11 -6l-14 -2l-28 -1l-6 -11l-29 -14l-12 -16l5 -10l12 -6l1 -13l-12 -6l0 -13l8 -16l74 26l23 7z","c":[3689,3603],"b":[3603,3542,3774,3663]},{"n":"Magomeni","d":"Kinondoni","p":"M3743 3493l-2 4l11 10l0 8l9 7l11 15l10 2l10 -6l8 -1l18 -11l1 -10l9 0l-12 20l-10 21l2 11l-6 9l-20 17l-8 11l-60 -25l-23 -7l11 -24l-6 -6l-23 -16l2 -18l-16 -5l-4 -17l13 -1l5 -9l5 -16l18 -7l9 5l7 9l4 12l21 17z","c":[3722,3527],"b":[3655,3449,3828,3600]},{"n":"Ndugumbi","d":"Kinondoni","p":"M3607 3466l7 2l15 1l8 -3l13 4l5 12l4 17l16 5l-2 18l23 16l6 6l-11 24l-74 -26l-40 -15l-34 -12l-7 -2l-44 -18l-43 -13l-12 -4l8 -20l5 -5l14 5l11 -3l12 5l5 7l19 -4l6 4l26 -1l13 3l9 -6l20 -6l9 0l9 10z","c":[3600,3508],"b":[3437,3453,3702,3568]},{"n":"Tandale","d":"Kinondoni","p":"M3552 3381l6 -1l18 12l9 20l-2 8l5 3l7 15l7 8l0 10l5 10l-4 1l-9 -10l-9 0l-20 6l-9 6l-13 -3l-26 1l-6 -4l-19 4l-5 -7l-12 -5l-11 3l-14 -5l-5 5l-1 -25l9 -2l6 -16l5 -18l-4 -6l1 -22l14 -1l9 7l10 -5l2 -6l17 -1l8 11l18 5l6 -3z","c":[3521,3417],"b":[3444,3363,3607,3469]},{"n":"Kijitonyama","d":"Kinondoni","p":"M3584 3235l-4 9l-3 -1l-7 17l6 2l-4 18l8 1l0 13l-17 10l-25 3l8 22l4 19l6 12l-4 2l0 19l-7 -5l-6 3l-18 -5l-8 -11l-17 1l-2 6l-10 5l-9 -7l-14 1l-9 0l1 -10l-3 -5l-12 -6l-6 0l4 -13l-1 -10l-18 -10l5 -21l-13 1l-16 -11l-20 -26l-3 -13l-5 -12l-17 -15l-30 -38l-4 -15l-3 -5l3 -5l19 -19l21 -20l20 -27l83 63l10 10l47 40l16 10l27 13z","c":[3473,3234],"b":[3311,3089,3584,3381]},{"n":"Kinondoni","d":"Kinondoni","p":"M3758 3233l19 0l23 3l28 10l23 13l18 13l22 19l15 33l16 30l13 31l-63 -3l-29 -2l-57 -7l-30 4l-2 -24l3 -54z","c":[3828,3311],"b":[3754,3233,3935,3385]},{"n":"Hananasif","d":"Kinondoni","p":"M3936 3389l9 34l10 24l-7 -10l-16 -17l-10 -2l-17 1l-9 -2l-5 -8l-8 0l-9 13l-1 10l6 16l-9 30l-13 -2l-4 13l-12 6l-13 16l-9 0l-1 10l-18 11l-8 1l-10 6l-10 -2l-11 -15l-9 -7l0 -8l-11 -10l2 -4l19 -51l3 -13l-1 -20l-8 -32l30 -4l57 7l29 2l63 3z","c":[3814,3462],"b":[3741,3373,3955,3539]},{"n":"Mwananyamala","d":"Kinondoni","p":"M3756 3377l8 32l1 20l-3 13l-19 51l-6 -1l-21 -17l-4 -12l-7 -9l-9 -5l-5 -36l-10 -10l1 -4l-23 -12l1 -7l-17 -2l-4 -28l-9 -22l-23 -42l2 -5l9 -11l-1 -27l25 4l16 0l83 -13l17 -1l-1 66l-3 54z","c":[3698,3365],"b":[3607,3233,3765,3493]},{"n":"Makumbusho","d":"Kinondoni","p":"M3617 3243l1 27l-9 11l-2 5l23 42l9 22l4 28l17 2l-1 7l23 12l-1 4l10 10l5 36l-18 7l-5 16l-5 9l-13 1l-5 -12l-13 -4l-8 3l-15 -1l-7 -2l-5 -10l0 -10l-7 -8l-7 -15l-5 -3l2 -8l-9 -20l-18 -12l-6 1l0 -19l4 -2l-6 -12l-4 -19l-8 -22l25 -3l17 -10l0 -13l-8 -1l4 -18l-6 -2l7 -17l3 1l4 -9z","c":[3597,3355],"b":[3538,3235,3696,3482]},{"n":"Makongo","d":"Kinondoni","p":"M3236 2794l7 27l38 120l60 101l7 15l11 16l15 16l-20 27l-21 20l-19 19l-3 5l-16 19l-50 -41l-11 -7l-25 -9l-3 1l-36 -3l-12 1l-86 52l-20 2l-14 14l10 10l4 8l0 15l-7 12l-9 8l0 5l-15 9l-8 1l-3 6l-8 3l-4 -10l-9 -17l-9 -7l3 -12l-7 -4l-4 -8l-15 -9l-21 -3l0 2l30 11l-7 12l-21 22l-13 9l-8 8l-4 5l-19 17l-10 -6l-15 -4l-10 0l-17 -4l-7 -4l-31 -1l-9 -4l-8 -9l-12 0l-10 -6l-5 -1l3 -6l1 -13l-11 -2l-4 3l-7 -4l-11 3l-9 -6l-5 6l-11 0l-14 8l-12 0l-4 -4l-21 5l-14 -22l-12 -25l4 -20l2 -24l-2 -8l5 -9l1 -16l-6 -14l-5 -18l-6 -1l-4 -26l0 -36l-18 -12l9 -17l5 16l5 6l16 0l7 8l16 -1l0 -9l9 -2l17 1l11 -9l7 -2l5 3l5 12l8 1l-1 13l-6 7l27 7l17 -7l11 22l11 11l8 -13l14 -13l-1 -12l20 -9l3 -23l9 -3l8 -7l-7 -12l19 -24l4 -12l12 0l4 -4l-5 -21l4 -5l6 6l11 4l-1 10l6 0l10 -5l4 -11l12 -6l7 -8l-1 -7l-9 1l2 -8l7 -6l8 -2l14 18l6 -7l8 0l6 12l8 5l8 1l5 -6l1 -24l18 -16l9 -16l4 -2l9 8l28 9l9 -10l11 -3l11 7l13 4l11 -10l7 -11l6 -2l11 3l5 10l10 2l3 14l10 -8l4 -14l13 -17l13 -10l11 -1l8 -8z","c":[3068,3039],"b":[2600,2794,3374,3282]},{"n":"Mbezi Juu","d":"Kinondoni","p":"M2975 2900l-2 -50l1 -16l0 -15l1 -68l5 -70l-3 -29l1 -74l-1 -16l-4 -11l2 -9l-1 -22l-6 -6l3 -6l-1 -15l9 -16l11 -9l14 -2l26 -21l43 -33l22 -12l18 -13l14 -5l24 101l17 60l12 42l9 30l31 101l8 33l8 45l-23 6l-8 8l-11 1l-13 10l-13 17l-4 14l-10 8l-3 -14l-10 -2l-5 -10l-11 -3l-6 2l-7 11l-11 10l-13 -4l-11 -7l-11 3l-9 10l-28 -9l-9 -8l-4 2l-9 16l-18 16l-1 24l-5 6z","c":[3086,2634],"b":[2968,2382,3236,2901]},{"n":"Wazo","d":"Kinondoni","p":"M2706 1771l20 21l125 138l80 89l37 52l23 35l23 28l6 10l23 36l19 23l30 43l4 9l31 127l-14 5l-18 13l-22 12l-43 33l-26 21l-14 2l-11 9l-9 16l1 15l-22 2l-21 -11l-4 -6l-8 -1l-14 -8l-23 12l-2 6l-11 2l-6 -3l-10 1l-11 -2l-9 -9l-8 -17l-9 -8l-9 -1l-19 3l-18 -4l-2 -2l-19 3l-3 -10l3 -18l-9 -7l5 -7l-4 -7l-16 -15l-12 1l-3 -7l-18 -25l-13 -9l-4 -12l-12 -2l-17 -30l9 -21l-6 -8l-14 2l4 -9l-10 -17l-7 12l-2 19l-8 4l4 7l-19 16l-9 2l-3 9l-12 11l-18 2l-11 9l-1 7l-7 10l0 17l5 2l1 20l-14 23l-4 25l6 6l-2 13l-5 6l-5 -2l-13 2l-16 7l-9 -1l-5 6l-8 -7l-13 0l-9 -4l-11 -1l-12 -10l-6 -1l-1 -7l-13 -13l-23 -20l-12 9l-17 -10l-5 8l6 15l-4 11l-16 13l3 11l-15 9l2 7l-19 6l-12 20l-11 -6l-17 2l-15 -10l-10 1l-5 -14l-12 -11l-4 -10l0 -8l-16 -17l-13 -1l-4 -6l-8 1l-1 -6l-12 -7l5 -17l7 0l-2 -16l-8 -9l-6 -15l-5 -3l7 -9l-4 -5l5 -2l-4 -9l6 -5l-3 -4l-5 -19l-7 -3l-3 -13l3 -12l-2 -3l17 -20l-6 -3l4 -5l2 -14l-2 -13l11 -22l-6 -6l11 -32l-7 -14l3 -8l-1 -10l9 -8l-5 -12l-7 -8l-11 1l1 -16l-5 -8l-8 -3l2 -17l-7 -4l4 -9l-9 -8l4 -8l0 -9l-10 -11l-16 -5l2 -13l-2 -11l13 -8l0 -12l4 -4l23 2l2 -9l7 3l13 -22l-2 -8l8 -7l-2 -11l4 -10l-2 -6l3 -8l11 -11l6 -13l10 -1l10 -13l-4 -4l6 -4l9 -2l-3 -17l29 -19l8 -4l80 1l-12 -16l2 -17l7 -11l-3 -9l19 -1l2 -10l11 1l-1 63l10 0l1 11l19 3l1 22l16 -3l-3 -131l-1 -60l5 -9l11 -5l-3 -13l18 0l11 7l22 6l20 15l21 29l5 10l14 11l26 21l8 11l2 9l25 41l25 20l-3 13l28 35l16 9l5 -6l9 -6l10 -10l38 -17l-41 -42l13 -2z","c":[2561,2086],"b":[2111,1628,3127,2532]},{"n":"Mabwepande","d":"Kinondoni","p":"M1942 1184l7 12l1 13l5 9l-4 10l-12 15l-23 3l-11 14l-2 18l1 11l5 7l17 21l20 27l38 12l-5 13l-3 14l-9 7l-8 34l3 16l-9 14l-7 7l-4 10l5 8l0 22l10 14l2 22l-5 19l-8 11l-12 1l-1 10l6 24l4 9l1 17l-2 15l-14 5l-6 14l4 7l-13 23l6 5l5 18l6 0l7 41l8 20l15 8l17 -6l7 4l13 -2l21 -17l4 3l8 -8l24 10l4 -2l20 9l12 2l20 12l15 -8l8 1l11 -10l-13 31l4 7l-5 10l8 4l-1 10l3 9l2 14l10 21l10 5l13 18l7 -1l-3 8l2 6l-4 10l2 11l-8 7l2 8l-13 22l-7 -3l-2 9l-23 -2l-4 4l0 12l-13 8l2 11l-2 13l16 5l10 11l0 9l-4 8l9 8l-4 9l7 4l-2 17l8 3l5 8l-1 16l11 -1l7 8l5 12l-9 8l1 10l-3 8l7 14l-11 32l6 6l-11 22l2 13l-2 14l-4 5l6 3l-17 20l-16 -9l-7 1l-14 -8l-18 14l-20 8l-33 6l-8 4l0 8l-9 2l-22 -5l-19 -9l-11 6l-4 9l-15 6l-19 6l-10 8l-18 -5l-1 -5l-25 -2l0 9l-14 9l-14 -22l-6 -7l-74 -110l-30 -9l-9 -12l17 -11l-17 -27l-4 -3l-51 -4l-17 -7l-16 -1l-5 3l-15 13l-17 8l-12 17l-1 -17l-3 -15l-19 -26l-5 -10l-10 -7l-10 0l-22 -11l-19 -14l16 -20l-5 -15l-3 -36l5 -7l36 -68l27 -22l3 -44l4 -11l4 -21l33 -33l5 -14l5 -17l-11 -29l13 -29l0 -31l-6 -10l-20 -5l-16 -12l5 -9l39 -11l9 -57l52 -66l7 -25l-4 -11l-28 -3l-10 -9l16 -28l23 -3l4 -18l-12 -30l25 -49l22 -55l23 -7l27 21l17 -7l4 -23l-28 -23l20 -22l17 0l29 -13l27 13l19 -23l20 -14l22 7z","c":[1785,1764],"b":[1501,1181,2182,2349]},{"n":"Bunju","d":"Kinondoni","p":"M2657 1509l-11 -8l-2 16l-7 1l0 13l5 0l-2 28l18 -1l69 5l-1 11l-24 21l-4 18l24 31l15 23l29 33l-40 40l-27 23l7 8l-9 11l-13 2l41 42l-38 17l-10 10l-9 6l-5 6l-16 -9l-28 -35l3 -13l-25 -20l-25 -41l-2 -9l-8 -11l-26 -21l-14 -11l-5 -10l-21 -29l-20 -15l-22 -6l-11 -7l-18 0l3 13l-11 5l-5 9l1 60l3 131l-16 3l-1 -22l-19 -3l-1 -11l-10 0l1 -63l-11 -1l-2 10l-19 1l3 9l-7 11l-2 17l12 16l-80 -1l-8 4l-29 19l3 17l-9 2l-6 4l4 4l-10 13l-10 1l-6 13l-11 11l-7 1l-13 -18l-10 -5l-10 -21l-2 -14l-3 -9l1 -10l-8 -4l5 -10l-4 -7l13 -31l-11 10l-8 -1l-15 8l-20 -12l-12 -2l-20 -9l-4 2l-24 -10l-8 8l-4 -3l-21 17l-13 2l-7 -4l-17 6l-15 -8l-8 -20l-7 -41l-6 0l-5 -18l-6 -5l13 -23l-4 -7l6 -14l14 -5l2 -15l-1 -17l-4 -9l-6 -24l1 -10l12 -1l8 -11l5 -19l-2 -22l-10 -14l0 -22l-5 -8l4 -10l7 -7l9 -14l-3 -16l8 -34l9 -7l3 -14l5 -13l-38 -12l-20 -27l-17 -21l-5 -7l-1 -11l2 -18l11 -14l23 -3l12 -15l4 -10l-5 -9l-1 -13l-7 -12l22 -12l7 -11l6 5l4 16l9 12l9 -3l12 1l16 -3l73 76l10 -10l54 42l15 17l15 -4l1 25l16 19l18 12l15 5l27 19l19 16l9 3l18 0l26 -8l-13 -32l8 -22l25 -21l73 45l60 35l129 80l18 10l13 -1z","c":[2297,1524],"b":[1903,1161,2766,1901]},{"n":"Mbweni","d":"Kinondoni","p":"M2770 1498l-12 0l-10 -7l-14 -4l-11 1l-8 5l-29 7l-4 -2l-4 7l-13 5l-8 -1l-1 -14l-13 1l-18 -10l-129 -80l-60 -35l-73 -45l-25 21l-8 22l13 32l-26 8l-18 0l-9 -3l-19 -16l-27 -19l-15 -5l-18 -12l-16 -19l-1 -25l-15 4l-15 -17l-54 -42l-10 10l-73 -76l-16 3l-12 -1l-9 3l-9 -12l-4 -16l-6 -5l27 -44l23 -22l20 -72l52 24l39 -24l12 -37l-14 -37l57 -29l13 -20l48 1l64 50l39 37l18 1l11 -17l28 -1l85 9l125 157l24 29l46 144z","c":[2361,1225],"b":[1971,900,2770,1510]},{"n":"Kunduchi","d":"Kinondoni","p":"M2770 1498l22 36l16 18l23 15l16 6l11 2l33 22l13 6l28 3l9 0l16 -6l10 -38l11 6l27 37l10 6l10 21l40 53l215 234l85 52l18 112l-35 128l16 96l25 46l-25 13l-36 3l-13 10l-14 9l-16 6l-54 -9l-55 -9l-16 -1l-33 7l-31 -127l-4 -9l-30 -43l-19 -23l-23 -36l-6 -10l-23 -28l-23 -35l-37 -52l-80 -89l-125 -138l-20 -21l-7 -8l27 -23l40 -40l-29 -33l-15 -23l-24 -31l4 -18l24 -21l1 -11l-69 -5l-18 1l2 -28l-5 0l0 -13l7 -1l2 -16l11 8l8 1l13 -5l4 -7l4 2l29 -7l8 -5l11 -1l14 4l10 7z","c":[3100,1950],"b":[2637,1487,3389,2394]},{"n":"Kawe","d":"Kinondoni","p":"M3389 2353l31 58l31 145l6 33l26 29l-1 51l8 37l16 35l21 104l30 56l-13 1l-8 -5l-26 -2l-10 6l-16 9l-7 7l-16 -4l-9 4l-3 15l-11 4l-3 6l-15 -3l-7 10l-10 1l2 3l-5 14l-6 11l-14 14l-20 24l-19 26l-60 -101l-38 -120l-7 -27l-8 -45l-8 -33l-31 -101l-9 -30l-12 -42l-17 -60l-24 -101l33 -7l16 1l55 9l54 9l16 -6l14 -9l13 -10l36 -3z","c":[3349,2687],"b":[3127,2353,3557,3042]},{"n":"Mikocheni","d":"Kinondoni","p":"M3758 3233l-17 1l-83 13l-16 0l-25 -4l-33 -8l-27 -10l-27 -13l-16 -10l-47 -40l-10 -10l-83 -63l-15 -16l-11 -16l-7 -15l19 -26l20 -24l14 -14l6 -11l5 -14l-2 -3l10 -1l7 -10l15 3l3 -6l11 -4l3 -15l9 -4l16 4l7 -7l16 -9l5 7l3 13l5 12l23 29l12 14l21 18l19 12l15 12l19 18l8 11l33 27l15 8l19 4l37 44l24 20l5 10l-1 12l-2 47z","c":[3517,3078],"b":[3341,2901,3763,3247]},{"n":"Msasani","d":"Kinondoni","p":"M3936 3389l-1 -4l-13 -31l-16 -30l-15 -33l-22 -19l-18 -13l-23 -13l-28 -10l-23 -3l-19 0l2 -14l2 -47l1 -12l-5 -10l-24 -20l-37 -44l-19 -4l-15 -8l-33 -27l-8 -11l-19 -18l-15 -12l-19 -12l-21 -18l-12 -14l-23 -29l-5 -12l-3 -13l-5 -7l10 -6l26 2l8 5l13 -1l15 29l72 57l65 25l35 14l51 7l54 -32l-8 -102l53 -79l-6 -77l3 -21l16 -5l23 5l49 23l44 52l5 39l28 103l-21 8l2 7l-7 18l-45 65l-20 20l14 3l8 10l-12 -4l-6 11l-5 17l-2 16l0 49l4 23l14 30l4 5l26 43l9 21l-4 13l-1 19l-2 15l-23 -1l-5 11l3 18l-6 -2l-7 9l-5 -3l-12 2l-7 5l-6 12z","c":[3803,3052],"b":[3500,2717,4056,3389]},{"n":"Kariakoo","d":"Ilala","p":"M3938 3724l-14 3l-55 23l-10 -31l-15 4l-9 -5l-6 -8l8 -5l27 -9l37 -14l20 -5l1 4z","c":[3883,3714],"b":[3829,3677,3938,3750]},{"n":"Jangwani","d":"Ilala","p":"M3892 3639l19 7l31 19l-5 12l-15 4l-1 -4l-20 5l-37 14l-27 9l-8 5l-5 -6l-14 -30l21 -41l1 -13z","c":[3876,3670],"b":[3810,3620,3942,3710]},{"n":"Gerezani","d":"Ilala","p":"M3938 3823l-1 0l-79 -5l-7 -11l-27 -21l-25 -17l70 -19l55 -23l14 -3l13 37l-19 12l-24 13l7 9l29 -1l-5 11l4 2l-7 11z","c":[3868,3771],"b":[3799,3724,3951,3823]},{"n":"Kisutu","d":"Ilala","p":"M4005 3706l-6 -6l-57 -35l23 -21l44 -39l5 -5l2 27l-2 11l31 33z","c":[3992,3655],"b":[3942,3600,4045,3706]},{"n":"Mchafukoge","d":"Ilala","p":"M4025 3720l-10 17l5 42l-25 8l-29 20l-28 16l-2 -5l7 -11l-4 -2l5 -11l-29 1l-7 -9l24 -13l19 -12l-13 -37l-16 -43l15 -4l5 -12l57 35l6 6l14 12z","c":[3981,3749],"b":[3908,3665,4025,3823]},{"n":"Upanga Mashariki","d":"Ilala","p":"M4014 3600l-5 5l-44 39l-23 21l-31 -19l-19 -7l5 -12l9 3l14 -28l23 -39l-7 -4l-19 -6l3 -10l-11 1l0 -24l4 -19l8 -16l8 -10l12 -9l18 -8l8 19l38 46l4 23l5 48z","c":[3975,3561],"b":[3892,3458,4014,3665]},{"n":"Upanga Magharibi","d":"Ilala","p":"M3955 3447l4 11l-18 8l-12 9l-8 10l-8 16l-4 19l0 24l11 -1l-3 10l19 6l7 4l-23 39l-14 28l-9 -3l-5 12l-60 -19l-58 -20l8 -11l20 -17l6 -9l-2 -11l10 -21l12 -20l13 -16l12 -6l4 -13l13 2l9 -30l-6 -16l1 -10l9 -13l8 0l5 8l9 2l17 -1l10 2l16 17z","c":[3864,3525],"b":[3774,3409,3959,3639]},{"n":"Kivukoni","d":"Ilala","p":"M4025 3720l-6 -2l-14 -12l40 -35l-31 -33l2 -11l-2 -27l0 -6l-5 -48l-4 -23l-38 -46l-8 -19l-4 -11l6 0l15 6l2 -6l19 9l4 -7l14 4l13 21l1 10l6 14l-3 11l33 30l33 24l19 13l13 13l20 26l21 51l2 22l-3 9l-5 6l-20 9l-8 0l-8 -7l2 -4l-11 -6l-17 -7l-9 -2l-20 2l-27 10l-12 14z","c":[4068,3582],"b":[3955,3447,4173,3720]},{"n":"Ilala","d":"Ilala","p":"M3799 3769l25 17l27 21l7 11l-13 1l-11 4l-25 12l-13 5l-19 2l-6 -8l-58 29l-56 28l-4 -10l-2 -16l-24 -49l-1 -9l2 -14l0 -23l4 -9l0 -10l5 -16l1 -15l5 -10l12 -10l14 -8l25 38l9 8l39 21l35 18z","c":[3728,3790],"b":[3626,3692,3858,3891]},{"n":"Mchikichini","d":"Ilala","p":"M3829 3710l6 8l9 5l15 -4l10 31l-70 19l-22 8l-35 -18l-39 -21l-9 -8l-25 -38l9 -5l17 2l16 -3l18 -8l10 -7l6 -8l13 -14l3 -9l1 -13l12 -27l58 20l-1 13l-21 41l14 30z","c":[3759,3688],"b":[3669,3600,3869,3777]},{"n":"Vingunguti","d":"Ilala","p":"M3447 4029l-11 5l-55 30l-8 4l-67 34l-63 31l-10 4l-21 -44l-12 -21l-3 -21l0 -30l1 -4l8 2l25 11l12 4l12 -6l5 -9l2 -18l10 -17l22 -24l10 -11l4 -16l-1 -11l23 -6l8 -12l20 -9l18 -30l11 -3l12 -5l-1 2l16 21l-7 16l1 21l16 19l9 -1l8 23l-5 6l-7 15l-2 12l9 13z","c":[3348,3996],"b":[3197,3857,3447,4137]},{"n":"Kipawa","d":"Ilala","p":"M3198 4017l-1 4l0 30l3 21l12 21l21 44l10 -4l8 13l15 -4l27 29l-21 20l8 13l6 43l17 18l4 10l-12 10l-110 115l-31 31l-16 14l-15 9l-44 16l-35 14l-44 13l-51 11l-24 5l-49 10l-29 7l-24 9l-31 11l0 -27l39 -85l14 8l12 4l6 -17l5 -2l1 -21l5 -28l4 -71l-8 -1l4 -10l-4 -1l-1 -8l4 -3l-3 -36l-23 -13l5 -8l-2 -6l-12 -6l-6 2l-6 -22l-5 -6l17 -14l-1 -10l13 -6l16 -11l17 -1l12 -3l14 -17l11 -8l12 -2l20 3l12 -1l11 -6l10 -16l17 -15l12 0l21 5l5 -5l10 -3l1 -8l16 -12l10 1l6 -3l9 -27l10 -8l9 -15l12 -7l24 2l8 -4l18 1l16 17z","c":[3087,4280],"b":[2792,4002,3307,4550]},{"n":"Buguruni","d":"Ilala","p":"M3657 3891l-5 2l-26 13l-77 39l-60 -95l-34 -36l26 -27l6 -14l-4 -17l6 -11l17 11l22 -3l5 -3l9 -17l6 -6l14 -3l38 5l28 0l10 -9l-1 15l-5 16l0 10l-4 9l0 23l-2 14l1 9l24 49l2 16z","c":[3554,3833],"b":[3455,3720,3657,3945]},{"n":"Kiwalani","d":"Ilala","p":"M3554 4190l-5 11l-15 10l-15 4l-53 14l-143 39l-16 7l-4 -10l-17 -18l-6 -43l-8 -13l21 -20l-27 -29l-15 4l-8 -13l63 -31l67 -34l8 -4l32 66l-8 6l0 14l3 6l-7 10l4 7l8 -5l8 0l1 5l22 1l11 7l21 -2l8 -8l8 4l6 -4l15 1l8 4l17 17l8 1z","c":[3348,4170],"b":[3243,4064,3554,4275]},{"n":"Mnyamani","d":"Ilala","p":"M3549 3945l3 12l8 19l-63 27l-50 26l-11 -25l-9 -13l2 -12l7 -15l5 -6l-8 -23l-9 1l-16 -19l-1 -21l7 -16l-16 -21l1 -2l7 -13l5 -4l7 1l8 7l4 -9l21 -18l4 -7l34 36z","c":[3476,3926],"b":[3398,3814,3560,4029]},{"n":"Minazi Mirefu","d":"Ilala","p":"M3554 4190l-8 4l-8 -1l-17 -17l-8 -4l-15 -1l-6 4l-8 -4l-8 8l-21 2l-11 -7l-22 -1l-1 -5l-8 0l-8 5l-4 -7l7 -10l-3 -6l0 -14l8 -6l-32 -66l55 -30l25 46l21 2l15 18l6 15l13 17l33 40l6 12z","c":[3451,4108],"b":[3381,4034,3555,4194]},{"n":"Tabata","d":"Ilala","p":"M3364 3722l14 -5l25 -2l8 5l7 -3l17 8l9 -8l11 3l7 7l-1 8l4 10l5 2l8 -5l11 3l-6 11l4 17l-6 14l-26 27l-4 7l-21 18l-4 9l-8 -7l-7 -1l-5 4l-7 13l-12 5l-11 3l-18 30l-20 9l-8 12l-23 6l1 11l-4 16l-10 11l-26 -14l1 -6l-12 -4l-8 1l-8 -4l-4 -9l9 -7l-5 -10l-15 -22l-8 -13l-8 -23l-11 -14l6 -4l10 -14l16 -5l11 -10l1 -9l4 -10l18 -18l17 -7l2 -4l-19 -8l-7 6l-6 -1l-4 -7l-28 -5l0 -4l-8 -7l4 -8l5 -23l1 -15l45 -1l26 4l8 8l37 30l5 -2l12 3z","c":[3333,3819],"b":[3199,3681,3489,3960]},{"n":"Kinyerezi","d":"Ilala","p":"M2504 3770l-2 21l-3 51l14 3l14 -7l9 1l7 -5l9 2l3 8l6 0l10 28l6 0l12 13l-4 6l4 14l-8 7l1 6l-4 13l-7 5l6 8l17 9l30 4l13 -1l9 3l19 -5l14 -9l5 -12l14 -5l11 -10l27 -11l18 5l1 16l4 5l16 0l10 14l12 7l1 9l5 11l-5 13l-1 13l-8 5l3 13l9 13l8 6l2 12l15 9l19 2l14 8l8 11l10 2l15 -1l11 9l8 3l7 6l1 12l9 3l4 8l-12 2l-11 8l-14 17l-12 3l-17 1l1 -5l-16 -2l-11 -14l-15 -1l-6 5l-17 6l-18 2l-9 -1l-9 -10l-12 -8l-15 -4l-18 3l-1 10l-17 5l-11 1l-18 5l-3 13l-10 5l-9 -3l-9 -8l-7 -10l-34 4l-18 0l-14 -11l-3 8l-6 29l-7 21l-8 33l-5 0l-36 -11l-42 -12l-5 0l-6 28l-6 0l-9 -12l-9 -5l-13 0l-16 2l-11 4l-8 -2l-2 7l-11 -1l-13 -5l5 -18l-3 -9l-10 -9l-4 -10l2 -20l1 -16l-73 -31l-18 -6l-52 -23l-13 -5l-1 -14l-4 -2l-27 -5l-17 -9l-4 -7l-7 -2l-5 -7l-11 -2l-12 -7l-15 -1l-4 -14l16 -15l8 -19l12 -17l6 -21l2 -13l12 -20l12 -11l10 8l16 6l20 3l14 20l16 -2l11 11l12 2l10 -8l27 5l15 -2l23 1l19 -9l12 -17l11 -11l11 -15l14 -9l8 -16l9 -5l15 5l5 -7l9 2l5 -3l7 4l7 -5l6 -18l-9 -6l-10 -20l11 -6l6 6l18 -5l12 -6l-7 -19l1 -6l7 1l10 9z","c":[2444,3994],"b":[2082,3763,2932,4230]},{"n":"Segerea","d":"Ilala","p":"M3043 3814l1 7l19 21l23 21l5 7l32 31l-23 13l-30 19l-8 16l3 25l15 18l8 24l4 18l-9 27l-6 3l-10 -1l-16 12l-1 8l-10 3l-5 5l-21 -5l-12 0l-17 15l-10 16l-11 6l-12 1l-20 -3l-4 -8l-9 -3l-1 -12l-7 -6l-8 -3l-11 -9l-15 1l-10 -2l-8 -11l-14 -8l-19 -2l-15 -9l-2 -12l-8 -6l-9 -13l-3 -13l8 -5l1 -13l5 -13l-5 -11l-1 -9l-12 -7l-10 -14l-16 0l-4 -5l-1 -16l13 -3l16 -17l11 3l41 20l22 -2l17 -35l15 -27l18 14l4 -14l5 -5l16 -5l18 -3l15 -1l10 -7l27 -10l16 -12z","c":[2932,3969],"b":[2754,3808,3123,4124]},{"n":"Kimanga","d":"Ilala","p":"M3222 3682l-1 15l-5 23l-4 8l8 7l0 4l28 5l4 7l6 1l7 -6l19 8l-2 4l-17 7l-18 18l-4 10l-1 9l-11 10l-16 5l-10 14l-6 4l-17 -4l-8 -9l0 -6l-14 -10l-13 5l-13 16l-4 11l-5 3l-8 -9l-8 -5l-22 -1l-12 2l-7 -9l-10 -10l-6 4l-9 1l-25 -6l-16 12l-27 10l-10 7l-15 1l-6 -8l1 -12l11 -25l-5 -15l-24 -11l3 -9l9 -1l5 -13l7 0l0 -7l8 4l6 -3l6 4l3 -6l22 -1l5 1l3 -22l8 5l7 -2l5 -12l6 -5l9 -1l5 5l-2 7l4 3l18 -4l4 -7l10 -7l6 6l12 -1l16 7l10 8l30 -16l11 -4l4 -13l12 4l20 -5l16 -2z","c":[3101,3761],"b":[2927,3680,3284,3841]},{"n":"Liwiti","d":"Ilala","p":"M3294 3960l-22 24l-10 17l-2 18l-5 9l-12 6l-12 -4l-25 -11l-8 -2l-9 3l-16 -17l-18 -1l-8 4l-24 -2l-12 7l-9 15l-10 8l-4 -18l-8 -24l-15 -18l-3 -25l8 -16l30 -19l23 -13l-32 -31l-5 -7l-23 -21l-19 -21l-1 -7l9 -1l6 -4l10 10l7 9l12 -2l22 1l8 5l8 9l5 -3l4 -11l13 -16l13 -5l14 10l0 6l8 9l17 4l11 14l8 23l8 13l15 22l5 10l-9 7l4 9l8 4l8 -1l12 4l-1 6z","c":[3165,3921],"b":[3043,3806,3294,4034]},{"n":"Bonyokwa","d":"Ilala","p":"M2428 3845l-5 7l-15 -5l-9 5l-8 16l-14 9l-11 15l-11 11l-12 17l-19 9l-23 -1l-15 2l-27 -5l-10 8l-12 -2l-11 -11l-16 2l-14 -20l-20 -3l-16 -6l-10 -8l10 -26l7 -31l19 1l7 6l11 -2l1 10l5 10l5 2l12 10l5 -4l6 8l11 3l5 -6l7 2l11 -13l6 0l4 -8l5 0l5 -16l-2 -11l14 -9l10 -3l16 -2l15 7l8 -3l16 6l11 -3l6 5l10 1l6 7l15 10l4 7zM2709 3918l-11 10l-14 5l-5 12l-14 9l-19 5l-9 -3l-13 1l-30 -4l-17 -9l-6 -8l7 -5l4 -13l-1 -6l8 -7l-4 -14l4 -6l-12 -13l-6 0l-10 -28l-6 0l-3 -8l-9 -2l-7 5l-9 -1l-14 7l-14 -3l3 -51l2 -21l4 -33l9 -1l26 2l15 -6l19 -13l13 -3l18 1l3 -4l21 -2l16 10l15 1l22 -6l-2 -6l13 -2l7 -8l0 8l19 2l-2 28l-3 16l2 11l-4 2l-4 24l-1 16l-2 8l-5 31l7 4l-5 18l3 22z","c":[2603,3824],"b":[2150,3700,2722,3959]},{"n":"Kisukuru","d":"Ilala","p":"M2860 3604l4 2l3 15l8 17l8 0l8 4l21 -6l7 4l-5 9l12 16l9 5l7 -6l13 20l14 0l18 10l4 10l13 10l-3 22l-5 -1l-22 1l-3 6l-6 -4l-6 3l-8 -4l0 7l-7 0l-5 13l-9 1l-3 9l24 11l5 15l-11 25l-1 12l6 8l-18 3l-16 5l-5 5l-4 14l-18 -14l-15 27l-17 35l-22 2l-41 -20l-11 -3l-16 17l-13 3l-18 -5l-27 11l-1 -28l-3 -22l5 -18l-7 -4l5 -31l2 -8l1 -16l4 -24l4 -2l-2 -11l3 -16l2 -28l-19 -2l0 -8l7 -6l8 -14l8 -5l3 -8l7 -4l26 -18l23 -9l13 -11l15 -10l22 -20z","c":[2828,3756],"b":[2703,3595,3004,3918]},{"n":"Ukonga","d":"Ilala","p":"M2866 4152l-16 11l-13 6l1 10l-17 14l5 6l6 22l6 -2l12 6l2 6l-5 8l23 13l3 36l-4 3l1 8l4 1l-4 10l8 1l-4 71l-5 28l-1 21l-5 2l-6 17l-12 -4l-14 -8l-39 85l0 27l-44 10l-88 15l-35 6l-15 -20l-3 -19l0 -14l-18 -17l8 -5l11 -21l1 -12l-10 -10l1 -3l11 3l12 -4l28 -15l-13 -25l-3 -20l1 -9l5 -13l-1 -14l-5 -17l-10 5l-8 -18l-4 -20l-3 -7l-3 -13l3 -28l4 -8l-12 -19l3 -17l0 -12l-4 -6l-1 -10l5 -31l-3 -17l34 -4l7 10l9 8l9 3l10 -5l3 -13l18 -5l11 -1l17 -5l1 -10l18 -3l15 4l12 8l9 10l9 1l18 -2l17 -6l6 -5l15 1l11 14l16 2z","c":[2756,4349],"b":[2589,4120,2878,4581]},{"n":"Pugu","d":"Ilala","p":"M2392 4635l-15 16l-6 10l-4 12l-1 12l3 17l0 12l-7 12l-11 8l-64 22l-10 1l-12 -3l-12 13l10 12l4 10l1 20l5 9l-8 4l11 34l11 12l-5 17l-3 26l-8 8l-7 25l-16 35l-7 18l-22 54l-12 35l-1 -6l-13 -7l-9 -2l-15 -7l-3 -4l-9 -2l-4 4l-9 -3l-2 -6l-5 3l-10 -3l-19 4l-9 -9l-14 2l-15 -4l-5 3l-25 -1l-10 -7l-24 3l-12 -2l-16 -8l-8 3l-25 2l-33 -15l-9 -1l-10 -5l0 -8l-11 -10l19 -5l11 -7l5 -8l3 -11l-2 -20l0 -11l10 -23l14 -10l10 -1l14 2l14 -2l7 -4l44 -32l7 -7l8 -15l9 -26l12 -18l-14 -11l-9 -2l-10 -6l-10 -83l12 1l12 -6l13 -21l20 -20l-8 -18l1 -19l5 -22l26 17l8 3l1 -18l4 -6l12 -1l16 -7l8 0l11 -11l7 -2l10 -20l20 -21l3 -15l11 -12l13 -8l15 -23l11 12l8 4l1 -6l10 -17l7 -6l0 -12l44 -5l9 21l0 8l8 27l7 5l4 -3l17 5l0 14l8 26l5 24l-1 12l-5 11l-1 13z","c":[2145,4762],"b":[1882,4441,2392,5086]},{"n":"Msongola","d":"Ilala","p":"M3016 5334l-14 10l1 5l-7 7l-3 17l-8 0l-2 7l6 10l-7 6l7 8l-8 4l-8 36l-10 -2l-3 10l2 17l4 11l-4 18l-4 6l2 9l9 10l1 5l-45 25l-22 -6l-15 18l-18 16l-9 -2l-4 21l4 15l-12 0l-30 5l-28 -5l-3 8l0 32l18 14l-20 11l-12 1l-30 16l-4 7l-26 -20l-10 -4l-10 16l2 13l-13 6l-1 12l-19 -5l-1 16l12 28l-25 20l4 24l12 13l4 16l37 30l-18 14l-22 1l-10 11l-21 1l-10 12l-15 -1l-15 16l-17 -6l1 -11l-27 -2l-5 12l-17 8l-11 11l-2 13l-11 11l4 10l7 7l-5 10l6 15l-15 10l4 20l-9 16l9 32l-24 46l-29 12l-43 44l-12 38l-8 4l4 20l4 5l-3 46l-18 75l-5 12l-16 24l-6 13l-20 19l-22 49l-5 27l-13 21l-2 0l-15 19l-46 31l-89 97l-38 33l-28 31l-9 -16l-18 -7l-12 -18l47 -140l-66 -29l-34 -16l10 -21l-67 -25l-21 31l-41 -12l-12 -46l-9 -16l4 -33l-12 -4l29 -1l23 -13l22 -28l20 -45l34 -47l39 -12l11 -15l-3 -59l8 -40l-91 -34l12 -18l7 -4l2 -9l0 -38l17 -16l25 10l21 11l16 11l14 6l21 6l2 -18l44 -21l41 -48l-3 -64l11 -20l0 -9l6 -1l6 -5l4 2l17 -11l6 -7l0 -24l39 -49l50 15l64 -27l33 -7l19 6l-17 -35l-18 -7l-3 -10l-23 -9l8 -26l9 -24l11 -25l13 -33l15 -32l14 -36l29 -67l6 -22l1 -15l-7 -5l5 -52l3 -21l0 -49l-6 -11l33 -20l57 -34l3 -21l-8 -20l-9 -13l-1 -16l11 2l11 -2l0 6l13 2l7 -4l16 2l2 -4l12 -3l13 -6l6 -7l9 -1l14 -6l5 1l16 -4l7 -5l5 -10l6 -1l8 5l-4 15l-9 13l-10 1l-4 11l-7 7l-3 17l-8 8l1 12l58 14l28 7l17 2l22 6l64 14l3 -10l17 -6l6 -20l-9 -26l-6 -8l11 -2l27 5l4 10l12 -2l14 20l6 4l7 -8l9 3l1 8l10 25l13 -6l8 1l12 24l11 15l24 23l11 19z","c":[2332,5941],"b":[1833,5127,3016,6745]},{"n":"Kitunda","d":"Ilala","p":"M3289 4595l18 18l4 -1l17 16l19 1l12 -3l13 -10l14 -1l5 2l19 23l8 0l15 10l7 1l7 6l-18 30l-9 8l-13 7l-16 2l-7 7l-17 -1l-15 7l-10 0l-17 -3l-14 -1l-19 5l-16 -1l-12 -2l-32 -29l-27 -6l-35 4l-5 -3l-27 3l-16 -5l-15 1l-12 -2l-6 -5l-20 -6l-15 -1l-17 -7l-23 6l-3 4l-19 9l-21 -7l-15 -11l-12 0l-18 13l-3 0l-9 1l-11 -8l-2 -10l-13 -32l-16 -5l-7 -5l-8 -31l-1 -24l-5 -13l-28 -7l24 -9l29 -7l49 -10l24 -5l51 -11l44 -13l35 -14l97 76l31 17l11 3l9 0l24 17l8 -1l5 4z","c":[3068,4590],"b":[2823,4470,3447,4718]},{"n":"Chanika","d":"Ilala","p":"M2338 5709l23 9l3 10l18 7l17 35l-19 -6l-33 7l-64 27l-50 -15l-39 49l0 24l-6 7l-17 11l-4 -2l-6 5l-6 1l0 9l-11 20l3 64l-41 48l-44 21l-2 18l-21 -6l-14 -6l-16 -11l-21 -11l-25 -10l-40 -18l-52 -45l-16 -26l-27 -20l-12 -9l-22 -24l-18 -20l-23 -40l-13 -32l-14 -23l5 -7l31 -68l-33 -7l-86 -22l-43 -10l-8 -6l-9 1l-23 -4l-12 -4l-13 -2l46 -55l16 7l28 -8l24 4l14 -6l11 2l44 -16l15 -11l26 -25l39 -20l4 -5l16 -3l29 -41l9 -15l11 -12l14 0l5 -10l8 -1l5 -6l4 9l4 -4l13 8l12 -1l16 10l2 9l6 2l0 9l8 6l6 -2l1 -7l15 -10l14 4l9 -1l7 -9l15 -8l9 5l20 0l9 2l0 4l10 3l10 25l10 13l-4 8l23 23l8 12l17 13l4 22l1 28l16 20l18 26l16 -3l16 14l19 2l38 26l13 14l22 6l11 15z","c":[2056,5731],"b":[1535,5407,2399,6058]},{"n":"Kivule","d":"Ilala","p":"M2992 4678l-3 16l3 8l-3 21l9 4l-11 11l-4 15l9 6l4 26l25 20l5 27l0 17l3 4l76 42l5 15l-48 -6l-21 13l-5 9l3 22l-15 31l-9 4l12 4l15 1l13 -2l2 9l9 10l22 9l8 10l17 5l0 7l12 6l22 2l16 8l-11 27l-4 13l-10 21l-19 -5l-4 5l-12 6l-20 13l-10 1l-10 6l-18 1l30 39l-15 13l-14 36l-28 13l-9 16l4 15l12 18l5 17l-5 16l-9 11l-5 -6l-11 -19l-24 -23l-11 -15l-12 -24l-8 -1l-13 6l-10 -25l-1 -8l-9 -3l-7 8l-6 -4l-14 -20l-12 2l-4 -10l-27 -5l-11 2l6 8l9 26l-6 20l-17 6l-3 10l-64 -14l-22 -6l-17 -2l-28 -7l-58 -14l-1 -12l8 -8l3 -17l7 -7l4 -11l10 -1l9 -13l4 -15l-8 -5l-6 1l-5 10l-7 5l-16 4l-5 -1l-14 6l-9 1l-6 7l-13 6l-12 3l-2 4l-16 -2l1 -9l4 -3l7 -28l13 -37l68 -170l3 -10l18 -89l25 -2l8 7l7 -3l30 11l2 -12l11 6l0 -15l9 -4l3 -8l7 -2l11 7l17 -14l13 -18l23 1l18 -8l30 -8l13 0l-7 -17l6 -9l6 -5l-3 -22l-5 -9l17 -7l-1 -4l9 -9l4 -8l3 0l18 -13l12 0l15 11z","c":[2840,5000],"b":[2556,4660,3163,5334]},{"n":"Gongolamboto","d":"Ilala","p":"M2602 4145l3 17l-5 31l1 10l4 6l0 12l-3 17l12 19l-4 8l-3 28l3 13l3 7l4 20l8 18l10 -5l5 17l1 14l-5 13l-1 9l3 20l13 25l-28 15l-12 4l-11 -3l-1 3l10 10l-1 12l-11 21l-8 5l18 17l0 14l3 19l15 20l-43 8l-164 30l-17 9l-9 7l-16 -31l1 -13l5 -11l1 -12l-5 -24l-8 -26l0 -14l-17 -5l-4 3l-7 -5l-8 -27l0 -8l-9 -21l16 1l13 2l1 -9l-2 -72l1 -39l-2 -25l1 -24l5 -15l-4 -21l0 -21l13 5l11 1l2 -7l8 2l11 -4l16 -2l13 0l9 5l9 12l6 0l6 -28l5 0l42 12l36 11l5 0l8 -33l7 -21l6 -29l3 -8l14 11z","c":[2496,4384],"b":[2325,4134,2651,4635]},{"n":"Majohe","d":"Ilala","p":"M2670 4825l-18 89l-3 10l-68 170l-13 37l-7 28l-4 3l-1 9l-7 4l-13 -2l0 -6l-11 2l-11 -2l-25 5l-16 -8l-13 -4l-6 0l-17 -4l-7 8l-5 11l-11 -3l-1 -11l-13 -6l-9 0l-9 -6l-15 -1l-9 -11l-7 2l-7 -6l-16 -1l-7 -4l-13 -1l-8 -8l-5 0l-2 -9l-4 -1l-3 -10l-7 -6l-6 0l-7 8l-20 -9l-14 -1l-6 -4l-13 3l-6 -4l12 -35l22 -54l7 -18l16 -35l7 -25l8 -8l3 -26l5 -17l-11 -12l-11 -34l8 -4l-5 -9l-1 -20l-4 -10l-10 -12l12 -13l12 3l10 -1l64 -22l11 -8l7 -12l0 -12l-3 -17l1 -12l4 -12l6 -10l15 -16l9 -7l17 -9l164 -30l43 -8l35 -6l2 22l-9 25l3 9l-3 24l8 33l-2 21l8 18l2 23l6 12l6 5z","c":[2472,4877],"b":[2207,4575,2681,5175]},{"n":"Zingiziwa","d":"Ilala","p":"M1535 5628l13 2l12 4l23 4l9 -1l8 6l43 10l86 22l33 7l-31 68l-5 7l14 23l13 32l23 40l18 20l22 24l12 9l27 20l16 26l52 45l40 18l-17 16l0 38l-2 9l-7 4l-12 18l91 34l-8 40l3 59l-11 15l-39 12l-34 47l-20 45l-22 28l-23 13l-29 1l-2 0l-68 41l-24 31l-23 15l-20 -12l7 -37l-4 -32l-5 -7l-73 -21l-14 -12l-2 -27l-3 -8l-9 -7l-6 -16l-2 -28l14 -23l15 -10l13 -3l7 1l13 -4l5 -11l-8 -9l-26 -7l-39 -27l8 -59l5 -9l9 -7l-2 -9l5 -7l-5 -6l-13 -6l0 -15l-5 0l-3 11l-10 1l-10 -5l-11 2l-10 5l-8 -4l-9 4l-6 -3l-4 5l-15 -2l-5 8l-1 13l-8 10l4 10l-18 21l-26 -3l-26 16l-8 19l-12 -1l-7 21l-13 4l-22 -6l-17 9l-5 12l-15 6l-15 18l-11 2l-10 17l-19 5l-8 12l-14 1l-2 -13l-4 -10l-17 -6l-3 -11l-30 3l-25 0l-15 -30l-13 -16l-12 -20l-6 -15l-26 -36l5 -24l-9 -18l16 -18l3 -9l-6 -13l-21 -8l-4 -25l2 -14l7 -14l53 10l36 -16l56 -8l43 14l83 19l39 37l76 -67l82 -92l-7 -26l-17 -28l-24 -49l-19 -54l-6 -9z","c":[1523,6051],"b":[1070,5628,2016,6480]},{"n":"Buyuni","d":"Ilala","p":"M2207 5086l6 4l13 -3l6 4l14 1l20 9l7 -8l6 0l7 6l3 10l4 1l2 9l5 0l8 8l13 1l7 4l16 1l7 6l7 -2l9 11l15 1l9 6l9 0l13 6l1 11l11 3l5 -11l7 -8l17 4l6 0l13 4l16 8l25 -5l1 16l9 13l8 20l-3 21l-57 34l-33 20l6 11l0 49l-3 21l-5 52l7 5l-1 15l-6 22l-29 67l-14 36l-15 32l-13 33l-11 25l-9 24l-8 26l-21 -9l-11 -15l-22 -6l-13 -14l-38 -26l-19 -2l-16 -14l-16 3l-18 -26l-16 -20l-1 -28l-4 -22l-17 -13l-8 -12l-23 -23l4 -8l-10 -13l-10 -25l-10 -3l0 -4l-9 -2l-20 0l-9 -5l-15 8l-7 9l-9 1l-14 -4l-15 10l-1 7l-6 2l-8 -6l0 -9l-6 -2l-2 -9l-16 -10l-12 1l-13 -8l-4 4l-4 -9l-5 6l-8 1l-5 10l-14 0l-11 12l-9 15l-29 41l-16 3l-4 5l-39 20l-26 25l-15 11l-44 16l-11 -2l-14 6l-24 -4l-28 8l-16 -7l47 -57l-15 -37l-49 8l-77 -74l28 -16l19 -55l35 -60l8 -54l99 -12l23 -40l-2 -29l24 -19l10 -15l6 -4l21 -10l12 -13l18 -12l46 -28l15 -14l12 -15l13 -13l8 -4l11 10l0 8l10 5l9 1l33 15l25 -2l8 -3l16 8l12 2l24 -3l10 7l25 1l5 -3l15 4l14 -2l9 9l19 -4l10 3l5 -3l2 6l9 3l4 -4l9 2l3 4l15 7l9 2l13 7z","c":[1985,5361],"b":[1487,5000,2532,5709]},{"n":"Pugu Station","d":"Ilala","p":"M2325 4441l-44 5l0 12l-7 6l-10 17l-1 6l-8 -4l-11 -12l-15 23l-13 8l-11 12l-3 15l-20 21l-10 20l-7 2l-11 11l-8 0l-16 7l-12 1l-4 6l-1 18l-8 -3l-26 -17l-36 -17l18 -35l81 -157l-56 -23l-2 -26l-1 -4l-13 -19l-11 -22l-8 -8l-6 -19l-9 -17l-2 -10l0 -32l5 -26l7 -78l4 -14l3 -20l9 -30l10 -20l0 -14l10 -3l4 14l15 1l12 7l11 2l5 7l7 2l4 7l17 9l27 5l4 2l1 14l13 5l52 23l18 6l73 31l-1 16l-2 20l4 10l10 9l3 9l-5 18l0 21l4 21l-5 15l-1 24l2 25l-1 39l2 72l-1 9l-13 -2z","c":[2210,4307],"b":[2034,4001,2359,4615]},{"n":"Mzinga","d":"Ilala","p":"M3471 4680l-13 36l-7 16l-4 3l-13 23l2 6l-3 9l-13 5l-11 14l-21 12l-3 -2l-15 15l-10 7l-4 15l-3 1l-8 15l-20 15l-31 16l-15 6l-4 8l-8 2l-6 7l5 12l-3 9l-14 8l-13 3l-11 30l-13 20l-8 19l-11 10l-21 24l-9 8l-16 -8l-22 -2l-12 -6l0 -7l-17 -5l-8 -10l-22 -9l-9 -10l-2 -9l-13 2l-15 -1l-12 -4l9 -4l15 -31l-3 -22l5 -9l21 -13l48 6l-5 -15l-76 -42l-3 -4l0 -17l-5 -27l-25 -20l-4 -26l-9 -6l4 -15l11 -11l-9 -4l3 -21l-3 -8l3 -16l19 -9l3 -4l23 -6l17 7l15 1l20 6l6 5l12 2l15 -1l16 5l27 -3l5 3l35 -4l27 6l32 29l12 2l16 1l19 -5l14 1l17 3l10 0l15 -7l17 1l7 -7l16 -2l13 -7l9 -8l18 -30l11 0l22 -9l5 1l-1 14l-8 13z","c":[3187,4851],"b":[2983,4648,3485,5052]},{"n":"Kipunguni","d":"Ilala","p":"M2823 4539l28 7l5 13l1 24l8 31l7 5l16 5l13 32l2 10l11 8l9 -1l-4 8l-9 9l1 4l-17 7l5 9l3 22l-6 5l-6 9l7 17l-13 0l-30 8l-18 8l-23 -1l-13 18l-17 14l-11 -7l-7 2l-3 8l-9 4l0 15l-11 -6l-2 12l-30 -11l-7 3l-8 -7l-25 2l11 -58l-6 -5l-6 -12l-2 -23l-8 -18l2 -21l-8 -33l3 -24l-3 -9l9 -25l-2 -22l88 -15l44 -10z","c":[2786,4689],"b":[2653,4539,2923,4838]},{"n":"Miburani","d":"Temeke","p":"M3929 4125l-46 115l-24 -8l-35 -10l-69 -27l-6 -2l5 -44l2 -12l4 -52l12 -1l12 -9l6 -7l3 -13l29 -8l6 -6l-1 -18l16 0l6 -8l19 -8l-2 -9l23 -21l9 -6l13 -3l18 -34l14 -24l1 -9l17 15l16 11l17 7l-21 59l-22 70z","c":[3867,4071],"b":[3749,3901,3994,4240]},{"n":"Azimio","d":"Temeke","p":"M3824 4222l-24 27l-3 17l28 4l32 1l13 4l-45 75l-2 8l-4 32l-5 19l-5 0l-10 8l-9 0l-13 9l-19 -6l-13 -8l-15 -1l-9 4l-5 -4l-8 -7l-3 -9l-7 -8l-8 -5l-7 -10l-1 -13l-6 -16l0 -5l-8 -19l-2 -10l-3 -2l9 -7l10 12l3 -10l6 -4l14 8l25 -32l28 -29l1 -10l-7 -15l3 -25z","c":[3766,4310],"b":[3663,4195,3870,4426]},{"n":"Tandika","d":"Temeke","p":"M3663 4307l-13 -6l-12 4l-11 -3l-8 4l-6 -3l-3 -22l-19 -14l-5 -7l-1 -9l-5 -4l-2 -12l21 9l3 -7l1 -19l19 -25l14 -14l35 -33l17 23l23 20l21 12l20 19l7 15l-1 10l-28 29l-25 32l-14 -8l-6 4l-3 10l-10 -12z","c":[3679,4227],"b":[3578,4146,3759,4312]},{"n":"Sandali","d":"Temeke","p":"M3671 4146l-35 33l-14 14l-19 25l-1 19l-3 7l-21 -9l-47 -19l-12 -1l15 -4l15 -10l5 -11l1 -6l-6 -12l-33 -40l-13 -17l-6 -15l-15 -18l-21 -2l-25 -46l11 -5l50 -26l63 -27l10 20l12 18l18 14l23 12l-1 6l17 36l-5 37l-8 12l12 0l17 -8l7 -6l18 19z","c":[3568,4108],"b":[3436,3976,3680,4244]},{"n":"Temeke","d":"Temeke","p":"M3760 4085l-4 52l-2 12l-5 44l6 2l-3 25l-20 -19l-21 -12l-23 -20l-17 -23l9 -10l-18 -19l-7 6l-17 8l-12 0l8 -12l5 -37l-17 -36l1 -6l-23 -12l-18 -14l-12 -18l-10 -20l-8 -19l-3 -12l77 -39l26 -13l15 29l-6 3l20 37l11 -5l6 14l-18 10l-2 7l17 30l11 10l45 33l6 8z","c":[3683,4054],"b":[3549,3893,3760,4220]},{"n":"Chang'ombe","d":"Temeke","p":"M3809 3835l50 97l5 15l2 51l2 9l-19 8l-6 8l-16 0l1 18l-6 6l-29 8l-3 13l-6 7l-12 9l-12 1l-3 -16l-6 -8l-45 -33l-11 -10l-17 -30l2 -7l18 -10l-6 -14l-11 5l-20 -37l6 -3l-15 -29l5 -2l56 -28l58 -29l6 8l19 -2z","c":[3779,3960],"b":[3652,3834,3868,4085]},{"n":"Keko","d":"Temeke","p":"M3937 3823l3 5l11 5l-6 68l-1 0l-1 9l-14 24l-18 34l-13 3l-9 6l-23 21l-2 -51l-5 -15l-50 -97l25 -12l11 -4l13 -1z","c":[3894,3905],"b":[3809,3818,3951,3998]},{"n":"Kurasini","d":"Temeke","p":"M4055 4186l-13 -9l7 -8l-28 -20l-13 4l-12 -3l-21 -11l-18 -3l-28 -11l22 -62l22 -70l21 -59l-17 -7l-16 -11l-17 -15l1 0l6 -68l-11 -5l-3 -5l1 0l28 -16l29 -20l25 -8l1 12l61 49l52 119l-3 2l7 16l-7 11l0 13l16 37l8 3l8 31l-36 34l2 39l-7 4l-18 -1l-38 21z","c":[4056,3983],"b":[3929,3779,4163,4186]},{"n":"Mtoni","d":"Temeke","p":"M4055 4186l-9 17l-15 11l-12 11l-5 13l29 2l3 16l14 21l-19 -7l-10 16l-5 13l-27 2l-17 6l-16 15l-3 17l4 15l10 21l-7 11l-26 -3l-15 14l-19 1l-35 8l-16 -3l-7 1l-7 9l-9 -3l-7 4l-15 -5l5 -19l4 -32l2 -8l45 -75l-13 -4l-32 -1l-28 -4l3 -17l24 -27l35 10l24 8l46 -115l28 11l18 3l21 11l12 3l13 -4l28 20l-7 8z","c":[3933,4268],"b":[3797,4125,4060,4414]},{"n":"Buza","d":"Temeke","p":"M3777 4426l-7 10l0 5l-13 4l-4 6l-9 3l-11 -4l-26 12l-7 -2l-19 7l-13 14l-3 7l6 14l-8 4l2 5l-8 8l-4 9l4 9l-10 4l-9 -3l-3 -6l-17 5l-2 -4l-5 12l-6 1l3 8l-6 6l1 10l-11 5l-21 1l-3 -4l-5 11l-19 9l-10 9l-6 13l-14 -1l-16 14l-15 15l-3 6l-22 9l-11 0l-7 -6l-7 -1l-15 -10l-8 0l-19 -23l-5 -2l-14 1l-13 10l-12 3l-19 -1l-17 -16l-4 1l-18 -18l-6 -15l2 -10l-7 -12l-3 -18l2 -16l6 -6l9 -26l13 -3l6 -7l15 -9l7 0l11 5l7 0l18 6l4 5l6 -5l16 -2l22 2l12 -2l7 -7l17 -11l12 -3l17 6l18 -2l28 -4l9 -10l6 2l19 -2l16 4l6 0l13 -9l14 -6l2 -4l23 -8l26 -5l13 -9l10 -2l29 1l2 -2l5 4l9 -4l15 1l13 8z","c":[3445,4535],"b":[3275,4411,3777,4657]},{"n":"Makangarawe","d":"Temeke","p":"M3663 4307l3 2l2 10l8 19l0 5l6 16l1 13l7 10l8 5l7 8l3 9l8 7l-2 2l-29 -1l-10 2l-13 9l-26 5l-23 8l-2 4l-14 6l-13 9l-6 0l-16 -4l-19 2l-6 -2l-9 10l-28 4l-18 2l-17 -6l-12 3l-12 -25l3 -14l-3 -12l12 -7l16 -14l3 -7l6 -4l32 -3l6 -5l8 2l17 -6l28 -12l8 -10l5 -13l6 -8l8 -16l17 -7l6 3l8 -4l11 3l12 -4z","c":[3583,4384],"b":[3441,4301,3716,4467]},{"n":"Yombo Vituka","d":"Temeke","p":"M3541 4369l-17 6l-8 -2l-6 5l-32 3l-6 4l-3 7l-16 14l-12 7l3 12l-3 14l12 25l-17 11l-7 7l-12 2l-22 -2l-16 2l-6 5l-4 -5l-18 -6l-7 0l-11 -5l-7 0l-15 9l-6 7l-13 3l-9 26l-6 6l-2 16l3 18l7 12l-2 10l6 15l-25 -9l-5 -4l-8 1l-24 -17l-9 0l-11 -3l-31 -17l-97 -76l44 -16l15 -9l16 -14l31 -31l110 -115l12 -10l16 -7l143 -39l3 16l-4 16l4 16l-2 10l-4 1l-5 13l8 5l9 0l7 15l-1 11l18 7l15 3l8 13l14 12z","c":[3311,4410],"b":[3079,4229,3541,4595]},{"n":"Kilakala","d":"Temeke","p":"M3541 4369l-5 -2l-14 -12l-8 -13l-15 -3l-18 -7l1 -11l-7 -15l-9 0l-8 -5l5 -13l4 -1l2 -10l-4 -16l4 -16l-3 -16l53 -14l12 1l47 19l2 12l5 4l1 9l5 7l19 14l3 22l-17 7l-8 16l-6 8l-5 13l-8 10z","c":[3536,4295],"b":[3458,4215,3613,4369]},{"n":"Kijichi","d":"Temeke","p":"M4327 4436l-12 9l0 6l19 -2l7 4l1 7l-7 5l-12 -2l-2 8l4 5l15 0l1 5l-5 8l2 11l-10 -4l3 7l11 0l-2 6l-6 -2l8 11l-9 -1l0 8l5 1l-1 9l-10 5l2 4l-42 19l-54 52l-14 -8l-9 19l3 8l-20 13l-12 2l-11 5l-13 10l-3 8l-13 9l-5 -20l-6 -1l-14 2l-17 6l-15 1l-7 -10l-12 -4l-10 -14l-4 -2l-18 -39l-7 0l-4 -31l5 -16l-13 -3l-18 0l-1 -7l-18 -2l-11 7l-15 1l3 11l-12 23l-24 -9l-10 2l-21 -4l-1 -7l-8 -24l-15 -14l-6 0l-7 -6l-4 -16l-12 3l-17 14l-18 -5l3 -11l14 -13l7 -18l-3 -13l-10 -11l-1 -14l5 -28l15 5l7 -4l9 3l7 -9l7 -1l16 3l35 -8l19 -1l15 -14l26 3l7 -11l-10 -21l-4 -15l3 -17l16 -15l17 -6l27 -2l5 -13l10 -16l19 7l35 13l36 1l5 10l8 5l-2 55l1 10l9 11l14 12l15 8l13 3l10 -3l8 -6l4 -11l11 -9l12 -1l10 4l2 12l-4 22l6 9l20 6l16 -3l8 -8l13 -9l12 6z","c":[4074,4476],"b":[3799,4270,4342,4681]},{"n":"Mbagala Kuu","d":"Temeke","p":"M4141 4681l3 12l-5 5l0 11l-13 13l2 27l-4 6l-15 12l-8 4l-8 -3l-6 16l-6 5l2 6l-9 8l5 10l-18 8l-1 18l-9 8l-2 13l-13 4l-3 -5l-13 4l-5 5l4 4l-7 13l-12 2l-5 -5l8 -14l-9 -1l1 -11l-7 -47l-7 -17l-18 -23l-5 1l-14 -10l-8 2l-10 -2l-95 5l-3 -53l-7 -83l-5 -40l-15 -40l-5 -19l3 -13l18 5l17 -14l12 -3l4 16l7 6l6 0l15 14l8 24l1 7l21 4l10 -2l24 9l12 -23l-3 -11l15 -1l11 -7l18 2l1 7l18 0l13 3l-5 16l4 31l7 0l18 39l4 2l10 14l12 4l7 10l15 -1l17 -6l14 -2l6 1z","c":[3984,4695],"b":[3796,4505,4144,4887]},{"n":"Toangoma","d":"Temeke","p":"M4661 4749l-4 23l11 6l15 25l1 14l15 12l0 15l10 19l8 7l4 22l18 10l-14 7l-4 11l-1 15l-9 8l-7 10l-8 4l2 12l6 5l19 4l13 7l-3 17l-9 13l5 8l-5 11l8 4l-8 14l3 31l10 24l13 36l12 52l2 71l2 15l-38 -7l-26 2l-21 -1l-30 -13l11 -45l-22 -1l-14 -16l-15 -9l-23 7l-12 -6l-13 4l-27 0l-22 -9l-9 -1l-9 -5l-7 -20l-5 4l-8 -3l-12 4l-20 2l-23 -14l-39 -7l-13 33l20 50l-12 9l-26 8l-33 22l-10 19l-9 9l-9 -10l-22 -37l4 -30l-10 -8l-18 2l-25 -12l-6 -17l-24 -11l-16 -21l-17 -5l-9 -13l-20 6l-11 19l-33 17l-13 19l-19 3l-20 -2l-30 -16l-9 12l-15 6l-15 16l-14 23l-7 8l-10 -1l-10 3l-7 8l-6 -5l4 -3l-7 -4l-1 -18l3 -22l-11 -18l14 -12l1 -26l-8 -8l-3 -9l-11 -5l-5 -15l-18 -6l1 -12l-8 -10l0 -31l-9 -2l-1 -10l8 -12l19 -8l3 -9l-1 -8l12 -13l-4 -10l8 -16l1 -10l12 -10l2 -10l6 0l9 -7l11 0l2 8l8 0l-1 -5l11 -9l5 -16l5 -4l22 -9l8 -10l5 5l12 -2l7 -13l-4 -4l5 -5l13 -4l3 5l13 -4l2 -13l9 -8l1 -18l18 -8l-5 -10l9 -8l-2 -6l6 -5l6 -16l8 3l8 -4l15 -12l4 -6l-2 -27l13 -13l0 -11l5 -5l-3 -12l13 -9l3 -8l13 -10l11 -5l12 -2l20 -13l-3 -8l9 -19l14 8l24 12l9 8l15 29l23 8l17 18l38 10l41 20l15 -8l23 4l4 13l26 1l3 8l27 -4l-1 -7l26 -4l1 6l18 -3l0 -5l23 4l27 -1l-2 20l35 3z","c":[4304,4949],"b":[3849,4607,4766,5297]},{"n":"Mianzini","d":"Temeke","p":"M3879 5011l-3 9l-19 8l-8 12l1 10l9 2l0 31l8 10l-1 12l-39 13l-34 -4l-61 14l-42 33l-33 6l-33 -20l-49 25l-46 6l-4 -12l12 -8l10 -11l-3 -9l-23 -15l-12 -19l-2 -10l-11 -12l-8 -1l-14 -12l-7 -20l8 -7l31 -15l21 -6l5 -3l55 -35l11 -7l47 -12l20 -5l16 -5l16 -7l31 -17l49 -24l12 -7l20 -19l12 -16l13 -48l11 93l6 35l3 36l7 14z","c":[3713,5003],"b":[3467,4816,3879,5178]},{"n":"Kibondemaji","d":"Temeke","p":"M3995 4882l-8 10l-22 9l-5 4l-5 16l-11 9l1 5l-8 0l-2 -8l-11 0l-9 7l-6 0l-2 10l-12 10l-1 10l-8 16l4 10l-12 13l1 8l-18 -17l-7 -14l-3 -36l-6 -35l-11 -93l-3 -51l95 -5l10 2l8 -2l14 10l5 -1l18 23l7 17l7 47l-1 11l9 1z","c":[3917,4887],"b":[3831,4760,4003,5011]},{"n":"Chamazi","d":"Temeke","p":"M3532 5018l-5 3l-21 6l-31 15l-8 7l7 20l14 12l8 1l11 12l2 10l12 19l23 15l3 9l-10 11l-12 8l4 12l-13 21l-20 15l0 17l-13 16l0 10l-7 6l2 12l7 15l-6 1l2 12l-6 6l-6 21l-36 34l-28 4l-14 14l7 13l-2 25l-24 15l-1 16l-32 13l-6 24l15 16l-8 24l-15 7l4 19l-15 20l-17 8l-4 12l7 13l-2 16l-11 14l-1 10l-14 14l-40 -16l-222 -115l-40 -2l-1 -5l-9 -10l-2 -9l4 -6l4 -18l-4 -11l-2 -17l3 -10l10 2l8 -36l8 -4l-7 -8l7 -6l-6 -10l2 -7l8 0l3 -17l7 -7l-1 -5l14 -10l9 -11l5 -16l-5 -17l-12 -18l-4 -15l9 -16l28 -13l14 -36l15 -13l-30 -39l18 -1l10 -6l10 -1l20 -13l12 -6l4 -5l19 5l10 -21l4 -13l11 -27l9 -8l21 -24l11 -10l8 -19l13 -20l11 -30l13 -3l14 -8l3 -9l-5 -12l6 -7l8 -2l4 -8l15 -6l31 -16l20 -15l8 -15l3 -1l4 -15l10 -7l15 -15l3 2l21 -12l11 -14l13 -5l3 -9l-2 -6l13 -23l4 -3l3 18l7 4l11 3l7 13l7 5l24 10l11 18l-2 13l-19 24l-10 9l-13 18l-4 22l2 24l15 38l3 23l12 13l16 12l2 10z","c":[3288,5195],"b":[2958,4732,3547,5661]},{"n":"Kilungule","d":"Temeke","p":"M3681 4954l-16 5l-20 5l-47 12l-11 7l-55 35l-9 -9l-2 -10l-16 -12l-12 -13l-3 -23l-15 -38l-2 -24l4 -22l13 -18l10 -9l19 -24l2 -13l-11 -18l-24 -10l-7 -5l-7 -13l-11 -3l-7 -4l-3 -18l7 -16l13 -36l6 1l91 30l41 16l35 12l39 16l43 11l-25 30l-19 22l-24 4l2 19l-2 6l7 16l-2 13l-5 11l-1 16l-21 23l-6 11l13 12l21 6l2 4z","c":[3573,4856],"b":[3451,4680,3726,5018]},{"n":"Charambe","d":"Temeke","p":"M3831 4765l3 51l-13 48l-12 16l-20 19l-12 7l-49 24l-31 17l-16 7l-15 5l-2 -4l-21 -6l-13 -12l6 -11l21 -23l1 -16l5 -11l2 -13l-7 -16l2 -6l-2 -19l24 -4l19 -22l25 -30l18 6l7 1z","c":[3743,4855],"b":[3630,4765,3834,4959]},{"n":"Mbagala","d":"Temeke","p":"M3799 4517l-3 13l5 19l15 40l5 40l7 83l3 53l-80 8l-7 -1l1 -13l7 -2l3 -11l-1 -22l2 0l-3 -22l1 -14l-8 -8l-8 -23l-6 -11l-19 -24l9 -8l-2 -7l-5 -25l-10 -28l-7 -10l-23 -4l-12 -5l-6 2l-4 -9l4 -9l8 -8l-2 -5l8 -4l-6 -14l3 -7l13 -14l19 -7l7 2l26 -12l11 4l9 -3l4 -6l13 -4l0 -5l7 -10l13 -9l9 0l10 -8l5 0l-5 28l1 14l10 11l3 13l-7 18l-14 13z","c":[3768,4598],"b":[3653,4409,3831,4773]},{"n":"Kiburugwa","d":"Temeke","p":"M3657 4537l6 -2l12 5l23 4l7 10l10 28l5 25l2 7l-9 8l19 24l6 11l8 23l8 8l-1 14l3 22l-2 0l1 22l-3 11l-7 2l-1 13l-18 -6l-43 -11l-39 -16l-35 -12l-41 -16l-91 -30l-6 -1l5 -4l8 -13l1 -14l-5 -1l3 -6l15 -15l16 -14l14 1l6 -13l10 -9l19 -9l5 -11l3 4l21 -1l11 -5l-1 -10l6 -6l-3 -8l6 -1l5 -12l2 4l17 -5l3 6l9 3z","c":[3610,4653],"b":[3471,4532,3756,4772]},{"n":"Kigamboni","d":"Kigamboni","p":"M4316 3872l5 5l-5 4l-110 53l-20 14l-19 -21l5 -10l0 -13l-11 -18l-11 -13l-11 -34l-13 -16l-1 -11l2 -13l-10 -16l-13 -7l-2 -10l11 1l18 -1l15 5l23 -4l8 -11l1 -30l12 -9l15 -1l32 -14l19 2l15 -13l10 -6l11 -19l13 -4l7 -6l23 1l22 7l23 12l31 31l11 15l-8 14l-5 -3l0 11l-12 21l-5 32l-12 -7l-56 70l-10 9z","c":[4247,3805],"b":[4102,3656,4422,3948]},{"n":"Tungi","d":"Kigamboni","p":"M4316 3872l-2 -3l10 -9l56 -70l12 7l5 -32l12 -21l0 -11l5 3l8 -14l69 35l25 18l16 7l35 13l17 7l100 2l11 11l-46 37l-39 28l-27 22l-2 4l-28 24l-26 -1l-15 -2l-72 -3l-2 8l1 12l8 24l3 5l-42 3l-4 -6l-17 2l-4 -14l-16 -4l-20 7l-83 58l-36 18l-3 -9l0 -26l-7 -21l-8 -8l-3 -11l-9 -3l0 -5l-12 -6l20 -14l110 -53l5 -4z","c":[4465,3879],"b":[4186,3722,4695,4037]},{"n":"Mjimwema","d":"Kigamboni","p":"M4695 3815l-1 6l16 21l11 22l34 51l9 22l4 27l13 20l3 8l12 18l19 22l12 11l18 11l33 16l24 8l41 7l31 2l14 -3l80 -3l41 -2l30 -6l17 33l8 18l-21 12l-16 20l-32 35l-2 27l-10 59l-5 8l2 15l8 11l-6 16l-3 29l-11 12l-20 10l1 19l14 13l10 11l3 16l-1 13l-4 16l2 17l6 11l3 19l4 10l-2 4l-8 -1l-21 2l-20 10l-11 7l-20 4l-15 1l10 -14l0 -13l5 -8l-22 8l-17 -9l-15 0l-25 2l-6 -6l4 -29l-13 -5l-5 -7l-9 -2l-10 11l-5 -3l-1 -15l-3 -5l-16 5l-2 -36l-15 -6l-17 1l-17 -3l0 -4l-27 -3l-6 -8l2 -11l-3 -2l-1 -10l-19 6l-2 -8l-5 1l-6 -22l3 -6l-18 -6l-8 -5l-35 -9l-21 -1l-17 -9l-3 5l-21 -15l-12 -4l3 -8l-11 -5l-8 0l-1 -13l-15 0l-2 -14l3 -6l-59 -36l0 -57l-22 0l1 -7l7 -2l0 -22l3 -19l4 -1l17 -14l-10 -50l-30 -30l-22 -13l-19 -35l-3 -5l-8 -24l-1 -12l2 -8l72 3l15 2l26 1l28 -24l2 -4l27 -22l39 -28z","c":[4814,4179],"b":[4438,3815,5164,4550]},{"n":"Kibada","d":"Kigamboni","p":"M4886 4478l-9 2l-4 5l-2 31l-8 13l3 11l-8 11l-21 6l-11 26l-3 14l-19 -2l-14 4l-12 -3l-21 -12l-53 -13l-15 3l-14 -2l-17 14l-14 5l3 6l-8 13l0 25l-6 7l4 8l0 19l11 16l13 5l4 13l13 13l-1 15l-3 8l-13 10l-36 -2l-35 -3l2 -20l-27 1l-23 -4l0 5l-18 3l-1 -6l-26 4l1 7l-27 4l-3 -8l-26 -1l-4 -13l-23 -4l-15 8l-41 -20l-38 -10l-17 -18l-23 -8l-15 -29l-9 -8l-24 -12l54 -52l42 -19l-2 -4l10 -5l1 -9l-5 -1l0 -8l9 1l-8 -11l6 2l2 -6l-11 0l-3 -7l10 4l-2 -11l5 -8l-1 -5l-15 0l-4 -5l2 -8l12 2l7 -5l-1 -7l-7 -4l-19 2l0 -6l12 -9l34 -23l40 -12l29 -7l-29 -87l61 -14l7 -5l11 -3l3 3l17 -8l-4 -8l8 -5l0 -30l17 -14l59 36l-3 6l2 14l15 0l1 13l8 0l11 5l-3 8l12 4l21 15l3 -5l17 9l21 1l35 9l8 5l18 6l-3 6l6 22l5 -1l2 8l19 -6l1 10l3 2l-2 11l6 8l27 3l0 4l17 3l17 -1l15 6l2 36l16 -5l3 5l1 15z","c":[4605,4487],"b":[4233,4223,4886,4749]},{"n":"Vijibweni","d":"Kigamboni","p":"M4450 3973l19 35l22 13l30 30l10 50l-17 14l-4 1l-3 19l0 22l-7 2l-1 7l22 0l0 57l-17 14l0 30l-8 5l4 8l-17 8l-3 -3l-11 3l-7 5l-61 14l29 87l-29 7l-40 12l-34 23l-5 -22l-12 -6l-13 9l-8 8l-16 3l-20 -6l-6 -9l4 -22l-2 -12l-10 -4l-12 1l-11 9l-4 11l-8 6l-10 3l-13 -3l-15 -8l-14 -12l-9 -11l-1 -10l2 -55l21 -31l-18 -18l-23 -15l-5 -11l7 -14l26 -11l22 -21l13 -19l-5 -17l21 -20l1 -16l23 -31l10 -17l-1 -9l-8 -19l36 -18l83 -58l20 -7l16 4l4 14l17 -2l4 6z","c":[4342,4196],"b":[4119,3954,4531,4436]},{"n":"Kimbiji","d":"Kigamboni","p":"M6900 6153l-159 6l-30 -9l-17 -1l-6 -3l-10 7l-23 3l-8 -18l-11 -3l-41 2l-29 22l-85 5l-25 20l-26 -8l-22 2l-20 -4l-7 -4l-10 0l-20 10l-11 -6l-9 5l-27 4l-9 -4l-31 10l-17 -6l-9 -15l-10 -7l-15 -6l-14 -9l-13 -1l-22 4l-40 -4l-29 -10l-17 1l-12 4l-11 9l-18 2l-33 -81l28 -78l-2 -69l11 -49l6 -13l8 -29l3 -20l-2 -4l1 -17l-6 -52l-12 -4l-4 -9l16 -22l7 -16l5 -9l6 -22l16 -34l6 -11l-1 -18l-10 -15l-1 -11l-6 -15l1 -17l5 -20l38 -37l23 -27l23 -18l10 -14l13 -14l56 -23l17 -13l26 -19l24 -12l25 -9l17 -16l0 -12l33 10l20 5l18 7l32 -30l111 -24l11 9l10 14l4 27l22 26l11 9l13 44l7 14l22 22l20 13l27 13l21 21l9 16l1 23l11 30l6 12l13 12l11 1l43 -2l4 -9l16 4l13 8l7 -2l6 -11l16 -2l9 8l5 8l12 9l-2 24l-9 7l-3 14l-2 24l-6 2l-1 41l4 63l12 44l21 39l17 49l23 28l-24 37l-16 35l0 26l-26 28l-10 47z","c":[6465,5731],"b":[6004,5270,6969,6189]},{"n":"Pembamnazi","d":"Kigamboni","p":"M6900 6153l1 19l-3 36l6 12l2 13l0 18l-6 29l3 14l7 17l-3 19l-2 24l5 30l0 26l-5 32l-6 21l14 7l0 7l-5 16l3 14l-7 4l-30 27l-11 4l-9 -6l-7 3l-4 16l-1 23l5 22l0 20l3 15l9 20l-5 -1l-9 16l-5 13l3 22l0 12l4 23l0 20l2 16l5 10l-4 22l1 13l19 -6l-15 48l7 52l4 23l-3 17l-11 16l2 11l-108 124l-19 11l-11 10l-27 21l-19 20l-19 29l-5 10l-5 17l1 10l8 20l8 7l-1 12l4 7l-3 8l-6 5l-15 19l-15 24l-13 16l-19 14l-8 12l-20 57l-1 17l3 23l-18 -10l6 26l6 13l8 7l30 12l0 39l-15 37l-6 37l-9 14l-53 20l-16 45l-58 48l-46 -5l-134 -198l-137 9l-83 26l-216 185l-24 -28l-76 -9l-42 11l-51 -17l-13 -38l-2 -14l-12 -21l-20 -28l9 -8l33 -17l13 -21l-14 -8l-37 2l-19 -15l21 -12l-4 -19l-30 -8l-17 -15l-10 29l-6 23l-5 37l-25 -4l-42 5l-20 29l-99 31l23 -46l-23 -9l-27 -33l-7 -12l-2 -16l4 -44l7 -6l6 -16l12 -4l4 -6l0 -10l7 -2l1 -8l-12 -3l-6 -9l14 -13l11 2l1 -6l-7 -6l-4 -13l-16 2l-3 -7l8 -7l2 -7l-11 -3l4 -18l10 0l-1 -22l12 -15l-1 -16l5 -7l-11 -14l14 1l8 -19l-10 -19l18 -21l39 -7l23 -21l-7 -12l12 -14l15 0l34 -39l-25 -51l-21 -54l-54 -54l-20 -34l2 -17l-11 -36l-7 -11l9 -9l-4 -11l7 -36l27 -20l40 -9l7 -27l33 -17l14 -14l24 -34l6 -19l11 -3l13 8l4 -10l10 7l14 -10l0 -23l16 -15l-3 -15l15 -20l14 -6l-1 -6l7 -10l11 -5l5 2l9 -6l0 -5l8 1l6 -4l-4 -27l5 -26l7 -8l-6 -6l3 -7l-4 -5l-3 -20l-11 -14l-1 -19l-4 -9l6 -22l-6 -15l-11 -11l-2 -13l-23 -23l-5 -29l0 -8l24 -45l16 -20l14 -10l59 36l20 11l41 13l14 0l13 -5l21 -4l38 -28l26 8l66 17l7 -5l-1 -5l11 -4l5 -10l6 0l18 -22l8 -33l20 -19l24 -9l12 -10l-1 -7l-8 -3l18 -2l11 -9l12 -4l17 -1l29 10l40 4l22 -4l13 1l14 9l15 6l10 7l9 15l17 6l31 -10l9 4l27 -4l9 -5l11 6l20 -10l10 0l7 4l20 4l22 -2l26 8l25 -20l85 -5l29 -22l41 -2l11 3l8 18l23 -3l10 -7l6 3l17 1l30 9z","c":[6112,6963],"b":[5295,6135,6913,7780]},{"n":"Somangila","d":"Kigamboni","p":"M6565 5270l-111 24l-32 30l-18 -7l-20 -5l-33 -10l0 12l-17 16l-25 9l-24 12l-26 19l-17 13l-56 23l-13 14l-10 14l-23 18l-23 27l-38 37l-5 20l-1 17l6 15l1 11l10 15l1 18l-6 11l-16 34l-19 -43l-60 -59l-15 7l-69 -45l-23 -38l-25 -39l-2 -13l-14 -21l-23 -46l-14 -10l-6 -24l-4 -3l-5 -12l2 -26l-11 -11l3 -38l6 -10l-7 -9l8 -26l-4 -16l-31 -42l-24 -29l26 -105l-14 6l-49 -28l-1 -38l8 -32l-17 -17l27 -50l-64 -28l-11 -5l-76 -20l-48 -32l-17 -37l-19 -17l-85 -53l-82 -19l-11 7l-5 9l-14 -4l-26 -1l-12 26l3 22l-128 15l-38 -4l-6 -20l2 -17l5 -17l-6 -9l6 -9l-8 -22l0 -19l12 -13l11 -15l7 0l5 -9l-2 -8l-6 -8l-6 0l-9 -6l2 -4l-4 -10l-3 -19l-6 -11l-2 -17l4 -16l1 -13l-3 -16l-10 -11l-14 -13l-1 -19l20 -10l11 -12l3 -29l6 -16l-8 -11l-2 -15l5 -8l10 -59l2 -27l32 -35l16 -20l21 -12l-8 -18l-17 -33l24 -15l14 -25l10 0l80 80l35 33l68 34l58 17l78 9l18 8l8 -14l60 26l42 12l61 1l24 17l23 7l22 -2l25 -10l9 -22l-7 -20l5 -6l11 0l21 6l8 15l24 11l65 18l34 21l16 12l33 8l19 0l39 5l7 -9l0 -14l-3 -17l21 -49l28 5l6 10l27 32l-1 17l3 17l12 39l9 39l6 20l25 41l11 10l13 4l15 -4l14 8l4 10l-2 10l6 13l19 1l15 9l8 1l14 21l-1 11l9 7l10 16l-6 24l10 19l0 8l6 12l3 13l-3 4l8 38l3 6l-5 3l15 92l21 77l8 24l3 24l14 23l8 41l2 47l15 18l8 41l13 20l19 5l11 0l4 31l13 36l19 71l11 7l10 1l6 6z","c":[6050,4855],"b":[5048,4033,6565,5657]},{"n":"Kisarawe II","d":"Kigamboni","p":"M5084 4527l9 6l6 0l6 8l2 8l-5 9l-7 0l-11 15l-12 13l0 19l8 22l-6 9l6 9l-5 17l-2 17l6 20l38 4l128 -15l-3 -22l12 -26l26 1l14 4l5 -9l11 -7l82 19l85 53l19 17l17 37l48 32l76 20l11 5l64 28l-27 50l17 17l-8 32l1 38l49 28l14 -6l-26 105l24 29l31 42l4 16l-8 26l7 9l-6 10l-3 38l11 11l-2 26l5 12l4 3l6 24l14 10l23 46l14 21l2 13l25 39l23 38l69 45l15 -7l60 59l19 43l-6 22l-5 9l-7 16l-16 22l4 9l12 4l6 52l-1 17l2 4l-3 20l-8 29l-6 13l-11 49l2 69l-28 78l33 81l8 3l1 7l-12 10l-24 9l-20 19l-8 33l-18 22l-6 0l-5 10l-11 4l1 5l-7 5l-66 -17l-26 -8l-38 28l-21 4l-13 5l-14 0l-41 -13l-20 -11l-59 -36l7 -15l-1 -10l-104 -39l-37 -13l-17 -9l-38 63l-1 26l-5 7l3 11l13 17l2 14l-16 20l-148 41l-121 -104l34 -4l49 -3l14 -33l8 -17l9 -14l20 -12l6 -10l-3 -14l-1 -15l-9 -7l-4 -9l-3 -32l10 -26l0 -19l10 -28l0 -70l3 -22l3 -12l-2 -7l4 -8l-8 -16l-1 -17l16 -27l4 -58l-18 -62l14 -44l2 -9l9 -20l0 -20l-3 -8l1 -17l-4 -7l-11 -4l-41 -19l-33 17l-20 15l-10 13l-23 19l-3 7l-6 0l-13 -9l-16 11l-6 1l-14 -20l-6 -18l9 -29l6 -27l2 -17l1 -39l-5 -29l-8 -51l-115 -80l-6 -32l-8 -21l2 -88l-6 -6l-9 -18l-14 6l-19 -2l-18 4l-4 3l-16 2l-3 11l-11 13l-14 -1l-11 18l-13 2l-4 6l-11 8l-27 9l-21 10l-42 44l-2 0l-2 -15l-2 -71l-12 -52l-13 -36l-10 -24l-3 -31l8 -14l-8 -4l5 -11l-5 -8l9 -13l3 -17l-13 -7l-19 -4l-6 -5l-2 -12l8 -4l7 -10l9 -8l1 -15l4 -11l14 -7l-18 -10l-4 -22l-8 -7l-10 -19l0 -15l-15 -12l-1 -14l-15 -25l-11 -6l4 -23l13 -10l3 -8l1 -15l-13 -13l-4 -13l-13 -5l-11 -16l0 -19l-4 -8l6 -7l0 -25l8 -13l-3 -6l14 -5l17 -14l14 2l15 -3l53 13l21 12l12 3l14 -4l19 2l3 -14l11 -26l21 -6l8 -11l-3 -11l8 -13l2 -31l4 -5l9 -2l10 -11l9 2l5 7l13 5l-4 29l6 6l25 -2l15 0l17 9l22 -8l-5 8l0 13l-10 14l15 -1l20 -4l11 -7l20 -10l21 -2z","c":[5489,5400],"b":[4633,4467,6069,6343]},{"n":"Ubungo","d":"Ubungo","p":"M3295 3179l-14 17l-30 42l-46 60l-49 47l-8 11l-2 23l10 -5l4 -6l14 -9l6 10l18 -7l6 2l4 8l7 3l1 -6l6 3l9 -2l6 -10l8 5l0 6l12 6l-1 7l9 4l2 4l8 0l6 -9l6 5l7 -2l14 12l19 6l3 -1l1 11l-1 15l10 7l2 5l-6 15l-11 53l-53 -24l-9 31l-7 16l-31 -38l-18 19l-10 18l-2 19l-56 -33l-11 -11l-8 -16l-1 -16l9 -39l-10 11l-8 -3l-1 6l-5 -2l-11 -23l-8 0l-6 4l-8 -6l-16 5l-5 -11l-18 0l-22 13l4 8l-12 7l-11 0l-1 7l4 7l0 9l-9 3l-5 10l-8 5l-6 2l6 -2l-7 -18l-9 -10l-8 -1l-5 -10l5 -4l12 -22l1 -10l-5 -6l3 -18l5 -5l-2 -7l4 -1l1 -17l-4 -22l4 -3l-5 -16l3 -9l-6 -12l-8 -6l-18 -9l-14 -19l-2 0l8 -8l13 -9l21 -22l7 -12l-30 -11l0 -2l21 3l15 9l4 8l7 4l-3 12l9 7l9 17l4 10l8 -3l3 -6l8 -1l15 -9l0 -5l9 -8l7 -12l0 -15l-4 -8l-10 -10l14 -14l20 -2l86 -52l12 -1l36 3l3 -1l25 9l11 7z","c":[3063,3340],"b":[2917,3120,3342,3550]},{"n":"Sinza","d":"Ubungo","p":"M3432 3348l-12 -3l-2 5l-24 8l-1 7l-11 11l-17 8l-2 9l-8 0l-5 7l-7 -5l-10 3l-3 5l-3 1l-19 -6l-14 -12l-7 2l-6 -5l-6 9l-8 0l-2 -4l-9 -4l1 -7l-12 -6l0 -6l-8 -5l-6 10l-9 2l-6 -3l-1 6l-7 -3l-4 -8l-6 -2l-18 7l-6 -10l-14 9l-4 6l-10 5l2 -23l8 -11l49 -47l46 -60l30 -42l14 -17l16 -19l3 5l4 15l30 38l17 15l5 12l3 13l20 26l16 11l13 -1l-5 21l18 10l1 10z","c":[3304,3271],"b":[3146,3160,3436,3404]},{"n":"Manzese","d":"Ubungo","p":"M3432 3348l6 0l12 6l3 5l-1 10l9 0l-1 22l4 6l-5 18l-6 16l-9 2l1 25l-8 20l12 4l-6 23l1 11l-14 -1l-4 6l2 10l-15 4l-4 10l-9 -1l-27 -12l4 -12l-13 -1l-13 -8l-19 0l-7 -2l11 -53l6 -15l-2 -5l-10 -7l1 -15l-1 -11l3 -5l10 -3l7 5l5 -7l8 0l2 -9l17 -8l11 -11l1 -7l24 -8l2 -5z","c":[3392,3449],"b":[3325,3345,3464,3545]},{"n":"Makurumla","d":"Ubungo","p":"M3617 3542l-8 16l0 13l12 6l-1 13l-12 6l-5 10l-22 13l-20 -7l-15 0l-39 -16l-40 -24l-18 -8l-40 -19l4 -10l15 -4l-2 -10l4 -6l14 1l-1 -11l6 -23l43 13l44 18l7 2l34 12z","c":[3517,3552],"b":[3409,3482,3621,3619]},{"n":"Mburahati","d":"Ubungo","p":"M3603 3606l12 16l29 14l6 11l-20 0l-13 -7l-5 2l-12 -7l-43 28l-11 4l-1 5l-11 0l-22 5l-9 -1l-12 8l-13 -12l5 -12l-14 0l-3 -15l-6 -4l-7 -12l-11 -5l-9 -11l-2 -13l5 -4l9 -24l-4 -1l8 -7l18 8l40 24l39 16l15 0l20 7z","c":[3529,3623],"b":[3431,3564,3650,3684]},{"n":"Mabibo","d":"Ubungo","p":"M3409 3545l40 19l-8 7l4 1l-9 24l-5 4l2 13l9 11l11 5l7 12l6 4l3 15l14 0l-5 12l13 12l-9 4l-6 -3l-13 8l-24 1l-9 -4l-7 4l-11 -9l-12 -2l-18 13l-8 -2l-15 2l-10 11l-14 -11l-83 -54l-10 -11l-7 -10l-16 -40l-13 -20l-11 -11l2 -19l10 -18l18 -19l31 38l7 -16l9 -31l53 24l7 2l19 0l13 8l13 1l-4 12l27 12z","c":[3330,3588],"b":[3195,3485,3491,3707]},{"n":"Makuburi","d":"Ubungo","p":"M3195 3550l11 11l13 20l16 40l7 10l10 11l83 54l14 11l15 15l-9 2l-12 -3l-5 2l-37 -30l-8 -8l-26 -4l-45 1l-7 -2l-16 2l-20 5l-12 -4l-4 13l-11 4l-30 16l-10 -8l-16 -7l-12 1l-6 -6l-10 7l-4 7l-18 4l-4 -3l2 -7l-5 -5l-9 1l-6 5l-5 12l-7 2l-8 -5l-13 -10l-4 -10l-18 -10l-14 0l-13 -20l-7 6l-9 -5l-12 -16l5 -9l-7 -4l-21 6l-8 -4l-8 0l-8 -17l-3 -15l-4 -2l4 -6l-9 -11l-12 -22l-6 -23l8 -22l27 5l8 -23l-1 -12l13 0l-3 4l14 12l14 -9l8 -8l9 4l10 -8l5 0l12 7l5 -5l6 -2l8 -5l5 -10l9 -3l0 -9l-4 -7l1 -7l11 0l12 -7l-4 -8l22 -13l18 0l5 11l16 -5l8 6l6 -4l8 0l11 23l5 2l1 -6l8 3l10 -11l-9 39l1 16l8 16l11 11z","c":[3031,3573],"b":[2837,3416,3364,3724]},{"n":"Kimara","d":"Ubungo","p":"M2917 3260l2 0l14 19l18 9l8 6l6 12l-3 9l5 16l-4 3l4 22l-1 17l-4 1l2 7l-5 5l-3 18l5 6l-1 10l-12 22l-5 4l5 10l8 1l9 10l7 18l-6 2l-5 5l-12 -7l-5 0l-10 8l-9 -4l-8 8l-14 9l-14 -12l3 -4l-13 0l1 12l-8 23l-27 -5l-8 22l6 23l12 22l9 11l-4 6l-25 -9l-22 20l-15 10l-13 11l-23 9l-26 18l-7 4l-3 8l-8 5l-8 14l-7 6l-7 8l-13 2l2 6l-22 6l-15 -1l-16 -10l-21 2l-3 4l-18 -1l-13 3l-19 13l-15 6l-26 -2l-9 1l-4 33l-3 3l-10 -9l-7 -1l-1 6l7 19l-12 6l-18 5l-6 -6l-11 6l-13 -12l-8 6l-18 -6l-12 -10l4 -15l6 -13l-4 -12l7 -16l3 -17l3 -7l13 -11l8 -21l-5 -7l-5 -17l-3 -2l5 -12l41 -40l8 -11l0 -8l5 -7l-1 -14l11 -4l7 -8l18 -3l10 2l13 -14l14 4l9 -7l4 8l17 -9l1 -10l6 -3l-1 -7l8 -4l4 -13l7 -9l14 1l5 -4l0 -11l4 -5l7 1l18 -10l23 3l4 -4l15 4l7 3l3 12l15 2l5 8l4 -1l7 -13l7 1l8 6l5 -1l9 -9l5 -12l9 1l8 -5l2 -13l17 2l-1 -12l-6 -8l-7 -21l3 -31l2 -9l-25 -9l-23 4l-6 -5l-4 -20l-6 -8l3 -13l8 -15l12 -30l4 -6l5 1l10 6l12 0l8 9l9 4l31 1l7 4l17 4l10 0l15 4l10 6l19 -17z","c":[2707,3522],"b":[2392,3243,2972,3799]},{"n":"Saranga","d":"Ubungo","p":"M2609 2985l-9 17l18 12l0 36l4 26l6 1l5 18l6 14l-1 16l-5 9l2 8l-2 24l-4 20l12 25l14 22l21 -5l4 4l12 0l14 -8l11 0l5 -6l9 6l11 -3l7 4l4 -3l11 2l-1 13l-3 6l-4 6l-12 30l-8 15l-3 13l6 8l4 20l6 5l23 -4l25 9l-2 9l-3 31l7 21l6 8l1 12l-17 -2l-2 13l-8 5l-9 -1l-5 12l-9 9l-5 1l-8 -6l-7 -1l-7 13l-4 1l-5 -8l-15 -2l-3 -12l-7 -3l-15 -4l-4 4l-23 -3l-18 10l-7 -1l-4 5l0 11l-5 4l-14 -1l-7 9l-4 13l-8 4l1 7l-6 3l-1 10l-17 9l-4 -8l-9 7l-14 -4l-13 14l-10 -2l-18 3l-7 8l-11 4l1 14l-5 7l0 8l-8 11l-41 40l-5 12l3 2l5 17l5 7l-8 21l-13 11l-3 7l-3 17l-7 16l4 12l-6 13l-4 15l12 10l18 6l8 -6l13 12l10 20l9 6l-6 18l-7 5l-7 -4l-5 3l-9 -2l-7 -2l-4 -7l-15 -10l-6 -7l-10 -1l-6 -5l-11 3l-16 -6l-8 3l-15 -7l-16 2l-10 3l-14 9l2 11l-5 16l-5 0l-4 8l-6 0l-11 13l-7 -2l-5 6l-11 -3l-6 -8l-5 4l-12 -10l-5 -2l-5 -10l-1 -10l-11 2l-7 -6l-19 -1l1 -10l8 -12l7 -29l-3 -11l4 -11l-2 -19l3 -14l6 -5l13 -3l17 -16l-3 -21l11 -23l11 -15l15 -2l8 -9l7 -3l5 -8l8 -4l5 -9l1 -10l6 -7l16 -2l11 -6l12 -10l20 -6l10 -1l-19 -20l-1 -14l-12 -19l-5 -5l-1 -11l-6 -18l4 -4l-7 -5l-1 -7l6 -17l-6 0l-10 -7l10 -13l-6 -6l2 -6l-4 -13l3 -9l-10 -4l-18 -15l-31 -51l-29 -15l-1 -12l-14 -29l-12 -8l5 -12l-8 -3l3 -6l21 -4l-3 -7l6 -7l7 6l2 -12l-5 -12l8 -21l1 -9l20 -5l6 -13l7 -6l11 -24l8 3l13 -17l6 -2l4 9l8 6l4 -2l-2 -9l3 -7l9 -7l14 -3l12 -2l10 -5l16 0l19 -10l8 -11l8 -6l25 -10l8 -10l11 10l10 3l9 -1l9 -17l2 -12l27 3l12 -7l10 12l5 -2l2 -10l-1 -14l23 -13l-8 -12l9 -4l8 2l1 7l8 0l12 -14l12 4z","c":[2559,3419],"b":[2167,2967,2806,3872]},{"n":"Msigani","d":"Ubungo","p":"M2167 3828l-5 -2l0 -16l-14 1l-13 -3l-16 -13l-2 3l-10 -5l-13 6l-21 -22l-9 -16l-2 -9l2 -26l-2 -12l-8 -16l-9 -3l-16 -12l0 -9l-7 -10l-20 -3l-5 -7l-12 2l-7 -10l11 -29l-2 -11l-10 0l-32 -17l-4 -13l-5 -6l7 -26l-16 -1l-10 -5l-10 -17l2 -10l-6 -4l1 -41l-3 -5l-28 5l6 -18l2 -17l-7 -10l6 -19l-5 -4l179 -65l38 -13l22 -8l54 -10l34 -4l21 5l29 15l31 51l18 15l10 4l-3 9l4 13l-2 6l6 6l-10 13l10 7l6 0l-6 17l1 7l7 5l-4 4l6 18l1 11l5 5l12 19l1 14l19 20l-10 1l-20 6l-12 10l-11 6l-16 2l-6 7l-1 10l-5 9l-8 4l-5 8l-7 3l-8 9l-15 2l-11 15l-11 23l3 21l-17 16l-13 3l-6 5l-3 14l2 19l-4 11l3 11l-7 29l-8 12z","c":[2149,3562],"b":[1873,3298,2364,3828]},{"n":"Kwembe","d":"Ubungo","p":"M1875 3398l5 4l-6 19l7 10l-2 17l-6 18l28 -5l3 5l-1 41l6 4l-2 10l10 17l10 5l16 1l-7 26l5 6l4 13l32 17l10 0l2 11l-11 29l7 10l12 -2l5 7l20 3l7 10l0 9l16 12l9 3l8 16l2 12l-2 26l2 9l9 16l21 22l13 -6l10 5l2 -3l16 13l13 3l14 -1l0 16l5 2l-7 31l-10 26l-12 11l-12 20l-2 13l-6 21l-12 17l-8 19l-16 15l-10 3l0 14l-10 20l-9 30l-3 20l-4 14l-7 78l-5 26l0 32l2 10l9 17l6 19l8 8l11 22l13 19l1 4l-7 -2l-5 -11l-10 -3l-11 -6l-12 7l-7 -1l-24 -8l-6 5l-20 0l-13 -6l-10 6l-2 -11l-4 -4l-10 9l-7 -4l-3 -7l-11 -1l5 -15l-9 0l-6 -6l-3 -13l10 3l4 -15l-2 -5l8 -14l2 -12l-5 -8l4 -7l-16 -15l-2 -9l-5 -5l-18 8l-5 -1l4 -7l-13 -5l-1 -9l-6 -5l0 -7l-5 -5l-34 19l-22 2l-42 -20l-47 -19l-20 -12l-1 -14l-18 -9l-23 11l-32 0l-16 -13l-14 4l-40 -8l-7 -12l-19 -6l-17 -2l-19 -17l-34 -43l-22 -24l-13 -27l8 -18l18 3l26 -9l2 -28l-5 -25l13 -25l-3 -10l-1 -15l8 -9l-1 -11l3 -8l-2 -13l-6 -15l1 -15l-5 -9l-8 -7l-1 -5l5 -13l-2 -17l-9 -44l-31 -52l-15 -5l-11 0l-12 -10l-2 -32l1 -12l11 -44l-1 -21l13 -20l3 -17l-1 -8l-12 -21l0 -12l3 -13l8 -9l7 -13l66 1l8 -11l0 -12l9 -6l-3 -11l6 -2l1 -19l-9 -20l0 -13l-7 -1l-9 -9l-9 -4l-6 -13l1 -14l6 -4l8 -16l9 -9l7 -17l-1 -22l4 -10l0 -9l-8 -10l-9 -2l3 -14l-8 -6l-19 -27l13 -10l15 -1l6 -13l22 -8l15 -3l25 -15l7 0l11 4l7 -1l10 11l8 0l13 5l19 -1l-7 19l1 26l16 36l7 6l15 1l18 -3l12 7l36 10l23 -1l34 9l13 5l4 6l-3 25l2 13l11 18l-15 15l-13 -1l1 15l-4 10l7 10l-7 7l12 20l-7 9l1 20l16 7l11 24l5 4l1 15l13 11l3 6z","c":[1753,3689],"b":[1393,3046,2167,4337]},{"n":"Kibamba","d":"Ubungo","p":"M1465 3096l19 27l8 6l-3 14l9 2l8 10l0 9l-4 10l1 22l-7 17l-9 9l-8 16l-6 4l-1 14l6 13l9 4l9 9l7 1l0 13l9 20l-1 19l-6 2l3 11l-9 6l0 12l-8 11l-66 -1l-57 0l-10 1l-24 9l-12 2l-35 0l-47 6l-42 2l-109 -6l-10 -2l-32 -8l-14 0l-102 9l-14 -1l-17 -7l12 -26l16 -10l-1 -4l6 -23l9 -13l10 1l7 -5l-8 -9l0 -18l-4 -6l-5 3l-13 1l-4 7l-9 -4l-6 -12l-1 -9l5 -7l25 -23l14 -7l12 13l38 -8l18 9l3 -17l19 1l-4 -15l4 -5l8 7l8 -4l9 -9l35 -14l7 -10l14 7l4 -7l-2 -8l-7 -3l7 -9l10 -2l2 -12l-12 -23l9 -8l2 10l6 -4l8 7l3 -10l13 8l2 -9l-16 -12l11 -22l-7 -16l4 -5l-13 -10l-11 7l-7 2l3 -10l0 -12l5 -4l-1 -6l7 -15l14 -16l0 -11l4 -3l14 0l9 -20l10 -16l26 -14l2 -7l-10 -14l5 -9l18 3l11 5l12 -9l18 -19l1 -10l31 -12l5 -26l3 5l-3 12l11 11l-1 9l22 0l8 3l8 -4l5 4l3 14l9 7l4 14l13 10l12 -3l4 10l-7 12l14 -1l20 34l-6 12l5 12l12 -2l-2 8l-18 11l4 16l9 9l-15 7l20 13l16 25l8 4l-12 18z","c":[1321,3109],"b":[900,2821,1512,3396]},{"n":"Mbezi","d":"Ubungo","p":"M2143 2296l2 3l-3 12l3 13l7 3l5 19l3 4l-6 5l4 9l-5 2l4 5l-7 9l5 3l6 15l8 9l2 16l-7 0l-5 17l-5 10l-22 17l-10 1l-10 19l-1 20l-3 10l0 34l5 0l-11 26l-7 -5l-17 -7l-8 14l-8 5l-4 10l-3 24l-9 21l-7 6l3 15l7 2l12 17l-7 12l-1 12l4 8l1 26l-5 5l3 11l-5 14l10 8l-13 35l-4 0l9 22l7 7l7 1l21 -2l15 2l11 10l9 5l12 2l12 -4l13 -1l25 16l34 0l14 9l7 -3l14 -1l-6 13l-8 10l3 18l-1 7l20 10l-6 15l3 6l7 0l13 8l4 20l-4 7l7 1l6 20l6 8l-1 7l5 35l25 -2l9 8l-2 5l3 12l7 9l-14 3l-9 7l-3 7l2 9l-4 2l-8 -6l-4 -9l-6 2l-13 17l-8 -3l-11 24l-7 6l-6 13l-20 5l-1 9l-8 21l5 12l-2 12l-7 -6l-6 7l3 7l-21 4l-3 6l8 3l-5 12l12 8l14 29l1 12l-21 -5l-34 4l-54 10l-22 8l-38 13l-179 65l-33 15l-3 -6l-13 -11l-1 -15l-5 -4l-11 -24l-16 -7l-1 -20l7 -9l-12 -20l7 -7l-7 -10l4 -10l-1 -15l13 1l15 -15l-11 -18l-2 -13l3 -25l-4 -6l-13 -5l-34 -9l-23 1l-36 -10l-12 -7l-18 3l-15 -1l-7 -6l-16 -36l-1 -26l7 -19l-19 1l-13 -5l-8 0l-10 -11l-7 1l-11 -4l-7 0l-25 15l-15 3l-22 8l-6 13l-15 1l-13 10l-5 -5l12 -18l-8 -4l-16 -25l-20 -13l15 -7l-9 -9l-4 -16l18 -11l2 -8l-12 2l-5 -12l6 -12l-20 -34l-14 1l7 -12l-4 -10l-12 3l-13 -10l-4 -14l-9 -7l-3 -14l-5 -4l-8 4l-8 -3l-22 0l1 -9l-11 -11l3 -12l-3 -5l2 -11l27 -17l-9 -10l6 -24l-9 -2l-4 -17l47 -17l11 -8l0 -10l-13 -18l3 -7l13 -2l13 -10l3 -7l-9 -4l5 -15l35 -25l12 -7l10 0l5 6l-1 11l17 4l19 -25l-2 -19l2 -19l-6 -14l-27 -11l3 -30l7 -14l30 -13l1 -34l-14 -15l-2 -15l16 -28l-13 -14l-4 -24l9 -54l3 -25l11 -34l-24 -13l-16 -13l5 -20l20 -24l-12 -22l1 -16l9 -15l-13 -27l10 -13l10 -3l19 14l22 11l10 0l10 7l5 10l19 26l3 15l1 17l12 -17l17 -8l15 -13l5 -3l16 1l17 7l51 4l4 3l17 27l-17 11l9 12l30 9l74 110l6 7l14 22l14 -9l0 -9l25 2l1 5l18 5l10 -8l19 -6l15 -6l4 -9l11 -6l19 9l22 5l9 -2l0 -8l8 -4l33 -6l20 -8l18 -14l14 8l7 -1z","c":[1692,2747],"b":[1314,2077,2344,3413]},{"n":"Goba","d":"Ubungo","p":"M2971 2508l-3 6l6 6l1 22l-2 9l4 11l1 16l-1 74l3 29l-5 70l-1 68l0 15l-1 16l2 50l-8 -5l-6 -12l-8 0l-6 7l-14 -18l-8 2l-7 6l-2 8l9 -1l1 7l-7 8l-12 6l-4 11l-10 5l-6 0l1 -10l-11 -4l-6 -6l-4 5l5 21l-4 4l-12 0l-4 12l-19 24l7 12l-8 7l-9 3l-3 23l-20 9l1 12l-14 13l-8 13l-11 -11l-11 -22l-17 7l-27 -7l6 -7l1 -13l-8 -1l-5 -12l-5 -3l-7 2l-11 9l-17 -1l-9 2l0 9l-16 1l-7 -8l-16 0l-5 -6l-5 -16l2 -14l-12 -4l-12 14l-8 0l-1 -7l-8 -2l-9 4l8 12l-23 13l1 14l-2 10l-5 2l-10 -12l-12 7l-27 -3l-2 12l-9 17l-9 1l-10 -3l-11 -10l-8 10l-25 10l-8 6l-8 11l-19 10l-16 0l-10 5l-12 2l-7 -9l-3 -12l2 -5l-9 -8l-25 2l-5 -35l1 -7l-6 -8l-6 -20l-7 -1l4 -7l-4 -20l-13 -8l-7 0l-3 -6l6 -15l-20 -10l1 -7l-3 -18l8 -10l6 -13l-14 1l-7 3l-14 -9l-34 0l-25 -16l-13 1l-12 4l-12 -2l-9 -5l-11 -10l-15 -2l-21 2l-7 -1l-7 -7l-9 -22l4 0l13 -35l-10 -8l5 -14l-3 -11l5 -5l-1 -26l-4 -8l1 -12l7 -12l-12 -17l-7 -2l-3 -15l7 -6l9 -21l3 -24l4 -10l8 -5l8 -14l17 7l7 5l11 -26l-5 0l0 -34l3 -10l1 -20l10 -19l10 -1l22 -17l5 -10l12 7l1 6l8 -1l4 6l13 1l16 17l0 8l4 10l12 11l5 14l10 -1l15 10l17 -2l11 6l12 -20l19 -6l-2 -7l15 -9l-3 -11l16 -13l4 -11l-6 -15l5 -8l17 10l12 -9l23 20l13 13l1 7l6 1l12 10l11 1l9 4l13 0l8 7l5 -6l9 1l16 -7l13 -2l5 2l5 -6l2 -13l-6 -6l4 -25l14 -23l-1 -20l-5 -2l0 -17l7 -10l1 -7l11 -9l18 -2l12 -11l3 -9l9 -2l19 -16l-4 -7l8 -4l2 -19l7 -12l10 17l-4 9l14 -2l6 8l-9 21l17 30l12 2l4 12l13 9l18 25l3 7l12 -1l16 15l4 7l-5 7l9 7l-3 18l3 10l19 -3l2 2l18 4l19 -3l9 1l9 8l8 17l9 9l11 2l10 -1l6 3l11 -2l2 -6l23 -12l14 8l8 1l4 6l21 11z","c":[2517,2671],"b":[2039,2264,2980,3090]}],"districts":[{"n":"Kinondoni","p":"M3444 3433l9 -2l6 -16l5 -18l-4 -6l1 -22l-9 0l-2 -15l-19 -6l4 -23l-18 -10l5 -21l-13 1l-16 -11l-20 -26l-8 -25l-17 -15l-30 -37l-7 -21l-16 19l-50 -41l-36 -16l-51 -1l-86 52l-20 2l-14 14l14 18l0 15l-6 12l-10 8l0 5l-34 19l-14 -27l-8 -7l3 -12l-11 -12l-15 -9l-21 -3l30 13l-7 12l-21 23l-44 38l-10 -6l-25 -4l-24 -8l-31 -1l-17 -13l-12 0l-15 -6l4 -20l-11 -2l-4 3l-7 -4l-11 3l-9 -6l-5 7l-11 -1l-14 8l-12 1l-4 -5l-21 5l-26 -47l4 -52l5 -10l1 -15l-11 -31l-6 -2l-5 -26l1 -35l-18 -13l9 -17l10 22l16 0l7 8l16 -1l0 -9l26 -1l18 -11l10 15l8 1l-1 13l-6 7l27 7l17 -7l11 22l11 11l22 -26l-1 -12l20 -9l3 -23l16 -10l-6 -12l19 -24l4 -12l12 0l4 -4l-6 -21l4 -5l18 10l-1 10l6 0l10 -5l3 -12l13 -5l7 -8l-1 -7l-9 1l2 -8l15 -8l14 18l6 -7l8 0l6 12l8 5l-2 -50l7 -169l-3 -29l0 -74l-3 -58l-6 -6l3 -6l-22 2l-21 -11l-4 -6l-22 -9l-23 12l-2 7l-27 0l-11 -3l-9 -9l-8 -17l-9 -8l-28 3l-21 -7l-18 3l-3 -10l3 -18l-9 -7l5 -7l-4 -7l-16 -15l-12 1l-21 -32l-13 -9l-4 -12l-12 -2l-18 -30l10 -21l-6 -8l-14 2l4 -9l-10 -16l-7 11l-2 19l-8 4l4 7l-19 16l-9 2l-3 9l-12 11l-18 2l-11 9l-8 17l6 39l-14 23l-4 25l6 6l-7 19l-5 -2l-29 10l-9 -2l-5 6l-9 -6l-32 -6l-18 -11l-1 -7l-36 -32l-12 8l-17 -10l-5 8l6 15l-4 11l-16 13l3 11l-15 9l2 7l-19 6l-12 20l-11 -6l-17 2l-15 -10l-10 1l-5 -14l-12 -11l-4 -18l-16 -17l-13 -1l-4 -6l-8 1l-1 -6l-12 -7l5 -17l7 0l-2 -16l-19 -27l7 -9l-4 -5l5 -2l-4 -9l6 -5l-8 -23l-7 -3l-3 -13l1 -15l-37 -16l-18 14l-20 8l-41 10l0 8l-9 2l-22 -5l-19 -9l-11 6l-4 9l-34 12l-10 8l-18 -5l-1 -5l-25 -1l0 8l-14 9l-94 -139l-30 -9l-9 -12l17 -11l-17 -27l-88 -15l-37 24l-12 18l-4 -33l-25 -36l-9 -7l-10 0l-22 -11l-19 -14l16 -20l-5 -15l-3 -36l41 -75l27 -22l3 -44l7 -32l33 -33l6 -14l5 -17l-11 -29l13 -29l-1 -31l-5 -10l-20 -5l-16 -12l5 -9l39 -11l9 -57l52 -66l7 -25l-4 -11l-28 -3l-10 -9l16 -29l23 -2l4 -18l-12 -30l25 -49l22 -55l23 -7l27 21l17 -7l3 -23l-27 -23l19 -22l18 0l29 -13l27 13l19 -23l20 -14l22 7l28 -16l34 -55l23 -22l20 -72l52 24l39 -24l12 -37l-14 -37l57 -29l13 -20l48 1l64 50l39 36l18 2l11 -17l28 -1l85 9l149 186l46 144l82 188l22 36l16 18l23 15l27 8l33 22l41 9l24 -6l11 -38l11 6l27 37l10 5l10 22l40 53l215 234l86 51l17 113l-35 128l16 96l56 104l37 178l26 29l-1 51l8 37l16 35l21 104l45 85l72 57l100 39l51 7l54 -32l-8 -102l53 -79l-6 -77l3 -21l16 -5l23 5l49 23l44 52l6 39l27 103l-21 8l2 7l-7 18l-44 65l-21 20l14 3l8 10l-12 -4l-11 28l-2 65l4 23l53 99l-7 48l-22 -2l-5 11l2 18l-6 -1l-7 8l-5 -3l-12 2l-21 27l19 58l-23 -27l-27 0l-9 -3l-5 -8l-8 0l-9 13l-1 10l6 16l-9 30l-13 -1l-4 12l-11 6l-14 16l-22 41l2 11l-34 37l-12 27l-4 22l-19 22l-28 15l-16 3l-17 -2l-23 13l-27 29l-66 -5l-14 3l-15 23l-27 6l-28 -14l-13 3l-3 -18l-7 -7l-11 -3l-9 8l-17 -8l-7 3l-8 -5l-25 2l-14 5l-16 -15l11 -11l23 0l18 -13l12 2l11 9l7 -4l9 4l24 -2l13 -8l6 4l21 -13l42 -3l1 -5l54 -32l30 11l20 1l-6 -11l-29 -14l-12 -16l5 -10l11 -6l2 -13l-12 -6l0 -13l8 -16l-180 -64l8 -20z","c":[3013,2329]},{"n":"Ilala","p":"M2996 5356l-3 17l-8 0l-2 7l6 10l-7 6l8 8l-9 4l-8 36l-10 -2l-3 10l6 28l-8 24l12 24l-45 25l-22 -6l-33 34l-9 -1l-4 20l4 15l-42 5l-28 -5l-3 8l0 32l18 14l-20 11l-12 1l-30 16l-4 7l-36 -24l-10 16l3 13l-13 6l-2 12l-19 -5l-1 16l12 28l-25 20l4 24l12 12l4 17l37 31l-18 13l-22 1l-10 11l-21 1l-10 12l-15 -1l-15 16l-17 -6l1 -11l-27 -2l-5 12l-17 8l-11 11l-2 13l-11 11l11 17l-5 10l6 15l-15 10l4 20l-9 16l9 32l-24 46l-29 12l-43 44l-12 38l-8 4l8 25l-3 46l-18 75l-27 49l-20 19l-22 49l-5 27l-30 40l-46 31l-89 97l-38 33l-28 31l-9 -15l-18 -8l-12 -18l47 -140l-100 -45l10 -21l-66 -25l-22 31l-41 -12l-13 -46l-8 -16l4 -33l-14 -4l-68 42l-24 30l-23 15l-20 -12l7 -37l-4 -32l-5 -7l-73 -21l-14 -12l-2 -27l-12 -15l-6 -16l-2 -28l14 -23l15 -10l32 -6l6 -11l-8 -9l-26 -7l-39 -27l8 -59l14 -16l-2 -9l5 -7l-18 -12l0 -15l-5 0l-3 11l-20 -3l-21 6l-8 -4l-9 5l-6 -4l-4 5l-15 -2l-6 21l-8 10l4 10l-18 21l-26 -3l-26 16l-8 19l-12 -1l-7 21l-13 4l-22 -6l-17 9l-5 12l-15 6l-15 18l-11 2l-10 17l-19 5l-8 12l-14 1l-7 -23l-16 -6l-3 -11l-55 3l-15 -30l-57 -87l5 -24l-9 -19l16 -17l3 -9l-6 -13l-21 -8l-4 -25l9 -28l53 10l36 -16l56 -8l43 14l83 18l39 37l76 -66l82 -92l-7 -26l-42 -77l-18 -54l-6 -9l154 -188l-15 -37l-49 8l-78 -74l29 -16l19 -55l35 -60l8 -54l99 -12l23 -40l-2 -29l24 -19l10 -15l103 -67l40 -42l38 -16l8 -19l-2 -31l10 -23l14 -10l24 1l21 -6l44 -32l15 -22l9 -26l11 -18l-13 -11l-19 -8l-10 -83l12 1l12 -6l13 -21l20 -20l-8 -18l6 -40l-37 -18l100 -192l-56 -23l-3 -30l-32 -49l-15 -36l-2 -42l12 -104l16 -64l10 -20l0 -14l10 -3l16 -15l20 -36l8 -34l11 -21l13 -10l17 -57l19 1l7 6l11 -2l6 20l17 12l5 -4l6 8l11 3l5 -6l7 1l11 -12l6 0l4 -8l5 0l5 -16l-2 -11l24 -13l16 -1l15 7l8 -4l16 7l11 -3l6 5l10 1l25 24l16 4l5 -3l7 4l7 -6l6 -17l-9 -6l-10 -20l11 -6l6 6l29 -11l-6 -19l1 -6l17 10l3 -3l4 -33l35 1l34 -19l31 -3l3 -3l21 -2l16 10l15 1l22 -6l-2 -6l13 -3l30 -32l3 -8l33 -22l22 -9l51 -41l29 11l12 32l15 4l21 -6l7 4l-5 9l12 16l8 5l8 -6l13 20l14 0l18 10l4 10l21 15l7 -2l11 -17l9 -1l7 15l18 -4l14 -14l6 6l12 -1l26 15l41 -21l4 -12l12 3l36 -6l52 1l26 4l45 38l5 -2l12 3l23 -7l25 -3l8 6l7 -3l17 8l9 -8l11 3l7 7l3 18l13 -3l28 13l22 -3l5 -2l15 -23l14 -3l66 5l26 -29l24 -13l17 2l16 -3l28 -15l19 -22l4 -22l12 -27l34 -37l-2 -11l22 -41l13 -16l12 -6l4 -13l13 2l9 -30l-6 -16l1 -10l9 -13l8 0l5 8l9 2l27 1l23 27l21 6l2 -6l19 9l4 -7l14 4l13 21l7 24l-3 11l34 29l51 38l33 39l21 51l-1 31l-25 15l-8 0l-8 -7l2 -4l-28 -13l-29 0l-26 10l-23 22l-10 18l5 41l-25 8l-57 36l-93 -4l-49 21l-19 2l-6 -8l-222 111l11 31l-124 58l25 46l21 1l16 19l5 15l46 57l6 12l-6 17l-15 10l-211 57l-16 7l-153 157l-31 22l-44 17l97 75l31 17l20 2l24 18l8 -1l30 13l39 33l19 1l25 -13l14 -1l24 25l8 0l30 16l10 1l27 -8l-1 14l-13 17l-20 52l-17 26l2 6l-3 9l-13 5l-10 14l-22 12l-3 -2l-24 22l-5 15l-11 16l-20 15l-46 22l-4 8l-8 2l-6 7l5 12l-3 9l-27 11l-10 30l-14 20l-8 19l-41 42l-25 61l-19 -5l-36 24l-10 1l-10 6l-17 1l29 39l-15 13l-14 36l-28 13l-9 16l21 50l-5 16l-23 21l1 5z","c":[2467,5080]},{"n":"Temeke","p":"M3483 5247l0 10l-7 6l9 27l-6 1l2 12l-5 6l-7 21l-36 34l-28 4l-14 14l7 13l-2 25l-24 15l-1 16l-32 13l-6 24l15 16l-8 25l-15 6l4 19l-15 20l-17 8l-4 12l7 12l-2 17l-11 14l-1 10l-14 14l-40 -15l-222 -115l-40 -3l-10 -15l-2 -9l8 -24l-6 -28l3 -10l10 2l7 -36l9 -4l-8 -8l8 -6l-6 -10l2 -7l8 -1l9 -28l23 -21l5 -16l-21 -50l9 -16l28 -13l13 -36l16 -13l-30 -39l18 -1l10 -6l10 -1l36 -24l19 5l25 -61l41 -42l7 -19l14 -20l11 -30l27 -11l3 -9l-5 -12l6 -7l8 -2l4 -8l46 -22l19 -15l12 -16l4 -15l25 -22l3 2l21 -12l11 -14l13 -5l3 -9l-2 -6l17 -26l20 -52l13 -17l0 -14l-25 8l-12 0l-29 -17l-8 0l-24 -25l-14 2l-25 13l-20 -2l-38 -33l-30 -13l-8 1l-24 -17l-20 -2l-31 -18l-97 -76l44 -16l31 -23l153 -156l16 -8l211 -56l15 -10l5 -17l-5 -12l-46 -57l-6 -15l-15 -18l-21 -2l-25 -46l124 -58l-11 -31l222 -111l6 7l19 -1l49 -21l92 4l58 -36l25 -8l1 12l61 49l52 119l-2 2l6 16l-7 11l0 13l16 36l8 4l8 31l-36 34l3 39l-8 4l-18 -1l-38 21l-20 34l-27 22l-5 13l29 2l3 16l14 21l35 13l36 1l5 10l8 5l-1 65l23 23l15 8l13 3l10 -3l23 -26l12 -1l10 4l2 12l-4 22l6 9l20 6l16 -3l21 -17l12 6l5 22l-12 9l0 6l19 -2l8 4l1 7l-8 6l-12 -2l-2 7l5 5l14 0l2 5l-6 8l2 11l-10 -4l3 7l11 -1l-2 7l-6 -2l8 11l-9 -1l0 8l5 1l-1 9l-9 5l1 4l-42 19l-53 52l32 20l15 29l23 8l17 18l39 10l40 20l15 -8l23 4l4 13l26 1l3 8l27 -4l-1 -7l26 -4l1 6l18 -3l0 -6l23 4l27 0l-2 20l71 5l-4 22l11 7l15 25l1 14l15 12l0 15l11 19l7 7l4 22l18 10l-14 7l-4 26l-24 22l1 12l7 5l18 3l13 8l-3 17l-8 13l4 8l-5 11l8 4l-8 14l3 31l23 60l12 52l4 86l-38 -7l-47 1l-30 -13l10 -45l-21 -1l-29 -25l-23 7l-12 -6l-13 4l-27 0l-40 -15l-7 -20l-5 4l-8 -3l-32 6l-23 -14l-39 -7l-12 33l19 50l-12 9l-26 8l-33 22l-19 28l-32 -47l5 -30l-10 -8l-18 2l-25 -12l-6 -16l-24 -12l-16 -21l-17 -5l-9 -13l-20 6l-11 19l-32 17l-14 19l-19 4l-20 -3l-30 -16l-9 12l-15 6l-36 47l-20 2l-7 9l-6 -6l4 -3l-7 -4l2 -40l-11 -18l14 -12l1 -26l-9 -8l-2 -9l-11 -5l-5 -15l-18 -6l-39 13l-34 -4l-61 14l-42 33l-33 6l-33 -20l-49 25l-46 6l-13 21l-19 15l-1 17z","c":[3947,4720]},{"n":"Kigamboni","p":"M6904 6220l2 31l-6 29l10 31l-5 43l5 56l-11 53l14 7l-5 23l3 14l-37 31l-11 4l-9 -6l-7 3l-3 16l3 65l12 35l-5 -1l-14 29l10 93l4 10l-4 22l1 13l19 -6l-15 48l11 75l-3 17l-10 16l1 11l-108 124l-57 42l-19 20l-24 39l-5 17l1 10l8 20l8 7l-1 12l4 7l-3 8l-49 64l-19 14l-8 12l-20 57l2 40l-18 -10l12 39l38 19l0 39l-15 38l-6 36l-9 14l-53 20l-16 45l-58 48l-46 -5l-134 -198l-137 9l-83 26l-216 185l-24 -28l-76 -9l-42 12l-51 -18l-15 -52l-32 -49l42 -25l13 -21l-14 -8l-37 2l-19 -15l21 -12l-4 -18l-30 -9l-17 -15l-10 29l-11 60l-25 -3l-42 5l-20 28l-99 31l23 -46l-23 -9l-27 -33l-7 -12l-2 -16l4 -44l7 -6l6 -16l12 -5l4 -15l7 -2l1 -8l-12 -3l-7 -9l14 -13l12 2l1 -6l-7 -6l-4 -13l-16 2l-3 -7l8 -7l2 -7l-11 -3l4 -18l10 -1l-1 -21l12 -15l-2 -16l6 -7l-11 -14l14 1l8 -19l-10 -19l17 -21l40 -7l22 -21l-6 -12l12 -14l15 0l34 -39l-46 -105l-54 -54l-20 -34l1 -17l-10 -36l-7 -11l9 -9l-4 -11l7 -36l27 -20l40 -9l7 -27l33 -17l14 -14l24 -34l6 -19l11 -3l13 8l4 -10l10 7l14 -10l-1 -23l17 -15l-3 -15l15 -20l14 -6l-1 -6l6 -10l12 -5l5 2l8 -6l1 -5l8 1l6 -5l-4 -26l5 -26l7 -8l-6 -6l3 -7l-4 -5l-3 -20l-11 -14l-5 -28l6 -22l-6 -15l-11 -11l-2 -13l-23 -23l-5 -29l0 -8l24 -45l16 -21l14 -9l7 -15l-1 -10l-141 -52l-17 -9l-38 63l-1 26l-5 7l3 11l13 17l2 14l-16 20l-148 41l-121 -104l83 -7l31 -64l20 -12l6 -10l-4 -29l-9 -7l-4 -9l-3 -32l10 -26l-1 -19l11 -28l0 -70l8 -49l-8 -16l-1 -17l16 -27l4 -58l-18 -62l25 -73l-2 -45l-4 -7l-52 -23l-33 17l-20 15l-36 39l-6 0l-13 -9l-23 12l-13 -20l-7 -18l16 -56l3 -56l-13 -79l-115 -81l-6 -32l-8 -21l2 -88l-15 -24l-14 6l-19 -2l-38 9l-2 11l-12 13l-14 -1l-11 18l-13 2l-15 14l-48 20l-44 43l-4 -86l-12 -52l-23 -60l-3 -31l8 -14l-8 -4l5 -11l-5 -8l8 -13l4 -17l-13 -7l-19 -4l-6 -5l-2 -12l24 -22l5 -27l14 -6l-18 -10l-4 -22l-8 -7l-10 -19l-1 -14l-15 -13l0 -14l-15 -25l-11 -6l4 -23l-71 -5l2 -20l-27 1l-23 -4l0 5l-18 3l-1 -5l-26 3l1 7l-27 4l-3 -8l-26 -1l-4 -13l-23 -4l-15 8l-41 -20l-38 -9l-17 -19l-23 -8l-16 -29l-32 -20l54 -52l42 -19l-2 -4l10 -5l1 -9l-5 -1l0 -8l8 1l-7 -11l6 2l1 -6l-11 0l-2 -7l10 3l-2 -10l5 -8l-1 -5l-15 0l-4 -5l2 -8l12 2l7 -5l-1 -7l-7 -4l-19 2l0 -6l12 -9l-5 -22l-12 -6l-21 17l-16 3l-20 -6l-6 -9l4 -22l-2 -12l-10 -4l-12 1l-10 10l-5 10l-18 9l-28 -11l-23 -23l1 -65l21 -31l-18 -18l-23 -15l-5 -12l7 -13l26 -11l22 -21l13 -19l-5 -17l21 -20l1 -16l33 -48l-12 -37l0 -26l-7 -20l-8 -9l-3 -11l-9 -3l0 -5l-12 -6l-19 -21l5 -10l0 -13l-22 -31l-11 -34l-13 -16l1 -24l-10 -16l-13 -7l-2 -10l29 -1l15 6l23 -4l8 -11l1 -30l12 -9l15 -1l32 -14l19 1l25 -18l11 -19l20 -10l23 1l22 6l23 13l31 31l11 15l110 60l52 20l100 2l11 11l-1 6l61 94l9 22l4 27l28 46l31 33l51 27l24 8l72 9l135 -8l30 -6l24 -15l14 -25l10 0l115 113l68 34l58 17l78 9l18 8l8 -14l60 26l42 12l61 1l25 17l22 7l22 -2l24 -10l10 -22l-7 -20l5 -6l11 0l21 6l8 15l24 10l65 19l50 32l33 9l57 5l8 -9l-3 -31l21 -49l28 5l34 42l2 34l20 78l6 20l25 41l11 10l13 4l15 -5l14 9l4 10l-2 10l6 12l19 2l23 10l14 21l-1 10l9 8l10 16l-6 24l10 19l9 33l-3 4l11 44l-5 3l15 92l29 101l3 24l15 23l7 41l3 47l14 18l8 41l13 20l30 5l4 31l32 107l11 7l10 1l6 6l8 32l21 23l5 27l32 35l20 58l22 22l47 26l21 21l9 16l1 23l18 42l12 12l11 1l43 -3l4 -8l16 3l13 9l7 -2l6 -11l16 -2l26 25l-2 24l-9 7l-3 14l-2 24l-6 2l3 104l12 44l21 39l17 49l23 28l-24 37l-16 35l0 26l-26 28l-10 47l8 77l-3 36z","c":[6110,5728]},{"n":"Ubungo","p":"M2138 3896l-12 20l-8 34l-20 36l-16 15l-10 3l0 14l-10 20l-16 64l-12 104l2 42l15 35l8 9l25 45l-7 -2l-5 -11l-21 -9l-12 7l-31 -9l-6 5l-20 0l-13 -6l-10 6l-2 -11l-4 -4l-10 9l-8 -4l-2 -6l-12 -2l6 -15l-9 0l-6 -6l-3 -13l9 3l3 -20l8 -14l2 -12l-5 -8l4 -7l-16 -15l-7 -14l-23 7l4 -7l-13 -5l-1 -9l-7 -5l1 -7l-5 -5l-34 19l-22 2l-89 -39l-20 -12l-1 -14l-18 -9l-23 12l-32 -1l-16 -13l-14 4l-40 -8l-7 -12l-36 -8l-19 -17l-56 -66l-13 -28l8 -18l18 3l26 -10l2 -27l-5 -25l13 -25l-4 -25l8 -9l2 -19l-8 -28l1 -15l-13 -16l4 -18l-12 -61l-30 -52l-26 -5l-12 -10l-1 -44l10 -44l0 -21l13 -21l3 -16l-1 -8l-12 -21l0 -12l3 -13l15 -22l-57 0l-46 12l-35 0l-89 9l-109 -7l-42 -10l-116 10l-31 -9l12 -26l16 -10l5 -27l9 -13l17 -4l-8 -9l0 -18l-4 -6l-17 4l-5 8l-9 -5l-7 -21l5 -7l24 -24l15 -6l12 13l38 -9l18 9l3 -16l19 1l-4 -16l4 -4l8 7l8 -4l9 -9l35 -14l7 -10l14 6l4 -6l-2 -8l-7 -3l7 -9l9 -2l3 -12l-12 -23l9 -8l3 9l5 -3l8 7l3 -10l13 8l2 -9l-16 -12l11 -22l-7 -16l3 -5l-12 -10l-18 9l3 -22l5 -4l-1 -6l7 -15l14 -16l-1 -11l19 -3l19 -37l26 -13l1 -7l-9 -14l5 -9l29 8l30 -28l1 -10l31 -12l6 -37l28 -17l-9 -10l6 -23l-9 -3l-4 -17l47 -17l10 -8l1 -10l-13 -18l3 -7l13 -2l13 -10l3 -7l-9 -4l5 -15l47 -32l10 0l5 6l-1 11l17 4l19 -25l0 -38l-6 -14l-27 -11l2 -30l8 -14l30 -13l1 -34l-14 -15l-2 -15l16 -28l-13 -14l-4 -24l12 -79l11 -34l-40 -26l5 -20l20 -24l-12 -22l1 -16l9 -15l-13 -27l10 -13l10 -3l19 14l22 11l10 0l10 7l24 36l4 32l12 -17l37 -24l88 15l17 27l-17 11l9 12l30 9l94 139l14 -9l0 -9l25 2l1 5l18 4l10 -7l34 -13l4 -8l11 -6l19 9l31 3l0 -8l41 -10l20 -8l18 -15l37 17l2 28l7 3l8 23l-6 5l4 9l-5 2l4 5l-7 9l19 27l2 16l-7 0l-5 17l12 7l1 6l8 -1l4 6l13 1l16 17l4 18l12 11l6 14l9 -1l15 10l17 -2l11 5l11 -20l20 -5l-2 -7l15 -9l-3 -11l16 -13l4 -11l-6 -15l5 -8l17 10l12 -9l36 33l1 7l18 11l33 5l8 7l5 -6l9 1l29 -9l5 2l7 -19l-6 -6l4 -25l14 -23l-6 -39l8 -17l11 -9l18 -2l12 -11l3 -9l9 -2l18 -16l-3 -7l8 -4l2 -19l7 -12l10 17l-4 8l14 -2l6 9l-9 21l17 30l12 1l4 13l13 9l22 32l11 -1l16 15l4 7l-5 7l9 7l-3 18l3 10l19 -3l20 6l28 -2l9 8l8 17l10 9l10 2l27 0l2 -6l23 -12l22 9l4 6l21 11l22 -2l-3 6l6 6l2 22l4 139l-7 169l2 50l-8 -4l-6 -13l-8 0l-6 7l-15 -18l-14 8l-2 8l9 -1l1 7l-7 8l-12 6l-4 11l-10 6l-6 0l1 -11l-17 -10l-4 5l5 21l-4 4l-12 0l-4 12l-19 24l7 12l-17 10l-3 23l-20 9l1 12l-22 26l-11 -11l-11 -22l-17 7l-28 -7l6 -7l2 -13l-8 -1l-10 -15l-18 12l-26 0l0 9l-16 1l-7 -8l-16 0l-10 -22l-9 17l18 12l0 36l4 26l6 1l11 32l-1 16l-5 9l-4 52l13 25l14 22l20 -5l4 4l12 0l14 -9l10 1l6 -6l9 6l11 -3l22 3l-4 19l15 7l12 0l17 13l31 1l24 8l25 4l10 6l44 -39l21 -22l6 -12l-29 -13l21 3l15 9l12 12l-4 12l9 7l13 27l34 -19l0 -5l9 -9l6 -11l1 -15l-15 -18l15 -14l20 -2l86 -52l51 1l25 9l61 48l16 -19l7 20l30 38l17 15l8 25l20 26l16 11l13 -1l-5 21l18 10l-3 23l18 6l2 15l9 0l-1 22l4 6l-11 34l-9 2l1 25l-8 20l180 64l-8 16l0 13l12 6l-1 13l-12 6l-5 10l12 16l29 14l6 11l-20 0l-30 -11l-54 31l-1 5l-42 4l-21 13l-6 -4l-13 8l-24 1l-9 -4l-7 4l-11 -9l-11 -2l-19 13l-23 0l-10 11l15 15l-9 2l-12 -3l-5 2l-45 -38l-26 -4l-52 -1l-36 7l-12 -4l-4 13l-41 20l-26 -15l-12 1l-6 -6l-14 14l-18 4l-7 -15l-9 1l-11 17l-7 2l-21 -15l-4 -9l-18 -10l-14 -1l-13 -20l-7 6l-9 -5l-12 -16l5 -9l-8 -4l-20 6l-16 -4l-11 -32l-29 -11l-50 41l-23 9l-33 22l-3 8l-30 33l-13 3l2 5l-22 6l-15 -1l-16 -10l-21 2l-3 4l-31 2l-34 19l-35 -1l-4 33l-3 3l-17 -10l-1 6l7 19l-30 11l-6 -6l-11 6l10 20l9 6l-6 18l-7 5l-7 -4l-5 3l-16 -4l-25 -24l-10 -1l-6 -5l-11 3l-16 -6l-8 3l-15 -7l-16 2l-24 13l2 10l-5 16l-5 0l-4 8l-6 1l-11 12l-7 -1l-5 5l-11 -3l-6 -8l-5 4l-17 -12l-6 -20l-11 2l-7 -6l-18 -1l-18 57z","c":[1839,3204]}],"sea":"M7869 0l0 8680l-2596 0l33 -49l67 -66l49 8l71 -41l55 -50l39 -69l8 -39l27 -242l29 -131l41 -92l19 -33l51 -52l61 -44l216 -185l83 -26l137 -9l134 198l46 5l58 -48l16 -45l53 -20l9 -14l6 -37l15 -37l0 -39l-38 -19l-12 -39l18 10l-2 -40l20 -57l8 -12l23 -18l24 -36l21 -24l3 -8l-4 -7l1 -12l-8 -7l-8 -20l-1 -10l5 -17l24 -39l19 -20l57 -42l108 -124l-2 -11l11 -16l3 -17l-11 -75l15 -48l-19 6l-1 -13l4 -22l-5 -10l-9 -93l14 -29l5 1l-12 -35l-4 -65l4 -16l7 -3l9 6l11 -4l30 -27l5 1l2 -5l-3 -14l5 -23l-14 -7l11 -53l-5 -56l5 -43l-10 -31l6 -47l-8 -25l3 -36l-8 -77l10 -47l26 -28l0 -26l16 -35l24 -37l-23 -28l-17 -49l-21 -39l-12 -44l-3 -104l6 -2l2 -24l3 -14l9 -7l2 -24l-26 -25l-16 2l-6 11l-7 2l-13 -8l-16 -4l-4 9l-43 2l-11 -1l-13 -12l-14 -33l-4 -32l-9 -16l-21 -21l-47 -26l-22 -22l-20 -58l-33 -35l-4 -27l-21 -23l-8 -32l-6 -6l-10 -1l-11 -7l-32 -107l-4 -31l-30 -5l-13 -20l-8 -41l-15 -18l-2 -47l-8 -41l-14 -23l-3 -24l-29 -101l-15 -92l5 -3l-10 -37l1 -18l-18 -45l6 -24l-10 -16l-9 -7l1 -11l-14 -21l-23 -10l-19 -1l-6 -13l2 -10l-4 -10l-14 -8l-15 4l-13 -4l-11 -10l-25 -41l-6 -20l-21 -78l-2 -34l-33 -42l-28 -5l-21 49l3 31l-7 9l-58 -5l-33 -8l-50 -33l-65 -18l-24 -11l-8 -15l-21 -6l-11 0l-5 6l7 20l-9 22l-25 10l-22 2l-23 -7l-24 -17l-61 -1l-42 -12l-60 -26l-8 14l-18 -8l-78 -9l-58 -17l-68 -34l-115 -113l-10 0l-14 25l-24 15l-30 6l-135 8l-72 -9l-69 -31l-37 -37l-28 -46l-4 -27l-9 -22l-61 -94l1 -6l-11 -11l-100 -2l-52 -20l-110 -60l-11 -15l-41 -37l-27 -11l-21 -4l-30 11l-8 16l-28 22l-19 -2l-32 14l-15 1l-12 9l-1 30l-8 11l-23 4l-15 -5l-29 0l2 10l13 7l10 16l-1 24l13 16l11 34l22 31l0 13l-5 10l19 21l12 6l0 5l9 3l3 11l8 8l7 21l0 26l12 37l-33 48l-1 16l-21 20l5 17l-13 19l-22 21l-26 11l-7 14l5 11l23 15l18 18l-21 31l-8 -5l-5 -10l-36 -1l-35 -13l-14 -21l-3 -16l-29 -2l5 -13l27 -22l20 -34l38 -21l18 1l7 -4l-2 -39l36 -34l-8 -31l-8 -3l-16 -37l0 -13l7 -11l-7 -16l3 -2l-52 -119l-61 -49l-6 -54l10 -17l22 -22l27 -10l29 0l28 13l-2 4l8 7l8 0l20 -9l8 -15l-2 -22l-21 -51l-20 -26l-98 -80l3 -11l-7 -24l-13 -21l-13 -5l-7 8l-14 -9l-7 6l-15 -10l-4 4l-19 -58l21 -27l12 -2l5 3l5 -8l8 1l0 -25l2 -4l23 1l5 -27l2 -20l-9 -21l-44 -78l-4 -48l1 -37l6 -20l6 -11l12 4l-8 -10l-14 -3l20 -20l45 -65l7 -18l-2 -7l21 -8l-28 -103l-5 -39l-44 -52l-49 -23l-23 -5l-16 5l-3 21l6 77l-53 79l8 102l-54 32l-51 -7l-100 -39l-72 -57l-45 -85l-21 -104l-16 -35l-8 -37l1 -51l-26 -29l-37 -178l-56 -104l-16 -96l35 -128l-18 -112l-85 -52l-215 -234l-40 -53l-10 -21l-10 -6l-27 -37l-11 -6l-10 38l-25 6l-41 -9l-33 -22l-27 -8l-23 -15l-16 -18l-21 -35l-83 -189l-46 -144l-149 -186l-85 -9l-28 1l-11 17l-18 -1l-39 -37l-64 -50l-49 -1l43 -73l-78 -105l-127 -61l-174 -98l-12 -42l-38 -54l-21 -40l-39 -135l-42 -62l-80 -38l-83 0l-10 -14l19 -14l-5 -25l-14 -28l-4 -15l-63 -40l-61 -56zM5214 3803l25 -28l9 -31l-10 -20l-26 7l-32 52zM4746 3671l-7 49l16 28l20 4l15 -18l-3 -26l-20 -31zM5309 3719l12 -24l-18 -35l-30 -27l-27 0l28 57zM4503 3443l-12 47l16 14l29 -15l-12 -31zM4585 3344l-9 -16l-36 -34l-13 0l-5 50l-12 8l13 40l24 -6l67 22l8 20l30 4l-21 -36l-22 -13l-1 -17zM3900 2468l-32 -37l-34 -51l-29 -21l-32 -58l-43 -25l-25 5l-11 26l17 30l81 49l38 49l16 2l55 57zM3606 1829l-26 24l-24 2l-19 39l68 26l48 35zM1195 0l7 6l2 17l-19 29l-25 22l-47 16l-22 -12l-46 4l-49 -22l-48 -60z","other":"M1045 82l46 -4l22 12l47 -16l25 -22l19 -29l-2 -17l-7 -6l215 0l61 56l63 40l23 68l-19 14l10 14l83 0l80 38l42 62l39 135l59 94l12 42l174 98l127 61l78 105l-57 91l-57 30l14 38l-12 35l-37 23l-54 -23l-20 73l-23 22l-34 54l-27 15l-22 -6l-38 36l-27 -12l-48 13l-20 25l27 23l-3 20l-15 6l-27 -21l-26 9l-47 104l13 31l-4 16l-22 3l-18 29l12 12l27 3l3 9l-7 24l-51 66l-9 56l-38 11l-6 10l17 15l19 5l5 8l1 31l-14 28l11 30l-4 17l-6 12l-33 34l-11 76l-26 22l-41 75l7 52l-35 36l12 27l-9 14l-1 18l12 21l-19 23l-6 22l40 26l-10 32l-12 80l4 25l12 13l-15 28l2 15l14 16l-2 31l-29 14l-11 45l28 13l5 49l-17 23l-13 -3l-6 -17l-11 0l-49 32l-6 17l7 10l-25 11l-4 9l12 27l-57 25l3 19l9 3l-5 22l7 10l-26 15l-6 37l-30 12l-2 11l-28 26l-31 -6l-6 10l9 19l-26 14l-19 36l-18 4l-1 11l-24 41l-4 23l21 -6l9 7l4 21l-11 22l15 17l-11 -6l-4 8l-11 -3l-4 -8l-11 8l12 25l-3 10l-16 12l6 15l-14 -6l-7 11l-35 14l-9 9l-16 -3l-5 6l3 13l-17 0l-4 15l-16 -8l-38 8l-13 -13l-15 8l-30 32l7 23l10 5l22 -11l2 21l7 9l-15 3l-9 13l-6 27l-15 9l-12 27l18 10l117 -8l56 10l109 7l124 -8l46 -13l53 0l-17 32l13 42l-15 37l-11 65l2 45l13 11l26 5l29 51l11 59l-4 20l13 16l8 42l-3 19l-7 9l4 25l-13 25l3 51l-24 8l-20 -1l-8 19l13 29l56 67l20 17l35 8l8 13l41 7l14 -3l16 12l32 1l23 -11l16 7l1 15l20 12l90 39l24 -1l32 -19l11 25l12 4l-3 8l24 -6l21 27l-4 6l6 9l-12 42l-10 0l3 14l13 7l-3 14l23 13l10 -8l6 14l10 -5l13 5l27 -4l30 8l12 -6l19 8l11 13l3 26l54 22l-98 190l36 20l-6 39l8 18l-32 39l-25 6l11 85l31 19l-27 56l-57 42l-37 2l-16 10l-10 24l2 31l-8 18l-37 16l-41 42l-103 67l-34 34l1 30l-21 39l-100 12l-9 55l-34 60l-19 54l-29 17l79 78l49 -8l13 34l-153 188l72 165l-81 91l-74 65l-38 -36l-126 -32l-57 8l-37 15l-53 -9l-11 29l5 27l21 9l5 11l-18 26l8 19l-4 25l73 118l54 -3l3 11l17 6l8 24l15 -2l9 -12l18 -5l10 -17l42 -26l5 -13l15 -7l21 5l15 -4l8 -21l12 1l8 -19l25 -15l27 2l18 -22l-3 -10l12 -29l41 -1l20 -6l21 4l6 -12l0 15l17 10l-3 15l-14 16l-7 61l72 43l-4 8l-32 6l-16 10l-14 25l2 29l18 30l2 28l15 13l73 21l7 37l-6 38l21 13l26 -15l24 -31l66 -40l11 3l-4 31l23 64l43 13l21 -31l63 23l-8 22l98 45l-47 138l13 20l18 7l12 17l156 -162l46 -31l30 -41l5 -27l22 -49l20 -19l28 -49l18 -75l2 -47l-7 -24l7 -4l12 -38l42 -43l30 -12l25 -47l-9 -32l8 -17l-4 -19l16 -11l-6 -15l4 -11l-10 -15l13 -24l27 -18l5 -12l23 3l-1 10l20 6l15 -15l15 0l10 -12l21 -1l10 -11l22 -1l19 -14l-36 -34l-17 -28l-3 -22l24 -21l-12 -28l1 -13l19 4l2 -12l13 -7l-3 -14l9 -13l35 23l34 -22l33 -13l-16 -17l2 -36l26 5l43 -5l1 -36l9 1l32 -33l21 5l45 -25l39 3l222 115l43 15l14 -14l13 -25l-2 -40l17 -8l15 -21l-3 -19l14 -7l9 -25l-15 -17l5 -21l32 -13l1 -17l24 -15l3 -26l-7 -13l12 -12l28 -4l37 -35l12 -27l-1 -11l6 -3l-9 -26l19 -32l1 -17l19 -14l13 -21l45 -6l48 -24l32 19l35 -6l43 -33l59 -13l34 3l39 -12l16 5l5 15l11 5l11 16l-1 24l-14 13l10 19l-2 40l12 14l8 -8l21 -3l35 -47l24 -17l29 16l39 -2l15 -19l33 -18l11 -18l17 -5l8 12l17 5l16 21l24 11l7 17l26 12l17 -2l8 7l-4 30l34 49l21 -29l71 -39l-19 -52l11 -31l37 7l23 15l45 -6l7 18l41 16l40 -4l12 5l23 -6l28 24l19 2l-8 45l30 13l88 5l43 -43l76 -36l11 -17l14 0l15 -23l68 -13l13 22l-2 87l15 54l115 81l13 79l-4 55l-15 56l21 39l24 -10l20 8l37 -39l51 -31l53 28l2 44l-25 73l18 63l-3 57l-16 27l8 33l-8 49l0 70l-20 73l4 33l13 16l3 27l-25 22l-31 63l-83 10l123 106l149 -42l18 -22l-18 -42l5 -32l37 -61l154 60l2 8l-37 43l-25 54l5 31l24 23l19 38l-7 23l25 79l-10 33l3 26l-38 17l-7 17l-13 6l-15 20l3 15l-17 15l0 23l-11 8l-9 -6l-6 8l-12 -7l-12 4l-7 20l-24 33l-47 31l-7 27l-39 9l-28 22l-8 36l4 10l-8 10l17 47l-1 18l20 35l54 54l45 103l-32 37l-16 1l-12 14l6 12l-22 20l-39 7l-19 22l10 20l-7 17l-14 0l10 15l-3 22l-13 15l1 20l-9 1l-5 19l11 6l-10 11l4 9l16 0l10 19l-11 -1l-15 14l18 19l-36 45l-3 62l35 46l21 8l-18 48l99 -31l20 -29l67 -2l21 -87l15 13l29 8l3 16l-20 13l20 17l37 -1l11 6l-11 18l-43 27l33 49l15 54l52 18l44 -11l73 8l24 27l-59 43l-51 52l-60 125l-29 131l-35 281l-39 69l-55 50l-71 41l-49 -8l-67 66l-33 49l-5273 0l0 -8680l948 0l48 60zM5212 3731l26 -7l10 20l-9 31l-25 28l-34 -20zM4787 3708l3 26l-15 18l-20 -4l-16 -28l7 -49l21 6zM5246 3633l27 0l30 27l18 35l-12 24l-35 -29zM4536 3489l-29 15l-16 -14l12 -47l21 15zM4609 3383l22 13l21 36l-30 -4l-8 -20l-67 -22l-24 6l-13 -40l12 -8l5 -50l13 0l36 34l32 38zM3846 2437l-16 -2l-38 -49l-81 -49l-17 -30l11 -26l25 -5l43 25l32 58l29 21l66 88l1 26zM3605 1920l-68 -26l19 -39l24 -2l26 -24l47 126z"};
+
+const SOURCES = {
+  dn:{url:"https://dailynews.co.tz/where-does-dars-floodwater-go/",title:"Where does Dar’s floodwater go?",pub:"Daily News",date:{sw:"25 Septemba 2026",en:"25 September 2026"}},
+  resp:{url:"https://www.therespondents.co.tz/2026/09/five-dar-es-salaam-wards-get-flood.html",title:"Five Dar es Salaam wards get flood response plans",pub:"The Respondents",date:{sw:"Septemba 2026",en:"September 2026"}},
+  jfrm:{url:"https://onlinelibrary.wiley.com/doi/10.1111/jfr3.70161",title:"Flood-induced geomorphological changes and displacement of informal settlements, Msimbazi River basin",pub:"Journal of Flood Risk Management",date:{sw:"2025",en:"2025"}},
+  sinza:{url:"https://www.sciencedirect.com/science/article/pii/S2665972726000565",title:"Flash flood risk assessment and sanitation infrastructure vulnerability, Sinza River catchment",pub:"ScienceDirect",date:{sw:"2026",en:"2026"}}
+};
+const PLAN2021 = {sw:"Ni mojawapo ya kata 12 zilizopewa Mpango wa Kupunguza Hatari za Maafa wa jamii mwaka 2021. Kamati za Maafa za kata hizi zilipata mafunzo ya kujiandaa na kukabiliana na maafa.",en:"One of 12 wards given a community Disaster Risk Reduction plan in 2021. The Ward Disaster Management Committees in these wards were trained in preparedness and response."};
+const PLAN2026 = {sw:"Ni mojawapo ya kata tano zilizokabidhiwa mpango wa jamii wa kujiandaa na mafuriko mwezi Septemba 2026, kupitia mradi wa Ramani Zetu, Sauti Zetu wa OpenMap Development Tanzania kwa kushirikiana na serikali. Mipango hii inaonyesha maeneo ya hatari, njia za kuhama na maeneo salama ya kukusanyika.",en:"One of five wards handed a community flood preparedness plan in September 2026, through the Ramani Zetu, Sauti Zetu project by OpenMap Development Tanzania with the government. The plans show danger zones, evacuation routes and safe gathering points."};
+const INFO = {
+  "Jangwani":{rep:true,plan:"2021",src:["dn","jfrm"],text:{sw:"Kata ya bondeni katika Bonde la Msimbazi inayofurika karibu kila msimu wa mvua. Wakazi wanaeleza kutoa mali zao nje na kusubiri barabarani hadi maji yapungue. Daraja jipya na la juu la Jangwani linajengwa; maafisa walisema Septemba 2026 kuwa zaidi ya nusu ya kazi imekamilika.",en:"A low-lying ward in the Msimbazi valley that floods almost every rainy season. Residents describe carrying belongings out and waiting on the road until the water drops. A new, raised Jangwani bridge is being built; officials said in September 2026 that it was more than half complete."}},
+  "Kigogo":{rep:true,plan:"2021",src:["dn"],text:{sw:"Maeneo makubwa ya kata hii yako kwenye hatari ya mafuriko: makazi kando ya mabonde ya mito, taka zinazoziba njia za maji na mifereji isiyotosha, kwa mujibu wa ramani za Ramani Huria. Mradi wa daraja la Kigogo unaendelea.",en:"Large parts of this ward are exposed to flooding: homes along river valleys, rubbish blocking waterways and inadequate drainage, according to Ramani Huria's mapping. A Kigogo bridge project is under way."}},
+  "Tandale":{rep:true,plan:"2021",src:["dn","sinza"],text:{sw:"Mafuriko hapa yanahusishwa na mifereji iliyoziba na maeneo ya chini kando ya Mto Ng'ombe. Watafiti wanaitaja kuwa kata inayokumbwa na mafuriko ndani ya bonde la Mto Sinza.",en:"Flooding here is linked to blocked drains and low-lying areas along the Ng'ombe River. Researchers describe it as a flood-prone ward in the Sinza River catchment."}},
+  "Mchikichini":{rep:true,plan:"2021",src:["jfrm","dn"],text:{sw:"Eneo la chini kando ya Mto Msimbazi. Utafiti unaonyesha kuwa mipango duni ya makazi inaongeza hatari ya mafuriko hapa.",en:"A low-lying area along the Msimbazi River. Research finds that poor planning adds to the flood risk here."}},
+  "Kipawa":{rep:true,plan:null,src:["jfrm","dn"],text:{sw:"Utafiti unaonyesha mmomonyoko wa udongo kando ya Msimbazi katika eneo hili. Huko Karakata, wakazi wametumia mchanga, matete na mimea kuelekeza maji na kupunguza mmomonyoko.",en:"Research flags erosion along the Msimbazi in this area. In Karakata, residents have used sand, reeds and plants to redirect water and slow the erosion."}},
+  "Vingunguti":{plan:"2021",src:["dn"]},"Mnyamani":{plan:"2021",src:["dn"]},"Kawe":{plan:"2021",src:["dn"]},"Mzimuni":{plan:"2021",src:["dn"]},
+  "Mwananyamala":{plan:"2021",src:["dn"]},"Magomeni":{plan:"2021",src:["dn"]},"Ndugumbi":{plan:"2021",src:["dn"]},"Mbweni":{plan:"2021",src:["dn"]},
+  "Keko":{plan:"2026",src:["resp"]},"Makurumla":{plan:"2026",src:["resp"],alias:["makurumila"]},"Mabibo":{plan:"2026",src:["resp"]},"Ubungo":{plan:"2026",src:["resp"]},"Tabata":{plan:"2026",src:["resp"]}
+};
+const DEPTHS = ["ankle","knee","waist","road"];
+const ICONS = {
+  map:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5l5.5-2.5 7 3 5.5-2.5v13L15.5 20l-7-3L3 19.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 4v13M15.5 7v13" stroke="currentColor" stroke-width="1.8"/></svg>',
+  report:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>',
+  prep:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 4V3h6v1M8.5 11l2 2 4-4M8.5 17h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  health:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10.5v5M9.5 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  phone:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h3l1.5 4-2 1.3a11 11 0 0 0 6.1 6.1l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  ankle:'<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="8" y="3" width="14" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9" y="21" width="12" height="5" fill="currentColor" opacity=".55"/></svg>',
+  knee:'<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="8" y="3" width="14" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9" y="15" width="12" height="11" fill="currentColor" opacity=".55"/></svg>',
+  waist:'<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="8" y="3" width="14" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9" y="8" width="12" height="18" fill="currentColor" opacity=".55"/></svg>',
+  road:'<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M9 27l3-24M21 27l-3-24M15 6v3M15 13v3M15 20v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 9l14 12M22 9L8 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>',
+  pin:'<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 20s6-6 6-10.5A6 6 0 0 0 5 9.5C5 14 11 20 11 20z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="11" cy="9.5" r="2.2" fill="currentColor"/></svg>',
+  book:'<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 4.5h6a2 2 0 0 1 2 2V19a2 2 0 0 0-2-2H3zM19 4.5h-6a2 2 0 0 0-2 2V19a2 2 0 0 1 2-2h6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  cloud:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10.5a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.5 9.2 4.4 4.4 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 21l1-1.6M13 21l1-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  ext:'<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M10 3h5v5M15 3l-7 7M13 11v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  flag:'<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 19V4M5 4h10l-2 3.5L15 11H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>'
+};
+
+const T = {
+ sw:{
+  title:"Salama Dar: ramani ya uelewa wa mafuriko", proto:"Majaribio", navLabel:"Sehemu za programu", about:"Kuhusu Salama Dar",
+  tabMap:"Ramani", tabReport:"Ripoti", tabTma:"TMA", tabPrep:"Jiandae", tabHealth:"Afya", tabEm:"Dharura",
+  tmaTitle:"Dawati la TMA",
+  tmaLead:"Utabiri na tahadhari rasmi za hali ya hewa hutolewa na Mamlaka ya Hali ya Hewa Tanzania (TMA) pekee. Hapa kuna njia za haraka za kuzifikia.",
+  tmaSiteTitle:"Tahadhari na utabiri wa leo", tmaSiteBody:"Tovuti ya TMA ina tahadhari, utabiri wa saa 24, siku 5 na siku 10, na utabiri wa msimu.", tmaSiteBtn:"Fungua tovuti ya TMA",
+  tmaChanTitle:"Pata taarifa za TMA kwenye simu yako",
+  tmaChanBody:"Njia ya haraka zaidi ni kufuata chaneli rasmi ya TMA ya WhatsApp: taarifa mpya zinakufikia bila kufungua programu yoyote.",
+  tmaChanNone:"Viungo vya chaneli za TMA za WhatsApp, Instagram, X, Facebook na YouTube viko kwenye ukurasa wa mwanzo wa tovuti ya TMA.",
+  tmaRemindBody:"Weka kikumbusho cha kila asubuhi saa 1:00 cha kuangalia TMA, hadi mwisho wa Januari 2027.", tmaRemindBtn:"Weka kikumbusho kwenye kalenda",
+  tmaVerifyTitle:"Kabla ya kushiriki picha ya utabiri",
+  tmaVerifyLead:"Picha nyingi zinazosambaa msimu wa mvua zinatumia jina au nembo ya TMA bila kuwa rasmi. Jiulize:",
+  tmaVerify:["Je, iko kwenye tovuti au chaneli rasmi za TMA?","Ina tarehe na chanzo kinachoeleweka?","Kuna makosa ya tahajia au majina ya maeneo yasiyo sahihi?","Nembo ya TMA peke yake haithibitishi kuwa ni rasmi."],
+  tmaVerifyEnd:"Ukiwa na shaka, usishiriki picha. Shiriki kiungo cha TMA badala yake.",
+  tmaShareBtn:"Shiriki kiungo cha TMA", tmaCopied:"Kiungo kimenakiliwa.", tmaShareText:"Tahadhari na utabiri rasmi wa hali ya hewa: TMA",
+  tmaWhyTitle:"Kwa nini Salama Dar haionyeshi utabiri?",
+  tmaWhyBody:"Kwa mujibu wa Sheria ya TMA ya mwaka 2019, TMA ndiyo yenye mamlaka ya kutoa utabiri na tahadhari za hali ya hewa kwa umma. Tunakuelekeza kwenye chanzo rasmi ili upate taarifa sahihi na za wakati.",
+  offline:"Uko nje ya mtandao. Ramani na ushauri bado vinafanya kazi.",
+  introTitle:"Karibu Salama Dar",
+  introItems:["Ona kata za Dar es Salaam zenye historia ya mafuriko.","Jifunze jinsi ya kujiandaa na kulinda afya yako.","Ripoti mafuriko unayoyaona. Ripoti hukaguliwa kabla ya kuonekana."],
+  introNote:"Hii si tahadhari rasmi wala utabiri wa hali ya hewa. Tahadhari rasmi hutolewa na TMA: zipate kupitia Dawati la TMA ndani ya programu.", introStart:"Anza",
+  searchTitle:"Tafuta kata yako", searchPh:"Tafuta kata, mfano Tandale",
+  noMatch:"Hakuna kata yenye jina hilo. Jaribu tahajia nyingine.", listed:"imetajwa", notListedShort:"hakuna taarifa",
+  legRep:"Mafuriko yameripotiwa", legPlan:"Ina mpango wa maafa", legNone:"Hakuna taarifa", legReports:"Ripoti za jamii", legNotOfficial:"Tahadhari rasmi: TMA",
+  zoomIn:"Kuza ramani", zoomOut:"Punguza ramani", showAll:"Onyesha kata zote zilizotajwa",
+  mapLabel:"Ramani ya kata za Dar es Salaam zilizotajwa katika taarifa za mafuriko",
+  peekCount:"Kata {n} zimetajwa", peekHint:"Gusa kata au fungua orodha", peekOpen:"Fungua",
+  introKicker:"Kata za Dar es Salaam zilizotajwa katika taarifa za umma na tafiti kuhusu mafuriko",
+  introBody:"Gusa kata kwenye ramani, au tafuta jina lake, ili kuona kwa nini imetajwa, taarifa zimetoka wapi, na umuulize nani kuhusu njia ya kuhama.",
+  introAbsent:"Kata isiyo na rangi haimaanishi kuwa ni salama. Inamaanisha tu kwamba hatujapata taarifa zilizochapishwa kuihusu.",
+  listedTitle:"Kata zilizotajwa",
+  district:"Wilaya ya {d}", tagRep:"Mafuriko yameripotiwa", tag2021:"Mpango wa maafa wa kata, 2021", tag2026:"Mpango wa mafuriko wa kata, Septemba 2026",
+  askTitle:"Uliza nani", askPlan:"Uliza ofisi ya kata au Kamati ya Maafa ya Kata kuhusu njia yako ya kuhama na mahali pa kukusanyika.",
+  askGeneric:"Uliza ofisi ya kata au Serikali ya Mtaa kama kuna mpango wa kuhama na mahali salama pa kukusanyika.",
+  sourcesTitle:"Vyanzo", noneTitle:"Hakuna taarifa zilizochapishwa bado",
+  noneBody:"Hatujapata taarifa za umma kuhusu mafuriko katika kata hii. Hii haimaanishi kuwa ni salama: mafuriko yanaweza kutokea popote ambapo maji yanashindwa kupita.",
+  close:"Funga", communityTitle:"Ripoti za jamii, saa 24 zilizopita", communityNone:"Hakuna ripoti za jamii katika kata hii kwa saa 24 zilizopita.",
+  communityNote:"Kutoka kwa wakazi, zimekaguliwa na wanaojitolea, si na mamlaka.", reportHere:"Ripoti mafuriko katika kata hii",
+  reportsN:"ripoti {n}",
+  rTitle:"Ripoti mafuriko", rLead:"Umeona mafuriko sasa hivi? Wajulishe wengine. Kila ripoti hukaguliwa na wanaojitolea kabla ya kuonekana kwenye ramani, na huonekana kwa saa 24.",
+  rDanger:"Uko hatarini? Piga simu kwanza.",
+  demo:"Hali ya majaribio: ripoti zinahifadhiwa kwenye simu hii tu na hazionekani kwa wengine.",
+  fWard:"Kata", fWardPh:"Chagua kata", fPlace:"Mahali (si lazima)", fPlaceHint:"Mfano: daraja, barabara au soko.",
+  fDepth:"Maji yamefika wapi?", depth:{ankle:"Hadi kifundoni",knee:"Hadi magotini",waist:"Kiunoni au zaidi",road:"Barabara haipitiki"},
+  fNote:"Maelezo zaidi (si lazima)", fPrivacy:"Usiandike majina ya watu wala namba za simu.",
+  fConfirm:"Nimeona mafuriko haya mwenyewe, sasa hivi.", fSubmit:"Tuma ripoti", sending:"Inatuma…",
+  eWard:"Chagua kata.", eDepth:"Chagua maji yamefika wapi.", eConfirm:"Thibitisha kwamba umeona mwenyewe.",
+  eNet:"Ripoti haikutumwa. Angalia mtandao kisha ujaribu tena.", eOffline:"Uko nje ya mtandao. Kutuma ripoti kunahitaji mtandao.",
+  okTitle:"Asante. Ripoti yako imetumwa.", okBody:"Itaonekana kwenye ramani baada ya kukaguliwa, kwa saa 24.", again:"Tuma ripoti nyingine", toMap:"Rudi kwenye ramani",
+  mine:"Ripoti zako", stPending:"Inasubiri ukaguzi", stApproved:"Iko kwenye ramani", stExpired:"Muda umeisha", demoApprove:"Idhinisha (majaribio)",
+  justNow:"sasa hivi", minsAgo:"dakika {n} zilizopita", hoursAgo:"saa {n} zilizopita",
+  prepTitle:"Jiandae", prepLead:"Mambo ya kufanya kabla, wakati na baada ya mafuriko.", heroEn:"",
+  phases:[
+   {t:"Kabla ya mvua",i:["Jua njia yako ya kuhama na mahali pa kukusanyika. Uliza ofisi ya kata.","Usitupe taka kwenye mitaro na mito. Mitaro iliyoziba huongeza mafuriko.","Andaa begi la dharura: vitambulisho na nyaraka muhimu ndani ya mfuko wa plastiki, tochi, chaja au power bank, dawa na pakiti za ORS.","Weka akiba ya chakula na maji safi ya kunywa nyumbani.","Inua vitu vya thamani na vifaa vya umeme juu, mbali na sakafu.","Fuatilia taarifa za hali ya hewa kutoka TMA (angalia Dawati la TMA)."]},
+   {t:"Wakati wa mafuriko",i:["Hama mapema kwenda eneo la juu. Usisubiri maji yaingie ndani.","Usivuke maji yanayotiririka kwa miguu, pikipiki wala gari. Hata maji ya kina kifupi yanaweza kukuangusha.","Zima umeme kwenye swichi kuu kama ni salama kufanya hivyo. Kaa mbali na nyaya za umeme zilizoanguka.","Wazuie watoto kucheza kwenye maji ya mafuriko na karibu na mitaro.","Fuata maelekezo ya viongozi wa mtaa na mamlaka."]},
+   {t:"Baada ya mafuriko",i:["Rudi nyumbani pale tu mamlaka zinaposema ni salama.","Chemsha au tibu maji yote ya kunywa hadi uhakikishe ni salama.","Tupa chakula chochote kilichoguswa na maji ya mafuriko.","Safisha nyumba ukivaa buti na glavu, na tumia dawa ya kuua vijidudu.","Ukiharisha, ukipata homa, au jeraha likivimba, nenda kituo cha afya."]}],
+  healthTitle:"Afya na dawa", healthLead:"Mafuriko huchafua maji na huongeza hatari ya magonjwa ya kuhara. Hatua hizi rahisi huokoa maisha.",
+  health:[
+   {t:"Maji salama",p:"Chemsha maji hadi yachemke kwa nguvu kwa angalau dakika moja, au tumia dawa ya kutibu maji kama maelekezo yanavyosema. Hifadhi maji kwenye chombo safi chenye mfuniko."},
+   {t:"Kuhara na kipindupindu",p:"Kuharisha maji mengi ghafla kunaweza kuwa kipindupindu. Anza kunywa ORS mara moja na nenda kituo cha afya bila kuchelewa."},
+   {t:"Jinsi ya kutumia ORS",p:"Changanya pakiti moja ya ORS na maji safi kwa kipimo kilichoandikwa kwenye pakiti. Kwa watoto, endelea kunyonyesha na fuata ushauri wa mhudumu wa afya kuhusu zinki."},
+   {t:"Mbu na malaria",p:"Maji yaliyotuama huzalisha mbu. Lala ndani ya chandarua chenye dawa na mwaga maji yaliyokusanyika kwenye vyombo. Ukipata homa, pima malaria."},
+   {t:"Majeraha",p:"Maji ya mafuriko yana vijidudu. Funika vidonda na uvioshe kwa sabuni na maji safi. Homa na maumivu ya misuli baada ya kupita kwenye maji ya mafuriko yanahitaji daktari."},
+   {t:"Dawa zako",p:"Hifadhi dawa kwenye mfuko usiopitisha maji, juu ya sakafu. Usitumie dawa zilizolowa maji ya mafuriko; muulize mfamasia. Kama unatumia dawa za kudumu, kama za VVU, kisukari, shinikizo la damu au TB, weka akiba na kadi yako ya kliniki."}],
+  dangerTitle:"Nenda kituo cha afya sasa ukiona:", danger:["kiu kali au kushindwa kunywa","macho yaliyozama","mkojo kidogo au kutokojoa kabisa","kulegea sana au kusinzia kupita kiasi","damu kwenye choo"],
+  emTitle:"Namba za dharura", emLead:"Gusa namba ili kupiga.",
+  nums:[["112","Polisi"],["114","Zimamoto na Uokoaji"],["115","Gari la wagonjwa"],["190","Huduma za maafa"],["199","Afya Call Centre: ushauri wa afya"],["180","TANESCO: hitilafu za umeme"]],
+  offTitle:"Taarifa rasmi",
+  off:[{t:"Mamlaka ya Hali ya Hewa Tanzania (TMA)",p:"Chanzo pekee cha utabiri na tahadhari rasmi za hali ya hewa. Chaneli zao za WhatsApp, Instagram, X na Facebook zimeorodheshwa kwenye tovuti yao.",link:["meteo.go.tz","https://www.meteo.go.tz"]},
+       {t:"Ofisi ya Waziri Mkuu, Idara ya Menejimenti ya Maafa",p:"Inaratibu mfumo wa kitaifa wa tahadhari za mapema na kukabiliana na maafa."},
+       {t:"Ofisi ya kata, Serikali ya Mtaa na Kamati ya Maafa ya Kata",p:"Njia za kuhama na maeneo ya kukusanyika katika eneo lako."}],
+  aboutTitle:"Kuhusu Salama Dar",
+  about1:"Salama Dar ni mradi wa jamii unaoongozwa na vijana. Hauhusiani na TMA wala mamlaka yoyote ya serikali, na hautoi utabiri wala tahadhari.",
+  about2:"Hili ni toleo la majaribio. Taarifa za kata zimetoka kwenye habari na tafiti zilizochapishwa hadi Septemba 2026 na zinahitaji kuthibitishwa na mamlaka kabla ya kuzinduliwa kwa umma. Ushauri wa afya unahitaji kupitiwa na wataalamu wa afya.",
+  about3:"Mipaka ya kata imetoka kwenye seti ya data huria (kessyjr/tza_geojson kwenye GitHub). Huenda baadhi ya kata zimegawanywa tangu mipaka hii ilipochorwa.",
+  about5:"Ripoti za jamii hazikusanyi majina, namba za simu wala mahali ulipo kwa GPS. Ripoti zinaonyeshwa kwa kiwango cha kata tu.",
+  disclaimer:"Usitegemee programu hii wakati wa dharura. Hama kwenda eneo la juu, usivuke maji yanayotiririka, na fuata maelekezo ya mamlaka.",
+  modLink:"Kwa wanaojitolea: kagua ripoti", seaLabel:"Bahari ya Hindi"
+ },
+ en:{
+  title:"Salama Dar: flood awareness map", proto:"Prototype", navLabel:"App sections", about:"About Salama Dar",
+  tabMap:"Map", tabReport:"Report", tabTma:"TMA", tabPrep:"Prepare", tabHealth:"Health", tabEm:"Emergency",
+  tmaTitle:"TMA desk",
+  tmaLead:"Official weather forecasts and warnings come only from the Tanzania Meteorological Authority (TMA). Here are the quickest ways to reach them.",
+  tmaSiteTitle:"Today’s warnings and forecasts", tmaSiteBody:"TMA’s website has warnings, 24-hour, 5-day and 10-day forecasts, and seasonal outlooks.", tmaSiteBtn:"Open the TMA website",
+  tmaChanTitle:"Get TMA updates on your phone",
+  tmaChanBody:"The fastest way is to follow TMA’s official WhatsApp channel: new updates reach you without opening any app.",
+  tmaChanNone:"Links to TMA’s WhatsApp, Instagram, X, Facebook and YouTube channels are on the home page of the TMA website.",
+  tmaRemindBody:"Set a reminder every morning at 7:00 to check TMA, until the end of January 2027.", tmaRemindBtn:"Add a reminder to my calendar",
+  tmaVerifyTitle:"Before you share a forecast picture",
+  tmaVerifyLead:"Many pictures shared in the rainy season use TMA’s name or logo without being official. Ask yourself:",
+  tmaVerify:["Is it on TMA’s website or official channels?","Does it have a date and a clear source?","Are there spelling mistakes or wrong place names?","A TMA logo on its own doesn’t prove it’s official."],
+  tmaVerifyEnd:"If in doubt, don’t share the picture. Share TMA’s link instead.",
+  tmaShareBtn:"Share TMA’s link", tmaCopied:"Link copied.", tmaShareText:"Official weather warnings and forecasts: TMA",
+  tmaWhyTitle:"Why doesn’t Salama Dar show forecasts?",
+  tmaWhyBody:"Under the TMA Act 2019, TMA is the authority that issues weather forecasts and warnings to the public. We send you to the official source so you get correct, up-to-date information.",
+  offline:"You’re offline. The map and advice still work.",
+  introTitle:"Welcome to Salama Dar",
+  introItems:["See Dar es Salaam wards with a history of flooding.","Learn how to get ready and protect your health.","Report flooding you see. Reports are checked before they appear."],
+  introNote:"This is not an official warning or a weather forecast. Official warnings come from TMA: reach them through the TMA desk in the app.", introStart:"Start",
+  searchTitle:"Find your ward", searchPh:"Find a ward, e.g. Tandale",
+  noMatch:"No ward with that name. Try another spelling.", listed:"listed", notListedShort:"no reports",
+  legRep:"Flooding reported", legPlan:"Has a disaster plan", legNone:"No reports", legReports:"Community reports", legNotOfficial:"Official warnings: TMA",
+  zoomIn:"Zoom in", zoomOut:"Zoom out", showAll:"Show all listed wards",
+  mapLabel:"Map of Dar es Salaam wards named in flood reporting",
+  peekCount:"{n} wards named", peekHint:"Tap a ward or open the list", peekOpen:"Open",
+  introKicker:"Dar es Salaam wards named in public reporting and research on flooding",
+  introBody:"Tap a ward on the map, or search for it, to see why it is listed, where the information comes from, and who to ask about evacuation.",
+  introAbsent:"A ward without colour isn’t necessarily safe. It only means we haven’t found published reports about it.",
+  listedTitle:"Wards named",
+  district:"{d} District", tagRep:"Flooding reported", tag2021:"Ward disaster plan, 2021", tag2026:"Ward flood plan, September 2026",
+  askTitle:"Who to ask", askPlan:"Ask your ward office or Ward Disaster Management Committee for your evacuation route and assembly point.",
+  askGeneric:"Ask your ward office or mtaa government whether there is an evacuation plan and a safe assembly point.",
+  sourcesTitle:"Sources", noneTitle:"No published reports yet",
+  noneBody:"We haven’t found public reports of flooding in this ward. That doesn’t mean it is safe: floods can happen wherever water can’t drain away.",
+  close:"Close", communityTitle:"Community reports, last 24 hours", communityNone:"No community reports in this ward in the last 24 hours.",
+  communityNote:"From residents, checked by volunteers, not by the authorities.", reportHere:"Report flooding in this ward",
+  reportsN:"{n} reports",
+  rTitle:"Report flooding", rLead:"Seeing flooding right now? Let others know. Volunteers check every report before it appears on the map, and it stays for 24 hours.",
+  rDanger:"In danger? Call first.",
+  demo:"Prototype mode: reports are saved on this phone only and nobody else sees them.",
+  fWard:"Ward", fWardPh:"Choose a ward", fPlace:"Place (optional)", fPlaceHint:"For example: a bridge, road or market.",
+  fDepth:"How deep is the water?", depth:{ankle:"Ankle deep",knee:"Knee deep",waist:"Waist deep or more",road:"Road impassable"},
+  fNote:"More details (optional)", fPrivacy:"Don’t include people’s names or phone numbers.",
+  fConfirm:"I saw this flooding myself, just now.", fSubmit:"Send report", sending:"Sending…",
+  eWard:"Choose a ward.", eDepth:"Choose how deep the water is.", eConfirm:"Confirm that you saw it yourself.",
+  eNet:"The report wasn’t sent. Check your connection and try again.", eOffline:"You’re offline. Sending a report needs a connection.",
+  okTitle:"Thank you. Your report has been sent.", okBody:"It will appear on the map once it has been checked, for 24 hours.", again:"Send another report", toMap:"Back to the map",
+  mine:"Your reports", stPending:"Waiting for review", stApproved:"On the map", stExpired:"Expired", demoApprove:"Approve (demo)",
+  justNow:"just now", minsAgo:"{n} min ago", hoursAgo:"{n} h ago",
+  prepTitle:"Get ready", prepLead:"What to do before, during and after a flood.", heroEn:"Take precautions before danger comes",
+  phases:[
+   {t:"Before the rains",i:["Know your evacuation route and assembly point. Ask your ward office.","Don’t dump rubbish in drains or rivers. Blocked drains make flooding worse.","Pack an emergency bag: ID and key documents in a plastic bag, a torch, a charger or power bank, medicines and ORS sachets.","Keep a supply of food and safe drinking water at home.","Raise valuables and electrical items off the floor.","Follow weather updates from TMA (see the TMA desk)."]},
+   {t:"During a flood",i:["Move to higher ground early. Don’t wait for water to come inside.","Never cross moving water on foot, by motorbike or by car. Even shallow water can knock you over.","Switch off power at the main switch if it’s safe to do so. Stay away from fallen power lines.","Keep children out of floodwater and away from drains.","Follow instructions from local leaders and the authorities."]},
+   {t:"After a flood",i:["Go home only when the authorities say it’s safe.","Boil or treat all drinking water until you know it’s safe.","Throw away any food that touched floodwater.","Clean the house wearing boots and gloves, and use disinfectant.","If you get diarrhoea, a fever, or a wound that swells, go to a health facility."]}],
+  healthTitle:"Health and medicines", healthLead:"Floods contaminate water and raise the risk of diarrhoeal disease. These simple steps save lives.",
+  health:[
+   {t:"Safe water",p:"Bring water to a rolling boil for at least one minute, or use water treatment tablets or liquid as the label says. Store it in a clean, covered container."},
+   {t:"Diarrhoea and cholera",p:"Sudden, heavy watery diarrhoea can be cholera. Start drinking ORS straight away and go to a health facility without delay."},
+   {t:"Using ORS",p:"Mix one ORS sachet with clean water exactly as the packet says. For children, keep breastfeeding and follow a health worker’s advice on zinc."},
+   {t:"Mosquitoes and malaria",p:"Standing water breeds mosquitoes. Sleep under a treated net and empty containers that collect water. If you get a fever, get tested for malaria."},
+   {t:"Wounds",p:"Floodwater carries germs. Cover cuts and wash them with soap and clean water. Fever with muscle pain after wading through floodwater needs a doctor."},
+   {t:"Your medicines",p:"Keep medicines in a waterproof bag, off the floor. Don’t use medicines soaked by floodwater; ask a pharmacist. If you take long-term medicines, such as for HIV, diabetes, blood pressure or TB, keep a spare supply and your clinic card."}],
+  dangerTitle:"Go to a health facility now if you see:", danger:["extreme thirst, or unable to drink","sunken eyes","little or no urine","very weak or unusually sleepy","blood in the stool"],
+  emTitle:"Emergency numbers", emLead:"Tap a number to call.",
+  nums:[["112","Police"],["114","Fire and rescue"],["115","Ambulance"],["190","Disaster services"],["199","Afya Call Centre: health advice"],["180","TANESCO: power faults"]],
+  offTitle:"Official information",
+  off:[{t:"Tanzania Meteorological Authority (TMA)",p:"The only source of official weather forecasts and warnings. Their WhatsApp, Instagram, X and Facebook channels are listed on their website.",link:["meteo.go.tz","https://www.meteo.go.tz"]},
+       {t:"Prime Minister’s Office, Disaster Management Department",p:"Coordinates the national early warning and disaster response system."},
+       {t:"Your ward office, mtaa government and Ward Disaster Management Committee",p:"Evacuation routes and assembly points in your area."}],
+  aboutTitle:"About Salama Dar",
+  about1:"Salama Dar is a youth-led community project. It is not affiliated with TMA or any government authority, and it does not issue forecasts or warnings.",
+  about2:"This is a prototype. Ward information comes from news and research published up to September 2026 and must be checked with the authorities before public launch. Health guidance needs review by health professionals.",
+  about3:"Ward boundaries come from an open dataset (kessyjr/tza_geojson on GitHub). Some wards may have been split since these boundaries were drawn.",
+  about5:"Community reports don’t collect names, phone numbers or GPS location. Reports are shown at ward level only.",
+  disclaimer:"Don’t rely on this app in an emergency. Move to higher ground, never cross moving water, and follow the authorities’ instructions.",
+  modLink:"For volunteers: review reports", seaLabel:"Indian Ocean"
+ }
+};
+
+/* ---------------- Storage helpers ---------------- */
+const store = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+
+/* ---------------- Backend: Supabase REST or local demo ---------------- */
+const CFG = (window.SALAMA_CONFIG && window.SALAMA_CONFIG.supabaseUrl && window.SALAMA_CONFIG.supabaseAnonKey) ? window.SALAMA_CONFIG : null;
+const DAY = 24 * 3600 * 1000;
+const uuid = () => (crypto.randomUUID ? crypto.randomUUID() : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => { const r = Math.random()*16|0; return (c === "x" ? r : (r & 3 | 8)).toString(16); }));
+const Backend = CFG ? {
+  demo:false,
+  headers(){ return {apikey: CFG.supabaseAnonKey, Authorization: "Bearer " + CFG.supabaseAnonKey}; },
+  async listApproved(){
+    const since = new Date(Date.now() - DAY).toISOString();
+    const r = await fetch(`${CFG.supabaseUrl}/rest/v1/reports?select=id,created_at,ward,place,depth,note&created_at=gte.${encodeURIComponent(since)}&order=created_at.desc&limit=500`, {headers: this.headers()});
+    if (!r.ok) throw new Error("list " + r.status);
+    return r.json();
+  },
+  async submit(rep){
+    const r = await fetch(`${CFG.supabaseUrl}/rest/v1/reports`, {method:"POST", headers:{...this.headers(), "Content-Type":"application/json", Prefer:"return=minimal"},
+      body: JSON.stringify({id: rep.id, ward: rep.ward, place: rep.place || null, depth: rep.depth, note: rep.note || null, lang: rep.lang})});
+    if (!r.ok) throw new Error("submit " + r.status);
+  }
+} : {
+  demo:true,
+  all(){ return store.get("salamadar-demo-reports", []); },
+  async listApproved(){ const since = Date.now() - DAY; return this.all().filter(r => r.status === "approved" && Date.parse(r.created_at) >= since).sort((a,b) => b.created_at.localeCompare(a.created_at)); },
+  async submit(rep){ const a = this.all(); a.push({...rep, status:"pending"}); store.set("salamadar-demo-reports", a); },
+  approve(id){ const a = this.all(); const x = a.find(r => r.id === id); if (x) x.status = "approved"; store.set("salamadar-demo-reports", a); }
+};
+
+/* ---------------- State ---------------- */
+let lang = store.get("salamadar-lang", "sw"); if (lang !== "sw" && lang !== "en") lang = "sw";
+let sel = -1, approved = [], view = "ramani";
+const t = (k) => (T[lang][k] !== undefined ? T[lang][k] : T.sw[k]);
+const tf = (k, n) => t(k).replace("{n}", n);
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const W = GEO.wards; const idx = {}; W.forEach((w, i) => idx[w.n] = i);
+const LISTED = Object.keys(INFO).filter(n => idx[n] !== undefined).sort((a,b) => a.localeCompare(b));
+const cls = (n) => { const f = INFO[n]; if (!f) return "none"; return f.rep ? "rep" : "plan"; };
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const desktop = () => window.matchMedia("(min-width: 900px)").matches;
+const ago = (iso) => { const m = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 60000)); if (m < 2) return t("justNow"); if (m < 60) return tf("minsAgo", m); return tf("hoursAgo", Math.round(m/60)); };
+const srcLine = (S) => `<a href="${S.url}" target="_blank" rel="noopener">${esc(S.title)}</a>${/[?!.]$/.test(S.title) ? "" : "."} ${esc(S.pub)}, ${esc(S.date[lang])}.`;
+const $ = (id) => document.getElementById(id);
+
+/* ---------------- Map ---------------- */
+const NS = "http://www.w3.org/2000/svg";
+const svg = $("map"), box = $("mapbox"), gL = $("labels"), gB = $("bubbles"), selp = $("selp");
+$("sea").setAttribute("d", GEO.sea); $("other").setAttribute("d", GEO.other);
+W.forEach((w, i) => { const p = document.createElementNS(NS, "path"); p.setAttribute("d", w.p); p.setAttribute("class", "w " + cls(w.n)); p.dataset.i = i; $("wards").appendChild(p); });
+GEO.districts.forEach(d => { const p = document.createElementNS(NS, "path"); p.setAttribute("d", d.p); p.setAttribute("class", "dist"); $("dists").appendChild(p); });
+const V = {cx: GEO.W/2, cy: GEO.H/2, k: 10}; let kMin = 0.7, kMax = 30;
+const dims = () => [box.clientWidth || 360, box.clientHeight || 400];
+// Keep the visible map area clear of the overlays (search on top, sheet at bottom on mobile)
+const insets = () => { if (desktop()) return {top: 70, bottom: 16}; const m = $("panel").dataset.mode, h = box.clientHeight; return {top: 120, bottom: m === "half" ? h*0.56 + 12 : m === "full" ? h*0.56 + 12 : 110}; };
+let fitted = false;
+function clampView(){ const [w,h] = dims(); kMax = Math.max(GEO.W / w, GEO.H / h) * 1.02; V.k = Math.min(kMax, Math.max(kMin, V.k)); V.cx = Math.min(GEO.W, Math.max(0, V.cx)); V.cy = Math.min(GEO.H, Math.max(0, V.cy)); }
+function render(){ clampView(); const [w,h] = dims(), k = V.k; svg.setAttribute("viewBox", `${V.cx - w*k/2} ${V.cy - h*k/2} ${w*k} ${h*k}`); renderLabels(); }
+function fitBox(b, pad){
+  const [w,h] = dims(), ins = insets();
+  const bw = Math.max(b[2]-b[0], 1), bh = Math.max(b[3]-b[1], 1);
+  const aw = Math.max(w - 2*pad, 60), ah = Math.max(h - ins.top - ins.bottom - 2*pad, 60);
+  const k = Math.max(bw/aw, bh/ah);
+  const cy = (b[1]+b[3])/2 - ((ins.top - ins.bottom)/2) * k; // shift so the box sits in the clear area
+  return {cx:(b[0]+b[2])/2, cy, k};
+}
+let anim = 0;
+function animateTo(tg){
+  cancelAnimationFrame(anim);
+  if (reduce){ Object.assign(V, tg); render(); return; }
+  const f = {...V}, t0 = performance.now(), dur = 420;
+  const step = (now) => { const p = Math.min(1, (now - t0)/dur), e = 1 - Math.pow(1-p, 3);
+    V.k = Math.exp(Math.log(f.k) + (Math.log(tg.k) - Math.log(f.k)) * e); V.cx = f.cx + (tg.cx - f.cx)*e; V.cy = f.cy + (tg.cy - f.cy)*e;
+    render(); if (p < 1) anim = requestAnimationFrame(step); };
+  anim = requestAnimationFrame(step);
+}
+function listedBox(){ const b = [Infinity,Infinity,-Infinity,-Infinity]; LISTED.forEach(n => { const q = W[idx[n]].b; b[0]=Math.min(b[0],q[0]); b[1]=Math.min(b[1],q[1]); b[2]=Math.max(b[2],q[2]); b[3]=Math.max(b[3],q[3]); }); return b; }
+function showAll(a){ if (!box.clientWidth) return; fitted = true; const tg = fitBox(listedBox(), 16); a ? animateTo(tg) : (Object.assign(V, tg), render()); }
+function zoomAt(px, py, f){ const [w,h] = dims(); const ux = V.cx + (px - w/2)*V.k, uy = V.cy + (py - h/2)*V.k; const nk = Math.min(kMax, Math.max(kMin, V.k*f)); V.cx = ux - (px - w/2)*nk; V.cy = uy - (py - h/2)*nk; V.k = nk; render(); }
+function zoomBtn(f){ animateTo({...V, k: Math.min(kMax, Math.max(kMin, V.k*f))}); }
+function mkText(x, y, s, size, c){ const e = document.createElementNS(NS, "text"); e.setAttribute("x", x); e.setAttribute("y", y); e.setAttribute("font-size", size); e.setAttribute("text-anchor","middle"); e.setAttribute("dominant-baseline","central"); e.setAttribute("stroke-width", size*0.28); if (c) e.setAttribute("class", c); e.textContent = s; return e; }
+function reportCounts(){ const c = {}; approved.forEach(r => { c[r.ward] = (c[r.ward] || 0) + 1; }); return c; }
+function renderLabels(){
+  const k = V.k; gL.textContent = ""; gB.textContent = "";
+  const [vw, vh] = dims(); const VB = [V.cx - vw*k/2, V.cy - vh*k/2, V.cx + vw*k/2, V.cy + vh*k/2];
+  const inside = (r) => r[0] >= VB[0] && r[1] >= VB[1] && r[2] <= VB[2] && r[3] <= VB[3];
+  const placed = []; const hit = (r) => placed.some(p => !(r[2] < p[0] || r[0] > p[2] || r[3] < p[1] || r[1] > p[3]));
+  const counts = reportCounts();
+  // community report bubbles first, so labels avoid them
+  Object.keys(counts).forEach(n => { const i = idx[n]; if (i === undefined) return; const w = W[i]; const r = 12*k, cx = w.c[0], cy = w.c[1] - 20*k;
+    const g = document.createElementNS(NS, "g"); g.setAttribute("class","bub");
+    const c = document.createElementNS(NS, "circle"); c.setAttribute("cx", cx); c.setAttribute("cy", cy); c.setAttribute("r", r); g.appendChild(c);
+    const tx = mkText(cx, cy, String(counts[n]), 12*k); tx.removeAttribute("stroke-width"); g.appendChild(tx); gB.appendChild(g);
+    placed.push([cx-r, cy-r, cx+r, cy+r]); });
+  let order = LISTED.map(n => idx[n]).sort((a,b) => { const A = W[a].b, B = W[b].b; return (B[2]-B[0])*(B[3]-B[1]) - (A[2]-A[0])*(A[3]-A[1]); });
+  Object.keys(counts).forEach(n => { const i = idx[n]; if (i !== undefined && !order.includes(i)) order.push(i); });
+  if (sel >= 0) order = [sel].concat(order.filter(i => i !== sel));
+  for (const i of order){ const w = W[i], tw = (w.n.length*0.58*13 + 10)*k, th = 18*k;
+    if (i !== sel && (w.b[2]-w.b[0]) < tw*0.5) continue;
+    const r = [w.c[0]-tw/2, w.c[1]-th/2, w.c[0]+tw/2, w.c[1]+th/2];
+    if (i !== sel && (hit(r) || !inside(r))) continue;
+    placed.push(r); gL.appendChild(mkText(w.c[0], w.c[1], w.n, 13*k)); }
+  if (k > 3.2){ GEO.districts.forEach(d => { const label = t("district").replace("{d}", d.n), tw = (label.length*0.55*12 + 10)*k, th = 16*k;
+    const r = [d.c[0]-tw/2, d.c[1]-th/2, d.c[0]+tw/2, d.c[1]+th/2]; if (hit(r) || !inside(r)) return; placed.push(r); gL.appendChild(mkText(d.c[0], d.c[1], label, 12*k, "dl")); }); }
+  gL.appendChild(mkText(GEO.W*0.8, GEO.H*0.28, t("seaLabel"), 13*k, "sl"));
+}
+/* pointer: pan / pinch / tap */
+const ptrs = new Map(); let downWard = null, downPos = null, pinch = null;
+box.addEventListener("pointerdown", (e) => {
+  ptrs.set(e.pointerId, {x:e.clientX, y:e.clientY}); try { box.setPointerCapture(e.pointerId); } catch (err) {}
+  if (ptrs.size === 1){ downPos = {x:e.clientX, y:e.clientY}; const p = e.target.closest && e.target.closest("path.w"); downWard = p ? +p.dataset.i : null; box.classList.add("dragging"); q.blur(); }
+  if (ptrs.size === 2){ const [a,b] = [...ptrs.values()]; pinch = {d: Math.hypot(a.x-b.x, a.y-b.y), mx:(a.x+b.x)/2, my:(a.y+b.y)/2}; downWard = null; }
+  cancelAnimationFrame(anim);
+});
+box.addEventListener("pointermove", (e) => {
+  if (!ptrs.has(e.pointerId)) return; const prev = ptrs.get(e.pointerId), cur = {x:e.clientX, y:e.clientY}; ptrs.set(e.pointerId, cur);
+  if (ptrs.size === 1){ V.cx -= (cur.x - prev.x)*V.k; V.cy -= (cur.y - prev.y)*V.k; render(); }
+  else if (ptrs.size === 2 && pinch){ const [a,b] = [...ptrs.values()], rc = box.getBoundingClientRect(); const d = Math.hypot(a.x-b.x, a.y-b.y), mx = (a.x+b.x)/2, my = (a.y+b.y)/2;
+    V.cx -= (mx - pinch.mx)*V.k; V.cy -= (my - pinch.my)*V.k; zoomAt(mx - rc.left, my - rc.top, pinch.d / Math.max(d, 1)); pinch = {d, mx, my}; }
+});
+function endPtr(e){ if (!ptrs.has(e.pointerId)) return; ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = null;
+  if (ptrs.size === 0){ box.classList.remove("dragging"); const dist = downPos ? Math.hypot(e.clientX - downPos.x, e.clientY - downPos.y) : 99;
+    if (e.type === "pointerup" && dist < 7 && downWard !== null) select(downWard, {fit:false, open:true}); downWard = null; } }
+box.addEventListener("pointerup", endPtr); box.addEventListener("pointercancel", endPtr);
+box.addEventListener("wheel", (e) => { e.preventDefault(); const r = box.getBoundingClientRect(); zoomAt(e.clientX - r.left, e.clientY - r.top, Math.exp(e.deltaY * (e.deltaMode === 1 ? 0.05 : 0.0016))); }, {passive:false});
+$("zin").addEventListener("click", () => zoomBtn(0.55)); $("zout").addEventListener("click", () => zoomBtn(1.8));
+$("zall").addEventListener("click", () => { select(-1); setMode("peek"); showAll(true); });
+new ResizeObserver(() => { if (!fitted && box.clientWidth) showAll(false); else render(); }).observe(box);
+
+/* ---------------- Panel / sheet ---------------- */
+const panel = $("panel"), body = $("panelBody"), head = $("sheetHead");
+function setMode(m){ panel.dataset.mode = m; head.setAttribute("aria-expanded", m !== "peek"); }
+head.addEventListener("click", () => { if (sheetDragged) return; setMode(panel.dataset.mode === "peek" ? "half" : panel.dataset.mode === "half" ? "full" : "half"); });
+let sheetY = null, sheetDragged = false;
+head.addEventListener("pointerdown", (e) => { sheetY = e.clientY; sheetDragged = false; try { head.setPointerCapture(e.pointerId); } catch (er) {} });
+head.addEventListener("pointermove", (e) => { if (sheetY === null) return; if (Math.abs(e.clientY - sheetY) > 8) sheetDragged = true; });
+head.addEventListener("pointerup", (e) => { if (sheetY === null) return; const dy = e.clientY - sheetY; sheetY = null;
+  if (!sheetDragged) return; const m = panel.dataset.mode;
+  if (dy < -40) setMode(m === "peek" ? "half" : "full"); else if (dy > 40) { if (m === "full") setMode("half"); else { setMode("peek"); } }
+  setTimeout(() => { sheetDragged = false; }, 50); });
+function select(i, o = {}){
+  sel = i; selp.setAttribute("d", i >= 0 ? W[i].p : "");
+  if (o.open && !desktop()) setMode("half");
+  if (i >= 0 && o.fit){ const b = W[i].b, cx = (b[0]+b[2])/2, cy = (b[1]+b[3])/2, half = Math.max(Math.max(b[2]-b[0], b[3]-b[1])*1.1, 230); animateTo(fitBox([cx-half, cy-half, cx+half, cy+half], 8)); } else render();
+  renderPanel();
+}
+function tagHTML(n){ const f = INFO[n], out = [];
+  if (f.rep) out.push(`<li><span class="sw rep" aria-hidden="true"></span>${esc(t("tagRep"))}</li>`);
+  if (f.plan === "2021") out.push(`<li><span class="sw plan" aria-hidden="true"></span>${esc(t("tag2021"))}</li>`);
+  if (f.plan === "2026") out.push(`<li><span class="sw plan" aria-hidden="true"></span>${esc(t("tag2026"))}</li>`);
+  return out.join(""); }
+function communityHTML(n){
+  const rs = approved.filter(r => r.ward === n);
+  let h = `<div class="community"><h3>${esc(t("communityTitle"))}</h3>`;
+  if (!rs.length) h += `<p class="fine">${esc(t("communityNone"))}</p>`;
+  else h += `<ul class="rlist">` + rs.map(r => `<li><span class="depth-badge">${ICONS[r.depth] ? ICONS[r.depth].replace('width="30" height="30"','width="20" height="20"') : ""}${esc(t("depth")[r.depth] || r.depth)}</span>${r.place ? `<div>${esc(r.place)}</div>` : ""}${r.note ? `<div class="fine">${esc(r.note)}</div>` : ""}<div class="meta">${esc(ago(r.created_at))}</div></li>`).join("") + `</ul><p class="fine">${esc(t("communityNote"))}</p>`;
+  h += `<div class="btnrow"><a class="btn" href="#ripoti" data-prefill="${esc(n)}">${ICONS.flag}${esc(t("reportHere"))}</a></div></div>`;
+  return h;
+}
+function renderPanel(){
+  if (sel < 0){
+    $("peekTitle").textContent = tf("peekCount", LISTED.length); $("peekSub").textContent = t("peekHint");
+    body.innerHTML = `<span class="count">${LISTED.length}</span><p><strong>${esc(t("introKicker"))}</strong></p><p>${esc(t("introBody"))}</p>
+      <h3 style="margin-top:14px">${esc(t("listedTitle"))}</h3><div class="chips" id="chips">` +
+      LISTED.map(n => `<button type="button" data-n="${esc(n)}" aria-pressed="false"><span class="sw ${cls(n)}" aria-hidden="true"></span>${esc(n)}</button>`).join("") +
+      `</div><p class="fine" style="margin-top:14px">${esc(t("introAbsent"))}</p>`;
+  } else {
+    const w = W[sel], f = INFO[w.n], cnt = approved.filter(r => r.ward === w.n).length;
+    $("peekTitle").textContent = w.n; $("peekSub").textContent = cnt ? tf("reportsN", cnt) : (f ? (f.rep ? t("tagRep") : t("legPlan")) : t("legNone"));
+    let h = `<p class="kicker">${esc(t("district").replace("{d}", w.d))}</p><h2>${esc(w.n)}</h2>`;
+    if (f){ h += `<ul class="tags">${tagHTML(w.n)}</ul>`;
+      const parts = []; if (f.text) parts.push(f.text[lang]); if (f.plan === "2021") parts.push(PLAN2021[lang]); if (f.plan === "2026") parts.push(PLAN2026[lang]);
+      h += parts.map(p => `<p>${esc(p)}</p>`).join("");
+      h += `<div class="ask"><h3>${esc(t("askTitle"))}</h3><p>${esc(f.plan ? t("askPlan") : t("askGeneric"))}</p></div>`;
+      h += communityHTML(w.n);
+      h += `<div class="src"><h3>${esc(t("sourcesTitle"))}</h3><ol>` + f.src.map(s => `<li>${srcLine(SOURCES[s])}</li>`).join("") + `</ol></div>`;
+    } else {
+      h += `<ul class="tags"><li><span class="sw none" aria-hidden="true"></span>${esc(t("legNone"))}</li></ul><p><strong>${esc(t("noneTitle"))}</strong></p><p>${esc(t("noneBody"))}</p>
+        <div class="ask"><h3>${esc(t("askTitle"))}</h3><p>${esc(t("askGeneric"))}</p></div>` + communityHTML(w.n);
+    }
+    h += `<div class="btnrow"><button type="button" class="btn" id="closeSel">${esc(t("close"))}</button></div>`;
+    body.innerHTML = h;
+    $("closeSel").addEventListener("click", () => { select(-1); setMode("peek"); });
+  }
+  body.querySelectorAll("#chips button").forEach(b => b.addEventListener("click", () => select(idx[b.dataset.n], {fit:true, open:true})));
+  body.querySelectorAll("a[data-prefill]").forEach(a => a.addEventListener("click", () => { prefillWard = a.dataset.prefill; }));
+}
+
+/* ---------------- Search ---------------- */
+const q = $("q"), ql = $("qlist"); let opts = [], active = -1;
+const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f'’\s-]/g, "");
+function openList(){
+  const v = norm(q.value); if (!v){ closeList(); return; }
+  const sc = []; W.forEach((w, i) => { const ns = [norm(w.n)].concat((INFO[w.n] && INFO[w.n].alias) || []); let s = -1; ns.forEach(n => { if (n.startsWith(v)) s = Math.max(s, 2); else if (n.includes(v)) s = Math.max(s, 1); }); if (s >= 0) sc.push([s, i]); });
+  sc.sort((a,b) => b[0]-a[0] || W[a[1]].n.localeCompare(W[b[1]].n)); opts = sc.slice(0, 8).map(x => x[1]); active = opts.length ? 0 : -1;
+  ql.innerHTML = opts.length ? opts.map((i, j) => { const n = W[i].n, c = cls(n); return `<li role="option" id="opt${j}" data-i="${i}" aria-selected="${j === active}"><span><span class="sw ${c}" aria-hidden="true"></span> ${esc(n)} <small>${esc(W[i].d)}</small></span><small>${esc(c === "none" ? t("notListedShort") : t("listed"))}</small></li>`; }).join("")
+    : `<li class="empty" role="option" aria-disabled="true" aria-selected="false">${esc(t("noMatch"))}</li>`;
+  ql.hidden = false; q.setAttribute("aria-expanded","true"); if (active >= 0) q.setAttribute("aria-activedescendant","opt"+active); else q.removeAttribute("aria-activedescendant");
+}
+function closeList(){ ql.hidden = true; q.setAttribute("aria-expanded","false"); q.removeAttribute("aria-activedescendant"); }
+function choose(i){ q.value = W[i].n; closeList(); q.blur(); select(i, {fit:true, open:true}); }
+q.addEventListener("input", openList);
+q.addEventListener("keydown", (e) => {
+  if (ql.hidden && e.key === "ArrowDown"){ openList(); return; }
+  if (e.key === "ArrowDown" || e.key === "ArrowUp"){ if (!opts.length) return; e.preventDefault(); active = (active + (e.key === "ArrowDown" ? 1 : -1) + opts.length) % opts.length;
+    ql.querySelectorAll("li").forEach((li, j) => li.setAttribute("aria-selected", j === active)); q.setAttribute("aria-activedescendant","opt"+active); }
+  else if (e.key === "Enter"){ if (active >= 0 && opts.length){ e.preventDefault(); choose(opts[active]); } }
+  else if (e.key === "Escape"){ closeList(); }
+});
+ql.addEventListener("mousedown", (e) => e.preventDefault());
+ql.addEventListener("click", (e) => { const li = e.target.closest("li[data-i]"); if (li) choose(+li.dataset.i); });
+q.addEventListener("blur", () => setTimeout(closeList, 120));
+
+/* ---------------- Report form ---------------- */
+let prefillWard = null;
+const fWard = $("fWard"), form = $("rform");
+function renderForm(){
+  const cur = fWard.value;
+  fWard.innerHTML = `<option value="">${esc(t("fWardPh"))}</option>` + W.map(w => w.n).sort((a,b) => a.localeCompare(b)).map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join("");
+  fWard.value = cur;
+  const chosen = (form.querySelector('input[name="depth"]:checked') || {}).value;
+  $("depths").innerHTML = DEPTHS.map(d => `<input type="radio" name="depth" id="d-${d}" value="${d}"${chosen === d ? " checked" : ""}><label for="d-${d}">${ICONS[d]}<span>${esc(t("depth")[d])}</span></label>`).join("");
+  $("demoNote").hidden = !Backend.demo;
+}
+function showErr(id, msg, field){ $(id).textContent = msg || ""; if (field) field.setAttribute("aria-invalid", msg ? "true" : "false"); }
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const ward = fWard.value, depthEl = form.querySelector('input[name="depth"]:checked'), conf = $("fConfirm").checked;
+  showErr("eWard", ward ? "" : t("eWard"), fWard); showErr("eDepth", depthEl ? "" : t("eDepth")); showErr("eConfirm", conf ? "" : t("eConfirm"), $("fConfirm")); showErr("eSend", "");
+  if (!ward){ fWard.focus(); return; } if (!depthEl){ $("d-ankle").focus(); return; } if (!conf){ $("fConfirm").focus(); return; }
+  if (!navigator.onLine && !Backend.demo){ showErr("eSend", t("eOffline")); return; }
+  const rep = {id: uuid(), created_at: new Date().toISOString(), ward, place: $("fPlace").value.trim().slice(0,140), depth: depthEl.value, note: $("fNote").value.trim().slice(0,280), lang};
+  const btn = $("fSubmit"); btn.disabled = true; btn.textContent = t("sending");
+  try {
+    await Backend.submit(rep);
+    const mine = store.get("salamadar-mine", []); mine.unshift({id: rep.id, ward, depth: rep.depth, created_at: rep.created_at}); store.set("salamadar-mine", mine.slice(0, 20));
+    form.reset(); form.hidden = true;
+    $("rdone").hidden = false;
+    $("rdone").innerHTML = `<div class="success" tabindex="-1" id="okBox"><h2>${esc(t("okTitle"))}</h2><p>${esc(t("okBody"))}</p><div class="btnrow"><button type="button" class="btn primary" id="again">${esc(t("again"))}</button><a class="btn" href="#ramani">${esc(t("toMap"))}</a></div></div>`;
+    $("okBox").focus();
+    $("again").addEventListener("click", () => { $("rdone").hidden = true; form.hidden = false; fWard.focus(); });
+    renderMine();
+  } catch (err) { showErr("eSend", t("eNet")); }
+  finally { btn.disabled = false; btn.textContent = t("fSubmit"); }
+});
+async function renderMine(){
+  const mine = store.get("salamadar-mine", []); const M = $("mine");
+  if (!mine.length){ M.innerHTML = ""; return; }
+  const okIds = new Set(approved.map(r => r.id)); const demoAll = Backend.demo ? Backend.all() : [];
+  M.innerHTML = `<h2 style="margin-top:28px;font-size:1.2rem">${esc(t("mine"))}</h2><ul class="rlist">` + mine.map(m => {
+    const expired = Date.now() - Date.parse(m.created_at) > DAY, ok = okIds.has(m.id);
+    const demoPending = Backend.demo && !ok && !expired && demoAll.some(r => r.id === m.id && r.status === "pending");
+    const st = expired ? `<span class="st">${esc(t("stExpired"))}</span>` : ok ? `<span class="st ok">${esc(t("stApproved"))}</span>` : `<span class="st">${esc(t("stPending"))}</span>`;
+    return `<li><strong>${esc(m.ward)}</strong>, ${esc(t("depth")[m.depth] || "")} ${st}<div class="meta">${esc(ago(m.created_at))}</div>${demoPending ? `<button type="button" class="btn" style="min-height:40px;margin-top:6px" data-approve="${m.id}">${esc(t("demoApprove"))}</button>` : ""}</li>`;
+  }).join("") + `</ul>`;
+  M.querySelectorAll("[data-approve]").forEach(b => b.addEventListener("click", async () => { Backend.approve(b.dataset.approve); await loadReports(); }));
+}
+async function loadReports(){
+  try { approved = await Backend.listApproved(); } catch (e) { /* keep last good list */ }
+  render(); renderPanel(); renderMine();
+  const n = approved.length; renderLegend(n);
+}
+
+/* ---------------- Views / routing ---------------- */
+const VIEWS = [["ramani","tabMap","map"],["ripoti","tabReport","report"],["tma","tabTma","cloud"],["jiandae","tabPrep","prep"],["afya","tabHealth","health"],["dharura","tabEm","phone"]];
+function renderNav(){
+  $("tabbar").innerHTML = VIEWS.map(([id, k, ic]) => `<a href="#${id}" data-v="${id}"${id === "dharura" ? ' class="alert"' : ""}${view === id ? ' aria-current="page"' : ""}>${ICONS[ic]}<span>${esc(t(k))}</span></a>`).join("");
+  $("topnav").innerHTML = VIEWS.map(([id, k]) => `<a href="#${id}" data-v="${id}"${view === id ? ' aria-current="page"' : ""}>${esc(t(k))}</a>`).join("");
+}
+function route(focus){
+  const h = (location.hash || "#ramani").slice(1); const ids = VIEWS.map(v => v[0]).concat(["kuhusu"]);
+  view = ids.includes(h) ? h : "ramani";
+  ids.forEach(id => { $("v-" + id).hidden = id !== view; });
+  renderNav();
+  if (view === "ramani") requestAnimationFrame(() => { if (!fitted) showAll(false); else render(); });
+  if (view === "ripoti"){ if (prefillWard){ fWard.value = prefillWard; prefillWard = null; } $("rdone").hidden = true; form.hidden = false; renderMine(); }
+  if (focus){ const hd = $("h-" + view); if (hd) hd.focus({preventScroll:true}); $("v-" + view).scrollTop = 0; }
+}
+window.addEventListener("hashchange", () => route(true));
+$("aboutBtn").addEventListener("click", () => { location.hash = "#kuhusu"; });
+
+/* ---------------- Static text ---------------- */
+function renderLegend(n){
+  $("legend").innerHTML = `<li><span class="sw rep" aria-hidden="true"></span>${esc(t("legRep"))}</li><li><span class="sw plan" aria-hidden="true"></span>${esc(t("legPlan"))}</li><li><span class="sw none" aria-hidden="true"></span>${esc(t("legNone"))}</li>` +
+    (n ? `<li><span class="sw rpt" aria-hidden="true"></span>${esc(t("legReports"))} (${n})</li>` : "") +
+    `<li class="lnk"><a href="#tma">${esc(t("legNotOfficial"))}</a></li>`;
+}
+function renderStatic(){
+  document.querySelectorAll("[data-t]").forEach(el => el.textContent = t(el.dataset.t));
+  document.querySelectorAll("[data-ta]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.ta)); if (el.tagName === "BUTTON") el.title = t(el.dataset.ta); });
+  q.placeholder = t("searchPh"); $("maplabel").textContent = t("mapLabel"); $("heroEn").textContent = t("heroEn");
+  renderLegend(approved.length);
+  $("introList").innerHTML = t("introItems").map((s, i) => `<li>${[ICONS.pin, ICONS.book, ICONS.flag][i]}<span>${esc(s)}</span></li>`).join("");
+  $("phases").innerHTML = t("phases").map(p => `<div class="phase"><h2 style="font-size:1.15rem">${esc(p.t)}</h2><ul>${p.i.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`).join("");
+  $("healthItems").innerHTML = t("health").map(h => `<div><h2 style="font-size:1.06rem">${esc(h.t)}</h2><p>${esc(h.p)}</p></div>`).join("");
+  $("dangerList").innerHTML = t("danger").map(d => `<li>${esc(d)}</li>`).join("");
+  $("numList").innerHTML = t("nums").map(([n, l]) => `<li><a href="tel:${n}"><b>${n}</b><span>${esc(l)}</span></a></li>`).join("");
+  $("offList").innerHTML = t("off").map(o => `<li><h3>${esc(o.t)}</h3><p>${esc(o.p)}${o.link ? ` <a href="${o.link[1]}" target="_blank" rel="noopener">${esc(o.link[0])}</a>` : ""}</p></li>`).join("");
+  $("srcList").innerHTML = Object.values(SOURCES).map(S => `<li>${srcLine(S)}</li>`).join("");
+  $("modLink").hidden = !IS_SITE;
+}
+const TMA_URL = "https://www.meteo.go.tz";
+const TMA_LINKS = (window.SALAMA_TMA_LINKS && typeof window.SALAMA_TMA_LINKS === "object") ? window.SALAMA_TMA_LINKS : {};
+const CHANNELS = [["whatsapp","WhatsApp"],["x","X"],["instagram","Instagram"],["facebook","Facebook"],["youtube","YouTube"]];
+function renderTma(){
+  $("tmaOpen").innerHTML = `${esc(t("tmaSiteBtn"))} ${ICONS.ext}`;
+  const have = CHANNELS.filter(([k]) => typeof TMA_LINKS[k] === "string" && /^https:\/\//.test(TMA_LINKS[k]));
+  $("tmaChan").innerHTML = have.length ? have.map(([k, n]) => `<li><a href="${esc(TMA_LINKS[k])}" target="_blank" rel="noopener">${esc(n)} ${ICONS.ext}</a></li>`).join("")
+    : `<li style="grid-column:1/-1"><p class="fine" style="margin:0">${esc(t("tmaChanNone"))}</p></li>`;
+  $("tmaVerify").innerHTML = t("tmaVerify").map(x => `<li><span>${esc(x)}</span></li>`).join("");
+  $("tmaRemind").hidden = !IS_SITE;
+}
+$("tmaShare").addEventListener("click", async () => {
+  const out = $("tmaShared"); out.textContent = "";
+  try { if (navigator.share) { await navigator.share({title: "TMA", text: t("tmaShareText"), url: TMA_URL}); return; } } catch (e) { if (e && e.name === "AbortError") return; }
+  try { await navigator.clipboard.writeText(TMA_URL); out.textContent = t("tmaCopied"); } catch (e) { out.textContent = TMA_URL; }
+});
+$("tmaIcs").addEventListener("click", () => {
+  const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Salama Dar//SW","BEGIN:VEVENT","UID:salamadar-tma-check@salamadar","DTSTAMP:20261003T000000Z",
+    "DTSTART;TZID=Africa/Dar_es_Salaam:20261005T070000","DTEND;TZID=Africa/Dar_es_Salaam:20261005T071000","RRULE:FREQ=DAILY;UNTIL=20270131T040000Z",
+    "SUMMARY:" + (lang === "sw" ? "Angalia TMA: meteo.go.tz" : "Check TMA: meteo.go.tz"), "URL:" + TMA_URL,
+    "BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:TMA","TRIGGER:PT0M","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics], {type: "text/calendar"})); a.download = "salama-dar-tma.ics";
+  document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+});
+function setLang(l){
+  lang = l; store.set("salamadar-lang", l); document.documentElement.lang = l; document.title = t("title");
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  renderStatic(); renderTma(); renderNav(); renderForm(); renderPanel(); renderLabels(); renderMine(); if (!ql.hidden) openList();
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+/* ---------------- Offline + first run ---------------- */
+function net(){ $("offline").hidden = navigator.onLine; }
+window.addEventListener("online", () => { net(); loadReports(); }); window.addEventListener("offline", net);
+const intro = $("intro");
+$("introStart").addEventListener("click", () => { store.set("salamadar-intro", 1); intro.close(); });
+intro.addEventListener("cancel", () => store.set("salamadar-intro", 1));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && view === "ramani" && !desktop() && panel.dataset.mode !== "peek" && document.activeElement !== q) setMode("peek"); });
+
+/* ---------------- Boot ---------------- */
+setLang(lang); route(false); net();
+requestAnimationFrame(() => showAll(false));
+loadReports(); setInterval(() => { if (navigator.onLine) loadReports(); }, 120000);
+if (!store.get("salamadar-intro", 0) && intro.showModal) { try { intro.showModal(); } catch (e) {} }
+if (IS_SITE && "serviceWorker" in navigator && location.protocol !== "file:") { navigator.serviceWorker.register("sw.js").catch(() => {}); }
+</script>
+</body>
+</html>
