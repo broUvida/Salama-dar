@@ -46,7 +46,7 @@ code{background:var(--paper-2);padding:2px 6px;border-radius:6px;word-break:brea
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 const CFG = (window.SALAMA_CONFIG && window.SALAMA_CONFIG.supabaseUrl && window.SALAMA_CONFIG.supabaseAnonKey) ? window.SALAMA_CONFIG : null;
-const DEPTH = {ankle:"Hadi kifundoni / Ankle deep", knee:"Hadi magotini / Knee deep", waist:"Kiunoni au zaidi / Waist deep or more", road:"Barabara haipitiki / Road impassable"};
+const DEPTH = {clear:"Inapitika, hakuna maji / Passable, no water", ankle:"Hadi kifundoni / Ankle deep", knee:"Hadi magotini / Knee deep", waist:"Kiunoni au zaidi / Waist deep or more", road:"Barabara haipitiki / Road impassable"};
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const app = document.getElementById("app");
 const fmt = (iso) => new Date(iso).toLocaleString("sw-TZ", {dateStyle:"medium", timeStyle:"short"});

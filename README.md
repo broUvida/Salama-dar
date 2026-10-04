@@ -82,6 +82,11 @@ At this point the app works fully except that community reports stay on each pho
 - Add spam protection to the report form (for example Cloudflare Turnstile) before promoting it widely.
 - Line up enough volunteer reviewers to cover the heavy-rain days.
 
+## Regions and offline use
+People choose their region on first use. Dar es Salaam gets the ward map and community reports;
+other regions get the TMA desk, preparation, health and emergency sections plus a national map.
+After one visit online the app works offline; reports sent offline are queued and sent later.
+
 ## Updating ward information
 Ward details live in the `INFO` object near the top of the script in `index.html`. Each entry
 has its sources; keep every claim tied to a source.

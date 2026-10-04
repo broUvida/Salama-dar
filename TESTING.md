@@ -3,7 +3,7 @@
 Tested 3 October 2026 on a local server, Chromium, at 390×844 (phone, touch) and 1366×800
 (desktop), in light and dark mode, in Kiswahili and English.
 
-## Automated user-flow tests: 43 of 43 passed, 0 JavaScript errors
+## Automated user-flow tests: 50 of 50 passed, 0 JavaScript errors
 
 | # | Flow | Result |
 |---|---|---|
@@ -19,6 +19,8 @@ Tested 3 October 2026 on a local server, Chromium, at 390×844 (phone, touch) an
 | 24–26 | Service worker installs; app loads with no connection; offline banner appears | Pass |
 | 27–28 | Report reviewed on `moderate.html` appears on the map | Pass |
 | 29 | Desktop: side panel instead of bottom sheet, top navigation instead of tab bar | Pass |
+| 41–45 | Region must be chosen first; Mwanza shows the national map and hides the report form; switching back restores Dar's ward map; "passable" reports show green | Pass |
+| 46–47 | Offline report is queued with a clear message and stays queued if sending fails | Pass |
 | 36–40 | Preparation checklist ticks, progress and reload; health topics expand; emergency tiles dial the right numbers | Pass |
 | 30–35 | TMA desk: opens with the official TMA link, 4-point check before sharing, 6th tab, daily calendar reminder downloads, map legend links to it | Pass |
 
@@ -28,7 +30,7 @@ Load: first contentful paint about 90 ms locally; the whole app is about 160 KB 
 
 | Check | Result |
 |---|---|
-| Text contrast | 974 text elements measured across 7 sections and the welcome screen × 2 languages × 2 themes: 0 failures |
+| Text contrast | 972 text elements (latest run, including a non-Dar region) measured across 7 sections and the welcome screen × 2 languages × 2 themes: 0 failures |
 | Tap targets (SC 2.5.8) | 0 below 24 px after fixes (was 2: the "not an official warning" link at 20 px tall and the 22 px checkbox) |
 | Accessible names | 0 unnamed controls; every form field has a label |
 | Keyboard focus (SC 2.4.7) | Visible 3 px outline on 13 of 13 controls tabbed through |

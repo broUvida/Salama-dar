@@ -8,7 +8,7 @@ create table if not exists public.reports (
   created_at  timestamptz not null default now(),
   ward        text not null check (char_length(ward) between 2 and 60),
   place       text check (char_length(place) <= 140),
-  depth       text not null check (depth in ('ankle','knee','waist','road')),
+  depth       text not null check (depth in ('clear','ankle','knee','waist','road')),
   note        text check (char_length(note) <= 280),
   lang        text check (lang in ('sw','en')),
   status      text not null default 'pending' check (status in ('pending','approved','rejected')),
